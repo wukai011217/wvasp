@@ -1,0 +1,11 @@
+****************************************************************************************************
+Fri Dec 27 16:35:24 CST 2024
+command: 1
+file: print_out
+ROOT_DIR: /home/wk/auto/test
+command: 执行vasp计算结果检查的流程
+==================================================
+Fri Dec 27 16:35:24 CST 2024
+bash:  check-res
+ROOT_DIR: /home/wk/auto/test
+file: print_out

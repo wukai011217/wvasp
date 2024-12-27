@@ -1,0 +1,77 @@
+#when error print the reason
+error(){
+    echo "error:$1"
+}
+# function for get text
+get_txt(){
+    if [ $# -eq 4 ]
+    then
+        case $3 in
+        end)
+            grep  $2  $1|sed "{:start ;\$q ; N ; $[${4}+1],\$D ;b start }";;
+        head)
+            grep  $2  $1|sed -n "1,${4}p";;
+        *)
+            grep  $2  $1|sed -n "${3},${4}p"
+        esac
+    elif [ $# -eq 6 ]
+    then
+        case $3 in
+        end)
+            if [ $5 = down ]
+            then 
+                output=$(grep -A $6 "$2" $1 )
+                lines=$(echo "$output" | wc -l)
+                if [ $((lines % $[${6}+1])) -eq 0 ]; then
+                   grep -A $6 "$2" $1| sed '/--/d'|sed  "{:start ;\$q ; N ;$[$[${6}+1]*$[${4}+1]+1],\$D ;b start }"  
+                else
+                    head_lines=$[$[${6}+2] - $((lines % $[${6}+1]))]
+                    for ((i=1; i<=$head_lines; i++)); do
+                        sed -i '$a\'" " "$1"
+                    done
+                    grep -A $6 "$2" $1| sed '/--/d'|sed  "{:start ;\$q ; N ;$[$[${6}+1]*$[${4}+1]+1],\$D ;b start }"  
+                fi
+            elif [ $5 = up ]
+            then
+                grep -B $6 "$2" $1 | sed '/--/d'|sed  "{:start ;\$q ; N ;$[${6}*$[${4}+1]+1],\$D ;b start }" 
+            else
+                error 0
+            fi;;
+        head)
+            if [ $5 = down ]
+            then 
+                grep -A $6 "$2" $1 | sed '/--/d'|sed  -n "1,$[$[${6}+1]*${4}]p"
+            elif [ $5 = up ]
+            then
+                 output=$(grep -A $6 "$2" $1 )
+                lines=$(echo "$output" | wc -l)
+                if [ $((lines % $[${6}+1])) -eq 0 ]; then
+                   grep -A $6 "$2" $1| sed '/--/d'|sed  "{:start ;\$q ; N ;$[$[${6}+1]*$[${4}+1]+1],\$D ;b start }"  
+                else
+                    head_lines=$[${6} - $((lines % $[${6}+1]))]
+                    for ((i=1; i<=$head_lines; i++)); do
+                        sed -i "1s/^/ \n/" "$1"
+                    done
+                    grep -B $6 "$2" $1 | sed '/--/d'|sed  -n "1,$[$[${6}+1]*${4}]p"
+                fi
+            else
+                error 0
+            fi;;
+        *)
+            if [ $5 = down ]
+            then 
+                grep -A $6 "$2" $1 | sed '/--/d'|sed  -n "$[$[${3}-1]*$[${6}+1]+1],$[$[${6}+1]*$[${4}-1]+1]p"
+            elif [ $5 = up ]
+            then
+                grep -B $6 "$2" $1 | sed '/--/d'|sed  -n "$[${3}*$[${6}+1]],$[$[${6}+1]*${4}]p"
+            else
+                error 0
+            fi
+        esac
+    else 
+        echo -e 'please input like:\n " @1:filename word begin line_numbers. \n or @2:filename word begin line_numbers up lines. " '
+    fi
+}
+
+
+

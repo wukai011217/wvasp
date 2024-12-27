@@ -1,0 +1,68 @@
+#!/bin/bash
+#make  POSCAR
+#usage: ./pos-to-all.sh -file <POSCAR>
+source /home/wk/auto/function/environment
+source /home/wk/auto/function/setting
+
+#default
+file="POSCAR"
+command="0"
+TO_DIR=$(pwd)
+match=""
+
+#logging
+logging 1 "pos-to-all"
+
+#input
+while [[ $# -gt 1 ]] ;do 
+    case "$1" in 
+        -file|-F|-f) file=$2
+            echo "file: $file" >> "$WORK_DIR/logs"
+            shift 2 ;;  
+        -to) TO_DIR=$2
+            echo "TO_DIR: $TO_DIR" >> "$WORK_DIR/logs"
+            shift 2 ;;
+        -match|-M|-m) match=$2
+            echo "match: $match" >> "$WORK_DIR/logs"
+            shift 2 ;;
+        -command|-c|-C) command=$2
+            echo "command: $command" >> "$WORK_DIR/logs"
+            shift 2 ;;  
+        --) shift 
+            break;; 
+        *) echo "$1 is not an option" ;; 
+    esac 
+done
+
+#main
+case "$command" in
+    #one to all
+    0)find "$TO_DIR" -type d | while read TARGET_DIR
+        do
+            if [ -z "$(find "$TARGET_DIR" -mindepth 1 -type d)" ]; then
+                if [[ "$TARGET_DIR" == *"$match"* ]];then
+                    for i in "${elements[@]}"    
+                        do 
+                            if [[ $TARGET_DIR == *"/$i/"* ]]; then
+                                cp  "$file"  "$TARGET_DIR/POSCAR" 2>> $WORK_DIR/errors 1>> $WORK_DIR/logs
+                                sed -i "s/Ag/$i/g" "$TARGET_DIR/POSCAR"  2>> $WORK_DIR/errors 1>> $WORK_DIR/logs
+                            fi
+                        done
+                else
+                    :
+                fi
+            fi
+        done ;;
+    #mk M to M-2H,all to all
+    1)
+        :
+        ;;
+    help)
+        echo 'this is help'
+        ;;
+    *) echo "$command is not an option" ;; 
+esac
+
+#result
+result $? "pos-to-all"
+

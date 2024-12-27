@@ -1,0 +1,11 @@
+#!/bin/bash
+#记录一些默认参数
+
+#POTCAR位置
+pot_dir="/home/wk/auto/doc/pot"
+
+#工作目录
+WORK_DIR="/home/wk/auto"
+
+#脚本目录
+script_dir="/home/wk/auto"

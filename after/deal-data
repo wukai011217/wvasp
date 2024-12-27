@@ -1,0 +1,57 @@
+#!/bin/bash
+#说明：****
+#用法：****
+#例子：****
+#必要库导入
+source /home/wk/auto/function/environment
+source /home/wk/auto/function/setting
+
+#default
+ROOT_DIR=$(pwd)
+file="file"
+command="0"
+#不接受外来参数改变
+check_file="$WORK_DIR/datas"
+
+#logging
+logging 1 "filename"
+
+#input
+while [[ $# -gt 1 ]] ;do 
+    case "$1" in 
+        -dir|-D|-d) ROOT_DIR=$2 
+            echo "ROOT_DIR: $ROOT_DIR" >> "$WORK_DIR/logs"
+            shift 2 ;; 
+        -file|-F|-f) file=$2
+            echo "file: $file" >> "$WORK_DIR/logs"
+            shift 2 ;;   
+        -command|-c|-C) command=$2
+            echo "command: $command" >> "$WORK_DIR/logs"
+            shift 2 ;; 
+        --) shift 
+            break;; 
+        *) echo "$1 is not an option" ;; 
+    esac    
+done
+
+#main
+case "$command" in
+    0)find "$ROOT_DIR" -type d | while read TARGET_DIR
+        do
+            if [ -z "$(find "$TARGET_DIR" -mindepth 1 -type d)" ]; then
+                if [[ true ]]; then
+                    echo "" 2>>"$WORK_DIR/errors" 1>>"$WORK_DIR/logs"
+                fi
+            fi
+        done ;;
+    1)
+        :
+        ;;
+    help)
+        echo 'this is help'
+        ;;
+    *) echo "$command is not an option" ;; 
+esac
+
+#result of running this file 
+result $? "check-res"
