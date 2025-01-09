@@ -54,9 +54,25 @@ case "$command" in
             fi
         done ;;
     #mk M to M-2H,all to all
-    1)
-        :
-        ;;
+    1)find "$TO_DIR" -type d | while read TARGET_DIR
+        do
+            if [ -z "$(find "$TARGET_DIR" -mindepth 1 -type d)" ]; then
+                if [[ "$TARGET_DIR" == *"$match"* ]];then  
+                    cp "$file" "$TO_DIR/POSCAR" 2>> $WORK_DIR/errors 1>> $WORK_DIR/logs
+                    sed -i "s/Ag/$i/g" "$TO_DIR/POSCAR"  2>> $WORK_DIR/errors 1>> $WORK_DIR/logs
+                fi
+            fi
+        done ;;
+    #mk M-2H to 2H
+    2)find "$TO_DIR" -type d | while read TARGET_DIR
+        do
+            if [ -z "$(find "$TARGET_DIR" -mindepth 1 -type d)" ]; then
+                if [[ "$TARGET_DIR" == *"$match"* ]];then  
+                    cp "$file" "$TO_DIR/POSCAR" 2>> $WORK_DIR/errors 1>> $WORK_DIR/logs
+                    sed -i "s/Ag/$i/g" "$TO_DIR/POSCAR"  2>> $WORK_DIR/errors 1>> $WORK_DIR/logs
+                fi
+            fi
+        done ;;
     help)
         echo 'this is help'
         ;;

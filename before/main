@@ -67,7 +67,7 @@ main(){
             ;;
         #执行vasp计算结果检查的流程
         1)  echo "command: 执行vasp计算结果检查的流程" >> "$WORK_DIR/logs" 
-            $script_dir/after/check-res -dir ${ROOT_DIR} -file ${file}  
+            $script_dir/after/check-res -dir ${ROOT_DIR} -file ${file}  -match ${match}  
             ;;
         #执行数据提取的流程 
         2)  echo "command: 执行数据提取的流程" >> "$WORK_DIR/logs" 

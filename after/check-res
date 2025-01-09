@@ -7,6 +7,7 @@ source /home/wk/auto/function/setting
 ROOT_DIR=$(pwd)
 file="print_out"
 command="0"
+match=""
 
 #logging
 logging 1 "check-res"
@@ -23,6 +24,9 @@ while [[ $# -gt 1 ]] ;do
         -command|-c|-C) command=$2
             echo "command: $command" >> "$WORK_DIR/logs"
             shift 2 ;; 
+        -match|-M|-m) match=$2
+            echo "match: $match" >> "$WORK_DIR/logs"
+            shift 2 ;;
         --) shift 
             break;; 
         *) echo "$1 is not an option" ;; 
@@ -34,14 +38,15 @@ case "$command" in
     0)find "$ROOT_DIR" -type d | while read TARGET_DIR
         do
             if [ -z "$(find "$TARGET_DIR" -mindepth 1 -type d)" ]; then
-                
-                if [ ! -f "$TARGET_DIR/OUTCAR" ] || ! grep -q "reached" "$TARGET_DIR/OUTCAR" ; then
-                    echo " -1 $TARGET_DIR" >>"$WORK_DIR/datas"
-                    echo "unexpected end of calculation || $TARGET_DIR" >> "$WORK_DIR/bad_datas"
-                else
-                    echo " 1 $TARGET_DIR" >>"$WORK_DIR/datas"
-                    echo "$TARGET_DIR" >>"$WORK_DIR/good_datas"
-                    grep "E0" "$TARGET_DIR/print_out" | tail -n 1 >>"$WORK_DIR/good_datas"
+                if [[ "$TARGET_DIR" == *"$match"* ]];then
+                    if [ ! -f "$TARGET_DIR/OUTCAR" ] || ! grep -q "reached" "$TARGET_DIR/OUTCAR" ; then
+                        echo " -1 $TARGET_DIR" >>"$WORK_DIR/datas"
+                        echo "unexpected end of calculation || $TARGET_DIR" >> "$WORK_DIR/bad_datas"
+                    else
+                        echo " 1 $TARGET_DIR" >>"$WORK_DIR/datas"
+                        echo "$TARGET_DIR" >>"$WORK_DIR/good_datas"
+                        grep "E0" "$TARGET_DIR/print_out" | tail -n 1 >>"$WORK_DIR/good_datas"
+                    fi
                 fi
             fi
         done ;;
