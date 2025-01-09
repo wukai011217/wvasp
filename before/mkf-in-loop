@@ -2,8 +2,8 @@
 #copy file to the last folder in loop
 #useage:./mkf-in-loop -f <file> -c <command> -from <from directory>  -to <to directory>
 #EX:./mkf-in-loop -f POSCAR -c 0 -from /home/wk/auto/doc  -to /home/wk/auto/test/ads
-source /home/wk/auto/function/environment
-source /home/wk/auto/function/setting
+source environment
+source setting
 
 #default
 ROOT_DIR=$(pwd)

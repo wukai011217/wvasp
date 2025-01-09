@@ -1,8 +1,8 @@
 #!/bin/bash
 #make INCAR POTCAR from POSCAR，copy KPOINTS and vasp.sbatch
 #usage: ./xsd-to-input.sh <xsd> <input>
-source /home/wk/auto/function/environment
-source /home/wk/auto/function/setting
+source environment
+source setting
 
 #default
 command="0"

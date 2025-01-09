@@ -1,8 +1,8 @@
 #!/bin/bash
 #make  POSCAR
 #usage: ./pos-to-all.sh -file <POSCAR>
-source /home/wk/auto/function/environment
-source /home/wk/auto/function/setting
+source environment
+source setting
 
 #default
 file="POSCAR"

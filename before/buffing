@@ -77,3 +77,6 @@ awk 'NR==91 {$3 += 0.09} {print}' data.txt > temp.txt && mv temp.txt data.txt
 # Rename the .txt files in the current directory.
 rename 's/\.txt$//' *.txt
 
+# view the current directory size
+du -h --max-depth=1
+

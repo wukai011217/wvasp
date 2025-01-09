@@ -2,8 +2,8 @@
 #run vasp
 #useage:./run -dir <TO_DIR> -match <match> -screen <screen>
 #EX:./run -dir /home/wk/auto/test/ads -match M -screen OUTCAR
-source /home/wk/auto/function/environment
-source /home/wk/auto/function/setting
+source environment
+source setting
 
 #default
 TO_DIR="$(pwd)"

@@ -1,6 +1,6 @@
 #!/bin/bash
-source /home/wk/auto/function/environment
-source /home/wk/auto/function/setting
+source environment
+source setting
 
 #default
 ROOT_DIR=$(pwd)

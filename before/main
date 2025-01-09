@@ -1,8 +1,8 @@
 #!/bin/bash
 #the main script(给出一个xsd结构，生成多种元素的vasp输入文件，并运行vasp)
 #useage: 
-source /home/wk/auto/function/environment
-source /home/wk/auto/function/setting
+source environment
+source setting
 
 #default
 command="0"
@@ -54,40 +54,40 @@ main(){
         #执行批量vasp的流程
         0)  echo "command: 执行批量vasp的流程" >> "$WORK_DIR/logs"
             echo "pos-to-all" 
-            $script_dir/before/pos-to-all -f ${file} -to ${TO_DIR} -match ${match}
+            pos-to-all -f ${file} -to ${TO_DIR} -match ${match}
             echo "pot-to-all"
-            $script_dir/before/pot-to-all -to ${TO_DIR} -match ${match}
+            pot-to-all -to ${TO_DIR} -match ${match}
             echo "mkf-in-loop"
             for i in INCAR KPOINTS vasp.sbatch
               do
-                $script_dir/before/mkf-in-loop -f $script_dir/doc/$i -c 0 -from ${ROOT_DIR}  -to ${TO_DIR} -match ${match}
+                mkf-in-loop -f $script_dir/doc/$i -c 0 -from ${ROOT_DIR}  -to ${TO_DIR} -match ${match}
               done
             echo "run"
-            $script_dir/before/run -dir ${TO_DIR} -match ${match} 
+            run -dir ${TO_DIR} -match ${match} 
             ;;
         #执行vasp计算结果检查的流程
         1)  echo "command: 执行vasp计算结果检查的流程" >> "$WORK_DIR/logs" 
-            $script_dir/after/check-res -dir ${ROOT_DIR} -file ${file}  -match ${match}  
+            check-res -dir ${ROOT_DIR} -file ${file}  -match ${match}  
             ;;
         #执行数据提取的流程 
         2)  echo "command: 执行数据提取的流程" >> "$WORK_DIR/logs" 
-            $script_dir/after/deal-data -f ${file}  -dir ${ROOT_DIR}  -to ${TO_DIR}
+            deal-data -f ${file}  -dir ${ROOT_DIR}  -to ${TO_DIR}
             ;;
         #执行文件提取的流程
         3)  echo "command: 执行文件提取的流程" >> "$WORK_DIR/logs" 
-            $script_dir/after/copy-file -f ${file} -to ${TO_DIR} -dir ${ROOT_DIR} -command 0 -match ${match}
+            copy-file -f ${file} -to ${TO_DIR} -dir ${ROOT_DIR} -command 0 -match ${match}
             ;;
         #执行bader的流程
         4)  echo "command: 执行bader的流程" >> "$WORK_DIR/logs"
-            $script_dir/after/bader-data -dir ${ROOT_DIR}
+            bader-data -dir ${ROOT_DIR}
             ;;
         #执行删除的流程
         5)  echo "command: 执行删除的流程" >> "$WORK_DIR/logs"
-            $script_dir/after/del -f ${file} -dir ${ROOT_DIR}
+            del -f ${file} -dir ${ROOT_DIR}
             ;;
         #执行取消任务的流程
         6)  echo "command: 执行取消任务的流程" >> "$WORK_DIR/logs"
-            $script_dir/before/scancel  ${job_ID1} ${job_ID2}
+            scancel  ${job_ID1} ${job_ID2}
             ;;
         #help
         help)
