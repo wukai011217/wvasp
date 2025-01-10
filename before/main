@@ -51,19 +51,17 @@ done
 #main
 main(){
     case "$command" in 
-        #执行批量vasp的流程
+        #执行批量vasp的流程 file to match 
         0)  echo "command: 执行批量vasp的流程" >> "$WORK_DIR/logs"
             echo "pos-to-all" 
             pos-to-all -f ${file} -to ${TO_DIR} -match ${match}
             echo "pot-to-all"
             pot-to-all -to ${TO_DIR} -match ${match}
             echo "mkf-in-loop"
-            for i in INCAR KPOINTS vasp.sbatch
+            for i in KPOINTS vasp.sbatch
               do
-                mkf-in-loop -f $script_dir/doc/$i -c 0 -from ${ROOT_DIR}  -to ${TO_DIR} -match ${match}
+                mkf-in-loop -f doc/$i -c 0  -to ${TO_DIR} -match ${match}
               done
-            echo "run"
-            run -dir ${TO_DIR} -match ${match} 
             ;;
         #执行vasp计算结果检查的流程
         1)  echo "command: 执行vasp计算结果检查的流程" >> "$WORK_DIR/logs" 
