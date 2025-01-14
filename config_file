@@ -14,6 +14,10 @@ declare -A PATHS=(
     ["work_dir"]="${SCRIPT_DIR}/work"       # 工作目录
 )
 
+for dir_name in "${!PATHS[@]}"; do
+    export PATH="${PATHS[$dir_name]}:$PATH"
+done
+
 # 验证目录是否存在和可访问的函数
 verify_directories() {
     local dir_name
@@ -62,12 +66,7 @@ export_paths() {
         export "${dir_name}=${PATHS[$dir_name]}"
     done
 }
-# 路径变量加入环境变量
-add_paths() {
-    for dir_name in "${!PATHS[@]}"; do
-        export PATH="${PATHS[$dir_name]}:$PATH"
-    done
-}
+
 # 初始化路径
 init_paths() {
     # 验证或创建必要的目录
@@ -79,9 +78,7 @@ init_paths() {
     # 导出路径变量
     export_paths
 
-    # 添加路径到环境变量
-    add_paths
-    
+
     # 打印路径信息（调试用）
     if [[ "${DEBUG:-0}" == "1" ]]; then
         echo "Initialized directories:"

@@ -10,18 +10,8 @@ set -e  # 遇到错误立即退出
 set -u  # 使用未定义的变量时报错
 
 # 加载必要的配置文件和函数
-if [[ -f "config_file" ]]; then
-    . config_file
-else
-    echo "Error: config_file not found!" >&2
-    exit 1
-fi
-if [[ -f "functions" ]]; then
-    . functions
-else
-    echo "Error: functions not found!" >&2
-    exit 1
-fi
+. functions
+
 
 # 默认配置
 declare -A CONFIG=(
@@ -180,7 +170,7 @@ main() {
 }
 
 # 初始化日志
-logging 0
+logging 0 main
 
 # 解析命令行参数
 parse_arguments "$@"
