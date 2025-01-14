@@ -1,6 +1,6 @@
 #!/bin/bash
 #记录一些变量和函数
-. /home/wk/auto/function/environment
+source environment
 
 
 elements=(Mg Al Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Ba Ce Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi)

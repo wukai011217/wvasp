@@ -51,21 +51,21 @@ done
 #main
 main(){
     case "$command" in 
-        #执行批量vasp的流程 file to match 
+        #执行批量vasp的流程 -file <POSCAR> -to <DIR> -match <str>
         0)  echo "command: 执行批量vasp的流程" >> "$WORK_DIR/logs"
             echo "pos-to-all" 
-            pos-to-all -f ${file} -to ${TO_DIR} -match ${match}
+            wk-pos-to-all -f ${file} -to ${TO_DIR} -match ${match}
             echo "pot-to-all"
-            pot-to-all -to ${TO_DIR} -match ${match}
+            wk-pot-to-all -to ${TO_DIR} -match ${match}
             echo "mkf-in-loop"
             for i in KPOINTS vasp.sbatch
               do
-                mkf-in-loop -f doc/$i -c 0  -to ${TO_DIR} -match ${match}
+                wk-mkf-in-loop -f doc/$i -c 0  -to ${TO_DIR} -match ${match}
               done
             ;;
-        #执行vasp计算结果检查的流程
-        1)  echo "command: 执行vasp计算结果检查的流程" >> "$WORK_DIR/logs" 
-            check-res -dir ${ROOT_DIR} -file ${file}  -match ${match}  
+        #执行批量vaspM-2H to 2H的流程
+        1)  echo "command: 执行批量vaspM-2H to 2H的流程" >> "$WORK_DIR/logs" 
+            wk-pos-to-all -f ${file} -to ${TO_DIR} -match ${match} -command 2
             ;;
         #执行数据提取的流程 
         2)  echo "command: 执行数据提取的流程" >> "$WORK_DIR/logs" 

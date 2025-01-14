@@ -47,6 +47,7 @@ case "$command" in
                         echo " 1 $TARGET_DIR" >>"$WORK_DIR/datas"
                         echo "$TARGET_DIR" >>"$WORK_DIR/good_datas"
                         grep "E0" "$TARGET_DIR/print_out" | tail -n 1 >>"$WORK_DIR/good_datas"
+                        grep -q "reached" "$TARGET_DIR/print_out" >>"$WORK_DIR/good_datas"
                     fi
                 fi
             fi

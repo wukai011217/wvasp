@@ -66,10 +66,16 @@ case "$command" in
     #mk M-2H to 2H
     2)find "$TO_DIR" -type d | while read TARGET_DIR
         do
-            if [ -z "$(find "$TARGET_DIR" -mindepth 1 -type d)" ]; then
-                if [[ "$TARGET_DIR" == *"$match"* ]];then  
-                    cp "$file" "$TO_DIR/POSCAR" 2>> $WORK_DIR/errors 1>> $WORK_DIR/logs
-                    sed -i "s/Ag/$i/g" "$TO_DIR/POSCAR"  2>> $WORK_DIR/errors 1>> $WORK_DIR/logs
+            if [ -z "$(find "$TARGET_DIR" -mindepth 1 -type d)" ]; then 
+                if [[ "$TARGET_DIR" == *"M-2H"* ]];then  
+                    if [ -f "$TARGET_DIR"/CONTCAR ];then
+                        cp "$TARGET_DIR"/CONTCAR "$TARGET_DIR"/../2H/POSCAR 2>> $WORK_DIR/errors 1>> $WORK_DIR/logs
+                        sed -i "6s\ H" "$TARGET_DIR"/../2H/POSCAR  2>> $WORK_DIR/errors 1>> $WORK_DIR/logs
+                        sed -i "7s\ 2" "$TARGET_DIR"/../2H/POSCAR  2>> $WORK_DIR/errors 1>> $WORK_DIR/logs
+                        sed -i "10,80d" "$TARGET_DIR"/../2H/POSCAR  2>> $WORK_DIR/errors 1>> $WORK_DIR/logs
+                    else
+                        echo " NO CONTCAR in $TARGET_DIR"
+                    fi
                 fi
             fi
         done ;;
