@@ -1,0 +1,196 @@
+#!/bin/bash
+#
+# 脚本名称: vasp_batch_processor.sh
+# 描述: 给出一个 xsd 结构，生成多种元素的 VASP 输入文件并运行 VASP
+# 用法: ./vasp_batch_processor.sh [OPTIONS]
+# 作者: wukai
+# 创建日期: 2024-10-23
+
+set -e  # 遇到错误立即退出
+set -u  # 使用未定义的变量时报错
+
+# 加载必要的配置文件和函数
+if [[ -f "config_file" ]]; then
+    . config_file
+else
+    echo "Error: config_file not found!" >&2
+    exit 1
+fi
+if [[ -f "functions" ]]; then
+    . functions
+else
+    echo "Error: functions not found!" >&2
+    exit 1
+fi
+
+# 默认配置
+declare -A CONFIG=(
+    [command]="0"
+    [root_dir]="$(pwd)"
+    [match]=""
+    [file]="POSCAR"
+    [to_dir]="$(pwd)"
+    [screen]="OUTCAR"
+    [job_id_1]=0
+    [job_id_2]=1
+)
+
+# 函数：显示帮助信息
+show_help() {
+    cat << EOF
+Usage: $(basename "$0") [OPTIONS]
+Options:
+    -c, -command    Set command (0: batch VASP, 1: M-2H to 2H)
+    -d, -dir       Set root directory
+    -m, -match     Set match pattern
+    -f, -file      Set input file (default: POSCAR)
+    -to            Set target directory
+    -screen        Set screen file
+    -job           Set job IDs (requires two values)
+Example:
+    $(basename "$0") -c 0 -f POSCAR -to /path/to/dir -m "pattern"
+EOF
+}
+
+# 函数：执行批量 VASP 流程
+run_batch_vasp() {
+    local file="$1"
+    local to_dir="$2"
+    local match="$3"
+    
+    # 执行 pos-to-all
+    echo "pos-to-all" 
+    wk-pos-to-all -f "${file}" -to "${to_dir}" -match "${match}" || \
+        error_exit "pos-to-all failed"
+
+    # 执行 pot-to-all
+    echo "pot-to-all"
+    wk-pot-to-all -to "${to_dir}" -match "${match}" || \
+        error_exit "pot-to-all failed"
+
+    # 执行 mkf-in-loop
+    echo "mkf-in-loop"
+    for input_file in KPOINTS vasp.sbatch; do
+        wk-mkf-in-loop -f "doc/${input_file}" -c 0 -to "${to_dir}" -match "${match}" || \
+            error_exit "mkf-in-loop failed for ${input_file}"
+    done
+}
+
+# 函数：执行 M-2H to 2H 流程
+run_m2h_to_2h() {
+    local file="$1"
+    local to_dir="$2"
+    local match="$3"
+
+    # 执行 pos-to-all（命令 2）
+    wk-pos-to-all -f "${file}" -to "${to_dir}" -match "${match}" -command 2 || \
+        error_exit "pos-to-all failed"
+
+    # 执行 pot-to-all（命令 1）
+    wk-pot-to-all -to "${to_dir}" -match "${match}" -command 1 || \
+        error_exit "pot-to-all failed"
+
+    # 执行 mkf-in-loop
+    for input_file in KPOINTS vasp.sbatch; do
+        wk-mkf-in-loop -f "doc/${input_file}" -c 0 -to "${to_dir}" -match "${match}" || \
+            error_exit "mkf-in-loop failed for ${input_file}"
+    done
+}
+
+# 函数：解析命令行参数
+parse_arguments() {
+    while [[ $# -gt 1 ]]; do
+        case "$1" in
+            -command|-c|-C)
+                CONFIG[command]="$2"
+                echo "command: ${CONFIG[command]}" >> "${PATHS[log_dir]}/logs"
+                shift 2
+                ;;
+            -dir|-D|-d)
+                CONFIG[root_dir]="$2"
+                echo "ROOT_DIR: ${CONFIG[root_dir]}" >> "${PATHS[log_dir]}/logs"
+                shift 2
+                ;;
+            -match|-m|-M)
+                CONFIG[match]="$2"
+                echo "match: ${CONFIG[match]}" >> "${PATHS[log_dir]}/logs"
+                shift 2
+                ;;
+            -file|-F|-f)
+                CONFIG[file]="$2"
+                echo "file: ${CONFIG[file]}" >> "${PATHS[log_dir]}/logs"
+                shift 2
+                ;;
+            -to)
+                CONFIG[to_dir]="$2"
+                echo "TO_DIR: ${CONFIG[to_dir]}" >> "${PATHS[log_dir]}/logs"
+                shift 2
+                ;;
+            -screen)
+                CONFIG[screen]="$2"
+                echo "screen: ${CONFIG[screen]}" >> "${PATHS[log_dir]}/logs"
+                shift 2
+                ;;
+            -job)
+                if [[ $# -lt 3 ]]; then
+                    echo "Error: -job requires two values" >&2
+                    exit 1
+                fi
+                CONFIG[job_id_1]="$2"
+                CONFIG[job_id_2]="$3"
+                echo "job_ID_1: ${CONFIG[job_id_1]}" >> "${PATHS[log_dir]}/logs"
+                echo "job_ID_2: ${CONFIG[job_id_2]}" >> "${PATHS[log_dir]}/logs"
+                shift 3
+                ;;
+            -h|--help)
+                show_help
+                exit 0
+                ;;
+            --)
+                shift
+                break
+                ;;
+            *)
+                echo "$1 is not an option"
+                ;;
+        esac
+    done
+}
+
+# 函数：主程序
+main() {
+    local command="${CONFIG[command]}"
+    local file="${CONFIG[file]}"
+    local to_dir="${CONFIG[to_dir]}"
+    local match="${CONFIG[match]}"
+
+    case "${command}" in
+        0)  # 执行批量 VASP 流程
+            echo "command: 执行批量vasp的流程" >> "${PATHS[log_dir]}/logs"
+            run_batch_vasp "${file}" "${to_dir}" "${match}"
+            ;;
+        1)  # 执行批量 M-2H to 2H 流程
+            echo "command: 执行批量vaspM-2H to 2H的流程" >> "${PATHS[log_dir]}/logs"
+            run_m2h_to_2h "${file}" "${to_dir}" "${match}"
+            ;;
+        *)
+            echo "command: ${command} is not defined"
+            ;;
+    esac
+}
+
+# 初始化日志
+logging 0
+
+# 解析命令行参数
+parse_arguments "$@"
+
+# 执行主程序
+main
+
+# 记录结果
+{
+    printf '=%.0s' {1..50}
+    echo
+    result $? "main"
+} >> "${PATHS[result_dir]}/results"

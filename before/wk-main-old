@@ -66,32 +66,13 @@ main(){
         #执行批量vaspM-2H to 2H的流程
         1)  echo "command: 执行批量vaspM-2H to 2H的流程" >> "$WORK_DIR/logs" 
             wk-pos-to-all -f ${file} -to ${TO_DIR} -match ${match} -command 2
+            wk-pot-to-all -to ${TO_DIR} -match ${match} -command 1
+            for i in KPOINTS vasp.sbatch
+              do
+                wk-mkf-in-loop -f doc/$i -c 0  -to ${TO_DIR} -match ${match}
+              done
             ;;
-        #执行数据提取的流程 
-        2)  echo "command: 执行数据提取的流程" >> "$WORK_DIR/logs" 
-            deal-data -f ${file}  -dir ${ROOT_DIR}  -to ${TO_DIR}
-            ;;
-        #执行文件提取的流程
-        3)  echo "command: 执行文件提取的流程" >> "$WORK_DIR/logs" 
-            copy-file -f ${file} -to ${TO_DIR} -dir ${ROOT_DIR} -command 0 -match ${match}
-            ;;
-        #执行bader的流程
-        4)  echo "command: 执行bader的流程" >> "$WORK_DIR/logs"
-            bader-data -dir ${ROOT_DIR}
-            ;;
-        #执行删除的流程
-        5)  echo "command: 执行删除的流程" >> "$WORK_DIR/logs"
-            del -f ${file} -dir ${ROOT_DIR}
-            ;;
-        #执行取消任务的流程
-        6)  echo "command: 执行取消任务的流程" >> "$WORK_DIR/logs"
-            scancel  ${job_ID1} ${job_ID2}
-            ;;
-        #help
-        help)
-            echo 'this is help' 
-            ;;
-        
+            
         *) echo "command: $command is not defined" ;;
     esac 
 }

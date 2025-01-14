@@ -1,0 +1,120 @@
+#!/bin/bash
+# 检查并设置脚本目录
+if ! declare -p SCRIPT_DIR &>/dev/null; then
+    readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+fi
+# 定义项目相关目录
+declare -A PATHS=(
+    ["pot_dir"]="${SCRIPT_DIR}/doc/pot"     # POTCAR 文件目录
+    ["data_dir"]="${SCRIPT_DIR}/data"       # 数据文件目录
+    ["result_dir"]="${SCRIPT_DIR}/result"   # 结果文件目录
+    ["log_dir"]="${SCRIPT_DIR}/log"       # 日志文件目录
+    ["script_dir"]="${SCRIPT_DIR}/main"     # 脚本目录
+    ["func_dir"]="${SCRIPT_DIR}/function"   # 函数目录
+    ["work_dir"]="${SCRIPT_DIR}/work"       # 工作目录
+)
+
+# 验证目录是否存在和可访问的函数
+verify_directories() {
+    local dir_name
+    local dir_path
+    
+    for dir_name in "${!PATHS[@]}"; do
+        dir_path="${PATHS[$dir_name]}"
+        
+        if [[ ! -d "${dir_path}" ]]; then
+            echo "Error: Directory '${dir_name}' (${dir_path}) does not exist!" >&2
+            return 1
+        fi
+        
+        if [[ ! -r "${dir_path}" ]]; then
+            echo "Error: Cannot read directory '${dir_name}' (${dir_path})!" >&2
+            return 1
+        fi
+    done
+    
+    return 0
+}
+
+# 创建必要目录的函数
+ensure_directories() {
+    local dir_name
+    local dir_path
+    
+    for dir_name in "${!PATHS[@]}"; do
+        dir_path="${PATHS[$dir_name]}"
+        
+        if [[ ! -d "${dir_path}" ]]; then
+            echo "Creating directory: ${dir_path}"
+            mkdir -p "${dir_path}" || {
+                echo "Error: Failed to create directory '${dir_path}'!" >&2
+                return 1
+            }
+        fi
+    done
+    
+    return 0
+}
+
+# 导出路径变量供其他脚本使用
+export_paths() {
+    for dir_name in "${!PATHS[@]}"; do
+        export "${dir_name}=${PATHS[$dir_name]}"
+    done
+}
+# 路径变量加入环境变量
+add_paths() {
+    for dir_name in "${!PATHS[@]}"; do
+        export PATH="${PATHS[$dir_name]}:$PATH"
+    done
+}
+# 初始化路径
+init_paths() {
+    # 验证或创建必要的目录
+    ensure_directories || {
+        echo "Error: Failed to initialize directories!" >&2
+        return 1
+    }
+    
+    # 导出路径变量
+    export_paths
+
+    # 添加路径到环境变量
+    add_paths
+    
+    # 打印路径信息（调试用）
+    if [[ "${DEBUG:-0}" == "1" ]]; then
+        echo "Initialized directories:"
+        for dir_name in "${!PATHS[@]}"; do
+            echo "${dir_name}: ${PATHS[$dir_name]}"
+        done
+    fi
+    
+    return 0
+}
+
+# 使用示例
+main() {   
+    echo "Script directory: ${SCRIPT_DIR}"
+    # 初始化路径
+    init_paths || exit 1
+    
+    # 在这里使用定义的路径变量
+
+    echo "Working directory: ${work_dir}"
+    echo "Log directory: ${log_dir}"
+    echo "Result directory: ${result_dir}"
+
+    
+    # 验证特定文件是否存在
+    if [[ -f "${pot_dir}/Ce/POTCAR" ]]; then
+        echo "Found POTCAR file"
+    else
+        echo "Warning: POTCAR file not found"
+    fi
+}
+
+# 如果直接运行此脚本（而不是被源引用）
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    main "$@"
+fi
