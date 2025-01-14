@@ -1,0 +1,227 @@
+#!/bin/bash
+#
+# 文件名: functions
+# 描述: 存储共享变量和函数
+# 位置: $SCRIPT_DIR/function/functions
+. config_file
+
+# 检查工作目录是否已定义
+if [[ -z "${PATHS[work_dir]}" ]]; then
+    echo "Error: work_dir is not defined!" >&2
+    return 1
+fi
+
+# 元素数组定义
+declare -a elements=(
+    Mg Al Ca Sc Ti V  Cr Mn Fe Co Ni Cu 
+    Zn Ga Ge Sr Y  Zr Nb Mo Tc Ru Rh Pd 
+    Ag Cd In Sn Sb Ba Ce Hf Ta W  Re Os 
+    Ir Pt Au Hg Tl Pb Bi
+)
+
+# 结果记录函数
+# 参数:
+#   $1 - 执行状态（0表示成功，非0表示失败）
+#   $2 - 命令描述
+result() {
+    local status="$1"
+    local command="$2"
+    local result_file="${PATHS[result_dir]}/results"
+    local message
+    
+    # 确保结果文件存在
+    touch "${result_file}" 2>/dev/null || {
+        echo "Error: Cannot write to results file!" >&2
+        return 1
+    }
+    
+    # 根据状态生成消息
+    if [[ ${status} -eq 0 ]]; then
+        message="Successfully run ${command}"
+    else
+        message="Failed run ${command}"
+    fi
+    
+    # 写入结果
+    echo "${message}" >> "${result_file}"
+}
+
+# 日志记录函数
+# 参数:
+#   $1 - 日志级别（0表示分隔符，1表示命令日志）
+#   $2 - [可选]命令描述（当$1=1时使用）
+logging() {
+    local level="$1"
+    local message="$2"
+    local timestamp="$(date '+%Y-%m-%d %H:%M:%S')"
+    local log_files=(
+        "${PATHS[log_dir]}/logs"
+        "${PATHS[log_dir]}/errors"
+        "${PATHS[result_dir]}/results"
+    )
+    
+    # 检查日志文件是否可写
+    for log_file in "${log_files[@]}"; do
+        touch "${log_file}" 2>/dev/null || {
+            echo "Error: Cannot write to ${log_file}!" >&2
+            return 1
+        }
+    done
+    
+    # 根据日志级别处理
+    case "${level}" in
+        0)  # 分隔符日志
+            for log_file in "${log_files[@]}"; do
+                {
+                    printf '*%.0s' {1..100}
+                    echo
+                    echo "${timestamp}"
+                } >> "${log_file}"
+            done
+            ;;
+        1)  # 命令日志
+            for log_file in "${log_files[@]}"; do
+                {
+                    printf '=%.0s' {1..50}
+                    echo
+                    echo "${timestamp}"
+                    echo "bash: ${message}"
+                } >> "${log_file}"
+            done
+            ;;
+            
+        *)  # 无效的日志级别
+            echo "Error: Invalid logging level: ${level}" >&2
+            return 1
+            ;;
+    esac
+}
+
+# 检查日志文件函数
+check_log_files() {
+    local log_files=(
+        "${PATHS[log_dir]}/logs"
+        "${PATHS[log_dir]}/errors"
+        "${PATHS[result_dir]}/results"
+    )
+    
+    for log_file in "${log_files[@]}"; do
+        if [[ ! -f "${log_file}" ]]; then
+            echo "Creating log file: ${log_file}"
+            touch "${log_file}" || {
+                echo "Error: Failed to create ${log_file}!" >&2
+                return 1
+            }
+        fi
+        
+        if [[ ! -w "${log_file}" ]]; then
+            echo "Error: Cannot write to ${log_file}!" >&2
+            return 1
+        fi
+    done
+    
+    return 0
+}
+
+# 检查元素是否有效
+# 参数:
+#   $1 - 要检查的元素符号
+is_valid_element() {
+    local element="$1"
+    local valid=1
+    
+    for valid_element in "${elements[@]}"; do
+        if [[ "${element}" == "${valid_element}" ]]; then
+            valid=0
+            break
+        fi
+    done
+    
+    return ${valid}
+}
+
+# 清理日志文件函数
+clean_logs() {
+    local log_files=(
+        "${PATHS[log_dir]}/logs"
+        "${PATHS[log_dir]}/errors"
+        "${PATHS[result_dir]}/results"
+    )
+    
+    for log_file in "${log_files[@]}"; do
+        if [[ -f "${log_file}" ]]; then
+            : > "${log_file}"  # 清空文件内容
+        fi
+    done
+}
+
+# 初始化函数
+init_functions() {
+    # 检查必要的变量
+    if [[ -z "${PATHS[work_dir]}" ]]; then
+        echo "Error: work_dir is not defined!" >&2
+        return 1
+    fi
+    
+    # 检查日志文件
+    if ! check_log_files; then
+        echo "Error: Failed to initialize log files!" >&2
+        return 1
+    fi
+    
+    return 0
+}
+
+# 函数：错误处理
+# 参数：
+#   $1 - 错误信息
+error_exit() {
+    local message="$1"
+    local timestamp="$(date '+%Y-%m-%d %H:%M:%S')"
+    
+    # 写入错误日志
+    {
+        printf '=%.0s' {1..50}
+        echo
+        echo "${timestamp}"
+        echo "ERROR: ${message}"
+    } >> "${PATHS[log_dir]}/errors"
+    
+    # 输出到标准错误
+    echo "Error: ${message}" >&2
+    
+    # 记录到结果文件
+    result 1 "${message}"
+    
+    # 以非零状态退出
+    exit 1
+}
+
+# 如果直接执行此文件，显示用法说明
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    cat << EOF
+This file should be sourced, not executed directly.
+
+Usage:
+    source functions
+
+Available functions:
+    result     - Record command execution results
+    logging    - Log messages to log files
+    is_valid_element - Check if element symbol is valid
+    clean_logs - Clean all log files
+    
+Available variables:
+    elements   - Array of supported elements
+
+Example:
+    source functions
+    logging 1 "Starting process"
+    some_command
+    result $? "some_command"
+EOF
+    exit 1
+fi
+
+# 初始化
+init_functions || return 1
