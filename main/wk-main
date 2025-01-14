@@ -10,6 +10,7 @@ set -e  # 遇到错误立即退出
 set -u  # 使用未定义的变量时报错
 
 # 加载必要的配置文件和函数
+. config_file
 . functions
 
 
@@ -50,18 +51,18 @@ run_batch_vasp() {
     
     # 执行 pos-to-all
     echo "pos-to-all" 
-    wk-pos-to-all -f "${file}" -to "${to_dir}" -match "${match}" || \
+    wk-pos -f "${file}" -to "${to_dir}" -match "${match}" || \
         error_exit "pos-to-all failed"
 
     # 执行 pot-to-all
     echo "pot-to-all"
-    wk-pot-to-all -to "${to_dir}" -match "${match}" || \
+    wk-pot -to "${to_dir}" -match "${match}" || \
         error_exit "pot-to-all failed"
 
     # 执行 mkf-in-loop
     echo "mkf-in-loop"
     for input_file in KPOINTS vasp.sbatch; do
-        wk-mkf-in-loop -f "doc/${input_file}" -c 0 -to "${to_dir}" -match "${match}" || \
+        wk-mkf -f "$SCRIPT_DIR/data/${input_file}" -c 0 -to "${to_dir}" -match "${match}" || \
             error_exit "mkf-in-loop failed for ${input_file}"
     done
 }
@@ -73,16 +74,16 @@ run_m2h_to_2h() {
     local match="$3"
 
     # 执行 pos-to-all（命令 2）
-    wk-pos-to-all -f "${file}" -to "${to_dir}" -match "${match}" -command 2 || \
+    wk-pos -f "${file}" -to "${to_dir}" -match "${match}" -command 2 || \
         error_exit "pos-to-all failed"
 
     # 执行 pot-to-all（命令 1）
-    wk-pot-to-all -to "${to_dir}" -match "${match}" -command 1 || \
+    wk-pot -to "${to_dir}" -match "${match}" -command 1 || \
         error_exit "pot-to-all failed"
 
     # 执行 mkf-in-loop
     for input_file in KPOINTS vasp.sbatch; do
-        wk-mkf-in-loop -f "doc/${input_file}" -c 0 -to "${to_dir}" -match "${match}" || \
+        wk-mkf -f "$SCRIPT_DIR/data/${input_file}" -c 0 -to "${to_dir}" -match "${match}" || \
             error_exit "mkf-in-loop failed for ${input_file}"
     done
 }
