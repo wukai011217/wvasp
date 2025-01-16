@@ -1,8 +1,8 @@
 #!/bin/bash
 #检查计算结果是否正确 ,对正确的结果给出文件夹列表，对错误的结果给出错误信息
 
-source environment
-source setting
+. config_file
+. functions
 
 #default
 ROOT_DIR=$(pwd)

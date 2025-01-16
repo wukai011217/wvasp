@@ -68,6 +68,9 @@ sed '3a\This is the new line.' filename
 # Delete the last line in a file named "filename".
 sed -i '$d' filename
 
+# rewrite the line number 3 in a file named "filename".
+sed '行号c\新内容' 文件名
+
 # Modify the third column of the 89th and 91st lines in a file named "data.txt".
 awk 'NR==63 {line=$0} {print} NR==90 {print line}' data.txt > temp.txt && mv temp.txt data.txt
 

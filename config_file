@@ -14,6 +14,10 @@ declare -A PATHS=(
     ["work_dir"]="${SCRIPT_DIR}/work"       # 工作目录
 )
 
+# 将脚本目录添加到 PATH 中
+export PATH="${SCRIPT_DIR}:$PATH"
+
+# 遍历并添加其他目录到 PATH 中
 for dir_name in "${!PATHS[@]}"; do
     export PATH="${PATHS[$dir_name]}:$PATH"
 done

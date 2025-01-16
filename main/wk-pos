@@ -109,14 +109,17 @@ process_m2h_to_2h() {
     local target_dir="$1"
     
     if [ -z "$(find "$target_dir" -mindepth 1 -type d)" ]; then
-        if [[ "$target_dir" == *"M-2H"* ]]; then
-            if [ -f "$target_dir/CONTCAR" ]; then
-                cp "$target_dir/CONTCAR" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
-                sed -i "6s\ H" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
-                sed -i "7s\ 2" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
-                sed -i "10,80d" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
-            else
-                echo "NO CONTCAR in $target_dir" >&2
+        if [[ "$target_dir" == *"${CONFIG[match]}"* ]]; then
+            if [[ "$target_dir" == *"M-2H"* ]]; then
+                if [ -f "$target_dir/CONTCAR" ]; then
+                    mkdir -p "$target_dir/../2H"
+                    cp "$target_dir/CONTCAR" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
+                    sed -i "6c\ H" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
+                    sed -i "7c\ 2" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
+                    sed -i "10,90d" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
+                else
+                    echo "NO CONTCAR in $target_dir" >&2
+                fi
             fi
         fi
     fi

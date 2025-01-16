@@ -3,8 +3,8 @@
 #用法：****
 #例子：****
 #必要库导入
-source environment
-source setting
+. config_file
+. functions
 
 #default
 ROOT_DIR=$(pwd)
