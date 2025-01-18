@@ -82,21 +82,22 @@ parse_arguments() {
 
 # 函数：检查单个目录
 check_directory() {
-    local root_dir="$1"              # 从函数参数获取根目录
+    local root_dir="$1"             # 从 CONFIG 中获取根目录
     local match="${CONFIG[match]}"   # 从 CONFIG 中获取匹配模式
     local file="${CONFIG[file]}"     # 从 CONFIG 中获取要分析的文件
     local work_dir="${PATHS[work_dir]}"
-    
+
+
     # 找到 root_dir 下的所有目录，并逐一处理
     find "$root_dir" -type d | while read -r target_dir; do
         # 检查是否为叶目录（无子目录）
         if [[ -z "$(find "$target_dir" -mindepth 1 -type d)" ]]; then
             # 文件夹名称需匹配指定模式
             if [[ "$target_dir" == *"${match}"* ]]; then
-                echo "$target_dir"
+
                 local outcar="${target_dir}/OUTCAR"
                 local output_file="${target_dir}/${file}"
-                
+
                 # 检查是否存在 OUTCAR 且包含 "reached" 字符
                 if [[ ! -f "${outcar}" ]] || ! grep -q "reached" "${outcar}"; then
                     echo " -1 $target_dir" >> "${work_dir}/datas"
@@ -105,11 +106,11 @@ check_directory() {
                     # 计算结果正确
                     echo " 1 $target_dir" >> "${work_dir}/datas"
                     echo "$target_dir" >> "${work_dir}/good_datas"
-                    
+       
                     # 提取 print_out 中的 "E0"，记录最后一行
                     if [[ -f "${output_file}" ]]; then
                         grep "E0" "${output_file}" | tail -n 1 >> "${work_dir}/good_datas"
-                        grep -q "reached" "${output_file}" >> "${work_dir}/good_datas"
+                        grep -q "reached" "${output_file}" >> "${work_dir}/good_datas"|| echo "unreached" >> "${work_dir}/good_datas"
                     fi
                 fi
             fi
@@ -128,8 +129,12 @@ main() {
     fi
 
     case "${command}" in
-        0)  # 模式 0：检查目录结果分类
-            check_directory "$root_dir"
+        0)
+            # find "${CONFIG[root_dir]}" -type d | while read -r target_dir; do
+                # echo "[DEBUG] Checking directory: $target_dir"  # 输出完整路径以检查丢失情况
+                # 这里是执行逻辑，例如：
+            check_directory ${CONFIG[root_dir]}
+            # done
             ;;
         help)
             show_help

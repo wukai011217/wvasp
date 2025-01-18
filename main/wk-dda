@@ -89,18 +89,15 @@ process_bader() {
     local number="${CONFIG[number]}"
     local good_datas_file="${PATHS[work_dir]}/good_datas"
 
-    # 初始化 good_datas 文件
-    {
-        printf '*%.0s' {1..100}
-        echo
-        date
-    } >> "$good_datas_file"
+
 
     # 遍历目录
     find "$root_dir" -type d | while read -r target_dir; do
+    echo "Checking directory: $target_dir"
         if [[ -z "$(find "$target_dir" -mindepth 1 -type d)" ]]; then
             if [[ -f "$target_dir/ACF.dat" ]]; then
                 # 使用 awk 提取指定行的指定列
+                echo "Processing $target_dir" >> "$good_datas_file"
                 awk "NR==$number {print \$5}" "$target_dir/ACF.dat" >> "$good_datas_file"
             fi
         fi
