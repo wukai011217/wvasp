@@ -1,0 +1,15 @@
+bash: wk-del started
+bash: Root directory set to: test/bader
+bash: File to delete set to: vasp.sbatch
+****************************************************************************************************
+2025-01-18 16:50:59
+bash: Root directory set to: test/bader
+bash: File to delete set to: vasp.sbatch
+bash: File not found: test/bader/Ca/vasp.sbatch
+bash: Successfully deleted: test/bader/Ca/M-2H/vasp.sbatch
+bash: Successfully deleted: test/bader/Ca/M/vasp.sbatch
+bash: Successfully deleted: test/bader/Ca/2H/vasp.sbatch
+bash: File not found: test/bader/Au/vasp.sbatch
+bash: Successfully deleted: test/bader/Au/M-2H/vasp.sbatch
+bash: Successfully deleted: test/bader/Au/M/vasp.sbatch
+bash: Successfully deleted: test/bader/Au/2H/vasp.sbatch

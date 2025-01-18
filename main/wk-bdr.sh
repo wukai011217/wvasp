@@ -10,8 +10,8 @@ set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
 # 加载配置和函数
-source environment
-source setting
+. config_file
+. functions
 
 # 默认配置
 declare -A CONFIG=(

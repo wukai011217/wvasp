@@ -82,14 +82,10 @@ logging() {
         1)  # 命令日志
             for log_file in "${log_files[@]}"; do
                 {
-                    printf '=%.0s' {1..50}
-                    echo
-                    echo "${timestamp}"
                     echo "bash: ${message}"
                 } >> "${log_file}"
             done
             ;;
-            
         *)  # 无效的日志级别
             echo "Error: Invalid logging level: ${level}" >&2
             return 1
@@ -181,9 +177,6 @@ error_exit() {
     
     # 写入错误日志
     {
-        printf '=%.0s' {1..50}
-        echo
-        echo "${timestamp}"
         echo "ERROR: ${message}"
     } >> "${PATHS[log_dir]}/errors"
     

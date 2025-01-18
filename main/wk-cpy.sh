@@ -10,8 +10,8 @@ set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
 # 加载配置和函数
-source environment
-source setting
+. config_file
+. functions
 
 # 默认配置
 declare -A CONFIG=(
@@ -101,7 +101,7 @@ copy_file() {
     fi
     
     # 使用rsync复制文件
-    if rsync -av --include="${CONFIG[file]}" --exclude="*" "$source_dir/" "$dest_dir" 2>>"$WORK_DIR/errors"; then
+    if rsync -av --include="${CONFIG[file]}" --exclude="*" "$source_dir/" "$dest_dir" 2>>"$work_dir/errors"; then
         logging 1 "Successfully copied ${CONFIG[file]} to $dest_dir"
     else
         logging 3 "Failed to copy ${CONFIG[file]} to $dest_dir"
@@ -118,7 +118,7 @@ get_relative_path() {
 # 主程序
 main() {
     # 确保我们在工作目录中
-    cd "$WORK_DIR"
+    cd "$work_dir"
     
     case "${CONFIG[command]}" in
         0)

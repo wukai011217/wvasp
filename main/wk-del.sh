@@ -10,8 +10,8 @@ set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
 # 加载配置和函数
-source environment
-source setting
+. config_file
+. functions
 
 # 默认配置
 declare -A CONFIG=(
@@ -21,7 +21,7 @@ declare -A CONFIG=(
 )
 
 # 日志记录
-logging 1 "wk-del started"
+logging 0 "wk-del started"
 
 # 帮助信息
 show_help() {
@@ -78,16 +78,16 @@ parse_arguments() {
 delete_file() {
     local target_dir="$1"
     local target_file="$target_dir/${CONFIG[file]}"
-    
+
     if [[ -f "$target_file" ]]; then
-        if rm "$target_file" 2>>"$WORK_DIR/errors"; then
+        if rm "$target_file" 2>>"${PATHS[log_dir]}/errors"; then
             logging 1 "Successfully deleted: $target_file"
         else
-            logging 3 "Failed to delete: $target_file"
+            logging 1 "Failed to delete: $target_file"
             return 1
         fi
     else
-        logging 2 "File not found: $target_file"
+        logging 1 "File not found: $target_file"
     fi
 }
 
@@ -95,11 +95,8 @@ delete_file() {
 main() {
     case "${CONFIG[command]}" in
         0)
-            find "${CONFIG[root_dir]}" -type d | while read -r target_dir; do
-                # 检查是否是叶子目录
-                if [[ -z "$(find "$target_dir" -mindepth 1 -type d)" ]]; then
-                    delete_file "$target_dir"
-                fi
+            find "${CONFIG[root_dir]}" -mindepth 1 -type d | while read -r target_dir; do
+                delete_file "$target_dir"
             done
             ;;
         1)
