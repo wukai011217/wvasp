@@ -10,7 +10,6 @@ set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
 # 加载配置和函数
-. config_file
 . functions
 
 # 默认配置
@@ -20,21 +19,27 @@ declare -A CONFIG=(
     [command]="0"
 )
 
-# 日志记录
-logging 0 "wk-del started"
-
 # 帮助信息
 show_help() {
     cat << EOF
 Usage: $(basename "$0") [OPTIONS]
+
+Description:
+    Delete specified files from leaf directories.
+
 Options:
-    -d, -dir       Set root directory (default: current directory)
-    -f, -file      Set file to delete (default: CHG)
-    -c, -command   Set operation command (default: 0)
-    -h, --help     Show this help message
+    -d, -dir      Set root directory (default: current directory)
+    -f, -file     Set file to delete (default: CHG)
+    -c, -command  Set operation command (default: 0)
+    -h, --help    Show this help message
+
+Commands:
+    0: Delete specified file from leaf directories
+    1: Delete all files from leaf directories
 
 Example:
     $(basename "$0") -d /path/to/dir -f CHG
+    $(basename "$0") -d /path/to/dir -c 1    # Delete all files
 EOF
 }
 
@@ -91,6 +96,15 @@ delete_file() {
     fi
 }
 
+delete_all_file() {
+    local target_dir="$1"
+    if [[ -z "$(find "$target_dir" -mindepth 1 -type d)" ]]; then
+            rm "$target_dir"/* 2>>"${PATHS[log_dir]}/errors" || logging 1 "Failed to delete: $target_dir"
+        logging 1 "Successfully deleted: $target_dir"
+    else
+        logging 1 " $target_dir is not mindepth 1"
+    fi
+}
 # 主程序
 main() {
     case "${CONFIG[command]}" in
@@ -100,7 +114,9 @@ main() {
             done
             ;;
         1)
-            logging 1 "Command 1 is reserved for future use"
+            find "${CONFIG[root_dir]}" -mindepth 1 -type d | while read -r target_dir; do
+                delete_all_file "$target_dir"
+            done
             ;;
         help)
             show_help
@@ -112,6 +128,9 @@ main() {
             ;;
     esac
 }
+
+# 日志记录
+logging 0 
 
 # 启动脚本
 parse_arguments "$@"

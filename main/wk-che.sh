@@ -10,7 +10,6 @@ set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
 # 加载配置和函数
-. config_file
 . functions
 
 # 默认配置
@@ -21,21 +20,28 @@ declare -A CONFIG=(
     [match]=""
 )
 
-# 日志记录
-logging 1 "check-res started"
+
 
 # 帮助信息
 show_help() {
     cat << EOF
 Usage: $(basename "$0") [OPTIONS]
+
+Description:
+    Check VASP calculation results and collect data.
+
 Options:
-    -d, -dir       Set root directory (default: current directory)
-    -f, -file      Set the file to analyze (default: print_out)
-    -c, -command   Set the mode of operation (default: 0)
-                   0: Check results and classify good/bad directories
-    -m, -match     Set a pattern to filter directories
+    -d, -dir      Set root directory (default: current directory)
+    -m, -match    Set match pattern for directories
+    -c, -command  Set operation command (default: 0)
+    -h, --help    Show this help message
+
+Commands:
+    0: Check calculation status and collect data
+    1: Reserved for future use
+
 Example:
-    $(basename "$0") -d /path/to/root -f print_out -c 0 -m "pattern"
+    $(basename "$0") -d /path/to/dir -m "pattern"
 EOF
 }
 
@@ -89,7 +95,7 @@ check_directory() {
 
 
     # 找到 root_dir 下的所有目录，并逐一处理
-    find "$root_dir" -type d | while read -r target_dir; do
+    find "$root_dir" -mindepth 1 -type d | while read -r target_dir; do
         # 检查是否为叶目录（无子目录）
         if [[ -z "$(find "$target_dir" -mindepth 1 -type d)" ]]; then
             # 文件夹名称需匹配指定模式
@@ -101,7 +107,7 @@ check_directory() {
                 # 检查是否存在 OUTCAR 且包含 "reached" 字符
                 if [[ ! -f "${outcar}" ]] || ! grep -q "reached" "${outcar}"; then
                     echo " -1 $target_dir" >> "${work_dir}/datas"
-                    echo "unexpected end of calculation || $target_dir" >> "${work_dir}/bad_datas"
+                    echo "unexpected end of calculation | $target_dir" >> "${work_dir}/bad_datas"
                 else
                     # 计算结果正确
                     echo " 1 $target_dir" >> "${work_dir}/datas"
@@ -110,7 +116,7 @@ check_directory() {
                     # 提取 print_out 中的 "E0"，记录最后一行
                     if [[ -f "${output_file}" ]]; then
                         grep "E0" "${output_file}" | tail -n 1 >> "${work_dir}/good_datas"
-                        grep -q "reached" "${output_file}" >> "${work_dir}/good_datas"|| echo "unreached" >> "${work_dir}/good_datas"
+                        grep  "reached" "${output_file}" >> "${work_dir}/good_datas"|| echo "unreached" >> "${work_dir}/good_datas"
                     fi
                 fi
             fi
@@ -130,11 +136,7 @@ main() {
 
     case "${command}" in
         0)
-            # find "${CONFIG[root_dir]}" -type d | while read -r target_dir; do
-                # echo "[DEBUG] Checking directory: $target_dir"  # 输出完整路径以检查丢失情况
-                # 这里是执行逻辑，例如：
             check_directory ${CONFIG[root_dir]}
-            # done
             ;;
         help)
             show_help
@@ -144,6 +146,15 @@ main() {
             ;;
     esac
 }
+
+# 日志记录
+logging 0
+logging 1 "check-res started"
+
+{
+    printf '=%.0s' {1..100}
+    echo
+} | tee -a "${PATHS[work_dir]}/datas" "${PATHS[work_dir]}/good_datas" "${PATHS[work_dir]}/bad_datas" > /dev/null
 
 # 启动脚本
 parse_arguments "$@"

@@ -10,8 +10,7 @@ set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
 # 加载配置和函数
-source environment
-source setting
+. functions
 
 # 默认配置
 declare -A CONFIG=(
@@ -25,21 +24,28 @@ declare -A CONFIG=(
 declare -i job_count=0
 declare -i MAX_JOBS=100
 
-# 日志记录
-logging 1 "wk-run started"
+
 
 # 帮助信息
 show_help() {
     cat << EOF
 Usage: $(basename "$0") [OPTIONS]
+
+Description:
+    Submit VASP jobs to the cluster in leaf directories.
+
 Options:
-    -d, -dir       Set target directory (default: current directory)
-    -m, -match     Set pattern to match directories
-    -s, -screen    Set screen file to check (default: OUTCAR)
-    -h, --help     Show this help message
+    -d, -dir      Set root directory (default: current directory)
+    -m, -match    Set match pattern for directories
+    -c, -command  Set operation command (default: 0)
+    -h, --help    Show this help message
+
+Commands:
+    0: Submit jobs in matching leaf directories
+    1: Reserved for future use
 
 Example:
-    $(basename "$0") -d /path/to/dir -m M -s OUTCAR
+    $(basename "$0") -d /path/to/dir -m "pattern"
 EOF
 }
 
@@ -115,7 +121,7 @@ submit_vasp_job() {
 main() {
     case "${CONFIG[command]}" in
         0)
-            find "${CONFIG[to_dir]}" -type d | while read -r target_dir; do
+            find "${CONFIG[to_dir]}" -mindepth 1 -type d | while read -r target_dir; do
                 # 检查是否是叶子目录
                 if [[ -z "$(find "$target_dir" -mindepth 1 -type d)" ]]; then
                     # 检查目录名是否匹配模式
@@ -144,6 +150,10 @@ main() {
             ;;
     esac
 }
+
+# 日志记录
+logging 0
+logging 1 "wk-run started"
 
 # 启动脚本
 parse_arguments "$@"

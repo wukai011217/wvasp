@@ -10,7 +10,6 @@ set -e  # 遇到错误立即退出
 set -u  # 使用未定义的变量时报错
 
 # 加载必要的配置文件和函数
-. config_file
 . functions
 
 
@@ -26,20 +25,34 @@ declare -A CONFIG=(
     [job_id_2]=1
 )
 
-# 函数：显示帮助信息
+# 帮助信息
 show_help() {
     cat << EOF
 Usage: $(basename "$0") [OPTIONS]
+
+Description:
+    Main script for managing VASP calculations workflow.
+
 Options:
-    -c, -command    Set command (0: batch VASP, 1: M-2H to 2H)
-    -d, -dir       Set root directory
-    -m, -match     Set match pattern
-    -f, -file      Set input file (default: POSCAR)
-    -to            Set target directory
-    -screen        Set screen file
-    -job           Set job IDs (requires two values)
-Example:
-    $(basename "$0") -c 0 -f POSCAR -to /path/to/dir -m "pattern"
+    -d, -dir      Set root directory (default: current directory)
+    -to           Set target directory
+    -m, -match    Set match pattern for directories
+    -c, -command  Set operation command (default: 0)
+    -h, --help    Show this help message
+
+Commands:
+    0: Prepare and run VASP calculations
+    1: Check calculation results
+
+Examples:
+    # Prepare and run calculations
+    $(basename "$0") -d /path/to/dir -m "pattern"
+
+    # Check calculation results
+    $(basename "$0") -d /path/to/dir -m "pattern" -c 1
+
+    # Run Bader analysis
+    $(basename "$0") -d /path/to/dir -m "pattern" -c 2
 EOF
 }
 
@@ -51,18 +64,18 @@ run_batch_vasp() {
     
     # 执行 pos-to-all
     echo "pos-to-all" 
-    wk-pos -f "${file}" -to "${to_dir}" -match "${match}" || \
+    wk-pos.sh -f "${file}" -to "${to_dir}" -match "${match}" || \
         error_exit "pos-to-all failed"
 
     # 执行 pot-to-all
     echo "pot-to-all"
-    wk-pot -to "${to_dir}" -match "${match}" || \
+    wk-pot.sh -to "${to_dir}" -match "${match}" || \
         error_exit "pot-to-all failed"
 
     # 执行 mkf-in-loop
     echo "mkf-in-loop"
     for input_file in KPOINTS vasp.sbatch; do
-        wk-mkf -f "$SCRIPT_DIR/data/${input_file}" -c 0 -to "${to_dir}" -match "${match}" || \
+        wk-mkf.sh -f "$SCRIPT_DIR/data/${input_file}" -c 0 -to "${to_dir}" -match "${match}" || \
             error_exit "mkf-in-loop failed for ${input_file}"
     done
 }
@@ -74,40 +87,40 @@ run_m2h_to_2h() {
     local match="$3"
 
     # 执行 pos-to-all（命令 2）
-    wk-pos -f "${file}" -to "${to_dir}" -match "${match}" -command 2 || \
+    wk-pos.sh -f "${file}" -to "${to_dir}" -match "${match}" -command 2 || \
         error_exit "pos-to-all failed"
 
     # 执行 pot-to-all（命令 1）
-    wk-pot -to "${to_dir}" -match "${match}" -command 1 || \
+    wk-pot.sh -to "${to_dir}" -match "${match}" -command 1 || \
         error_exit "pot-to-all failed"
 
     # 执行 mkf-in-loop
     for input_file in KPOINTS vasp.sbatch; do
-        wk-mkf -f "$SCRIPT_DIR/data/${input_file}" -c 0 -to "${to_dir}" -match "${match}" || \
+        wk-mkf.sh -f "$SCRIPT_DIR/data/${input_file}" -c 0 -to "${to_dir}" -match "${match}" || \
             error_exit "mkf-in-loop failed for ${input_file}"
     done
 }
 
 # 函数：解析命令行参数
 parse_arguments() {
-    while [[ $# -gt 1 ]]; do
+    while [[ $# -gt 0 ]]; do
         case "$1" in
-            -command|-c|-C)
+            -c|-command|-C)
                 CONFIG[command]="$2"
                 echo "command: ${CONFIG[command]}" >> "${PATHS[log_dir]}/logs"
                 shift 2
                 ;;
-            -dir|-D|-d)
+            -d|-dir|-D)
                 CONFIG[root_dir]="$2"
                 echo "ROOT_DIR: ${CONFIG[root_dir]}" >> "${PATHS[log_dir]}/logs"
                 shift 2
                 ;;
-            -match|-m|-M)
+            -m|-match|-M)
                 CONFIG[match]="$2"
                 echo "match: ${CONFIG[match]}" >> "${PATHS[log_dir]}/logs"
                 shift 2
                 ;;
-            -file|-F|-f)
+            -f|-file|-F)
                 CONFIG[file]="$2"
                 echo "file: ${CONFIG[file]}" >> "${PATHS[log_dir]}/logs"
                 shift 2
@@ -142,7 +155,9 @@ parse_arguments() {
                 break
                 ;;
             *)
-                echo "$1 is not an option"
+                echo "Error: Unknown option $1"
+                show_help
+                exit 1
                 ;;
         esac
     done
@@ -164,6 +179,10 @@ main() {
             echo "command: 执行批量vaspM-2H to 2H的流程" >> "${PATHS[log_dir]}/logs"
             run_m2h_to_2h "${file}" "${to_dir}" "${match}"
             ;;
+        2) #结果处理
+            echo "command: 结果处理" >> "${PATHS[log_dir]}/logs"
+            result_processing "${file}" "${to_dir}" "${match}"  
+            ;;
         *)
             echo "command: ${command} is not defined"
             ;;
@@ -171,7 +190,10 @@ main() {
 }
 
 # 初始化日志
-logging 0 main
+{
+    printf '*%.0s' {1..100}
+    echo
+} | tee -a "${PATHS[result_dir]}/results" "${PATHS[log_dir]}/logs" "${PATHS[log_dir]}/errors" > /dev/null
 
 # 解析命令行参数
 parse_arguments "$@"
@@ -185,3 +207,10 @@ main
     echo
     result $? "main"
 } >> "${PATHS[result_dir]}/results"
+
+# 结束
+{
+    printf '*%.0s' {1..100}
+    echo
+    result $? "main"
+} | tee -a "${PATHS[result_dir]}/results" "${PATHS[log_dir]}/logs" "${PATHS[log_dir]}/errors" > /dev/null

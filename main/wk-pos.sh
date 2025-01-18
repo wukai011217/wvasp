@@ -6,6 +6,9 @@
 # 作者: wukai
 # 创建日期: 2024-10-23
 
+set -e  # 遇到错误立即退出
+set -u  # 使用未定义变量时报错
+
 # 加载配置和函数
 . functions
 
@@ -15,21 +18,29 @@ declare -A CONFIG=(
     [command]="0"
     [to_dir]="$(pwd)"
     [match]=""
+    [start]="0"
+    [end]="0"
 )
 
 # 函数：显示帮助信息
 show_help() {
     cat << EOF
 Usage: $(basename "$0") [OPTIONS]
+
+Description:
+    This script handles POSCAR file operations for different structures.
+
 Options:
     -f, -file     Set input file (default: POSCAR)
-    -to           Set target directory
-    -m, -match    Set match pattern
-    -c, -command  Set command (0: one to all, 1: M to M-2H, 2: M-2H to 2H)
+    -to           Set target directory (required)
+    -m, -match    Set match pattern for elements
+    -s, -start    Set start number (default: 0)
+    -e, -end      Set end number (default: 0)
+    -h, --help    Show this help message
 
 Commands:
-    0: Convert one POSCAR to all elements
-    1: Convert M to M-2H for all elements
+    0: Copy POSCAR to specified elements directories
+    1: Generate M-2H structure from M structure
     2: Convert M-2H to 2H structure
 
 Example:
@@ -39,7 +50,7 @@ EOF
 
 # 函数：解析命令行参数
 parse_arguments() {
-    while [[ $# -gt 1 ]]; do
+    while [[ $# -gt 0 ]]; do
         case "$1" in
             -file|-F|-f)
                 CONFIG[file]="$2"
@@ -60,6 +71,12 @@ parse_arguments() {
                 CONFIG[command]="$2"
                 echo "command: ${CONFIG[command]}" >> "${PATHS[log_dir]}/logs"
                 shift 2
+                ;;
+            -number|-n|-N)
+                CONFIG[start]="$2"
+                CONFIG[end]="$3"
+                echo "line_number: ${CONFIG[line_number]}" >> "${PATHS[log_dir]}/logs"
+                shift 3
                 ;;
             -h|--help)
                 show_help
@@ -84,8 +101,8 @@ process_one_to_all() {
         if [[ "$target_dir" == *"${CONFIG[match]}"* ]]; then
             for element in "${elements[@]}"; do
                 if [[ $target_dir == *"/$element/"* ]]; then
-                    cp "${CONFIG[file]}" "$target_dir/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
-                    sed -i "s/Ag/$element/g" "$target_dir/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
+                    cp "${CONFIG[file]}" "$target_dir/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
+                    sed -i "s/Ag/$element/g" "$target_dir/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
                 fi
             done
         fi
@@ -98,8 +115,9 @@ process_m_to_m2h() {
     
     if [ -z "$(find "$target_dir" -mindepth 1 -type d)" ]; then
         if [[ "$target_dir" == *"${CONFIG[match]}"* ]]; then
-            cp "${CONFIG[file]}" "${CONFIG[to_dir]}/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
-            sed -i "s/Ag/$element/g" "${CONFIG[to_dir]}/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
+            mkdir -p "$target_dir/../M-2H" 2>> "${PATHS[log_dir]}/errors"
+            cp "${CONFIG[file]}" "$target_dir/../M-2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
+            sed -i "s/Ag/$element/g" "$target_dir/../M-2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
         fi
     fi
 }
@@ -109,14 +127,15 @@ process_m2h_to_2h() {
     local target_dir="$1"
     
     if [ -z "$(find "$target_dir" -mindepth 1 -type d)" ]; then
+        
         if [[ "$target_dir" == *"${CONFIG[match]}"* ]]; then
             if [[ "$target_dir" == *"M-2H"* ]]; then
                 if [ -f "$target_dir/CONTCAR" ]; then
-                    mkdir -p "$target_dir/../2H"
-                    cp "$target_dir/CONTCAR" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
-                    sed -i "6c\ H" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
-                    sed -i "7c\ 2" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
-                    sed -i "10,90d" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
+                    mkdir -p "$target_dir/../2H" 2>> "${PATHS[log_dir]}/errors"
+                    cp "$target_dir/CONTCAR" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
+                    sed -i "6c\ H" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
+                    sed -i "7c\ 2" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
+                    sed -i "${CONFIG[start]},${CONFIG[end]}d" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
                 else
                     echo "NO CONTCAR in $target_dir" >&2
                 fi
@@ -136,17 +155,17 @@ main() {
     
     case "$command" in
         0)  # one to all
-            find "${CONFIG[to_dir]}" -type d | while read -r target_dir; do
+            find "${CONFIG[to_dir]}" -mindepth 1 -type d | while read -r target_dir; do
                 process_one_to_all "$target_dir"
             done
             ;;
         1)  # M to M-2H
-            find "${CONFIG[to_dir]}" -type d | while read -r target_dir; do
+            find "${CONFIG[to_dir]}" -mindepth 1 -type d | while read -r target_dir; do
                 process_m_to_m2h "$target_dir"
             done
             ;;
         2)  # M-2H to 2H
-            find "${CONFIG[to_dir]}" -type d | while read -r target_dir; do
+            find "${CONFIG[to_dir]}" -mindepth 1 -type d | while read -r target_dir; do
                 process_m2h_to_2h "$target_dir"
             done
             ;;
@@ -160,6 +179,7 @@ main() {
 }
 
 # 初始化日志
+logging 0 
 logging 1 "pos-to-all"
 
 # 解析命令行参数

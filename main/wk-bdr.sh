@@ -10,7 +10,6 @@ set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
 # 加载配置和函数
-. config_file
 . functions
 
 # 默认配置
@@ -19,25 +18,27 @@ declare -A CONFIG=(
     [command]="0"
 )
 
-# 日志记录
-logging 1 "wk-bdr started"
+
 
 # 帮助信息
 show_help() {
     cat << EOF
 Usage: $(basename "$0") [OPTIONS]
+
+Description:
+    Run Bader charge analysis on VASP output files.
+
 Options:
-    -d, -dir       Set root directory (default: current directory)
-    -c, -command   Set operation command (default: 0)
-    -h, --help     Show this help message
+    -d, -dir      Set root directory (default: current directory)
+    -c, -command  Set operation command (default: 0)
+    -h, --help    Show this help message
 
 Commands:
-    0: Process Bader analysis for directories without ACF.dat
+    0: Run Bader analysis in leaf directories
     1: Reserved for future use
-    help: Show this help message
 
 Example:
-    $(basename "$0") -d /path/to/dir -c 0
+    $(basename "$0") -d /path/to/dir
 EOF
 }
 
@@ -85,10 +86,10 @@ run_bader_analysis() {
         if bader CHGCAR -ref CHGCAR_sum; then
             logging 1 "Bader analysis completed successfully in: $target_dir"
         else
-            logging 3 "Bader analysis failed in: $target_dir"
+            logging 1 "Bader analysis failed in: $target_dir"
         fi
     else
-        logging 3 "chgsum.pl failed in: $target_dir"
+        logging 1 "chgsum.pl failed in: $target_dir"
     fi
     
     cd "$current_dir"
@@ -111,7 +112,7 @@ check_files() {
 main() {
     case "${CONFIG[command]}" in
         0)
-            find "${CONFIG[root_dir]}" -type d | while read -r target_dir; do
+            find "${CONFIG[root_dir]}" -mindepth 1 -type d | while read -r target_dir; do
                 # 检查是否是叶子目录
                 if [[ -z "$(find "$target_dir" -mindepth 1 -type d)" ]]; then
                     if [[ -f "$target_dir/ACF.dat" ]]; then
@@ -120,7 +121,7 @@ main() {
                         if check_files "$target_dir" "AECCAR0" "AECCAR2"; then
                             run_bader_analysis "$target_dir"
                         else
-                            logging 2 "Missing AECCAR files in: $target_dir"
+                            logging 1 "Missing AECCAR files in: $target_dir" 
                         fi
                     fi
                 fi
@@ -139,6 +140,10 @@ main() {
             ;;
     esac
 }
+
+# 日志记录
+logging 0
+logging 1 "wk-bdr started"
 
 # 启动脚本
 parse_arguments "$@"

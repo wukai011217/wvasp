@@ -10,7 +10,6 @@ set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
 # 加载配置和函数
-. config_file
 . functions
 
 # 默认配置
@@ -22,23 +21,30 @@ declare -A CONFIG=(
     [command]="0"
 )
 
-# 日志记录
-logging 1 "wk-cpy started"
+
 
 # 帮助信息
 show_help() {
     cat << EOF
 Usage: $(basename "$0") [OPTIONS]
+
+Description:
+    Copy specified files between directories while maintaining structure.
+
 Options:
-    -d, -dir       Set source directory (default: current directory)
-    -f, -file      Set file to copy (default: CONTCAR)
-    -to            Set destination directory (default: current directory)
-    -m, -match     Set pattern to match directories
-    -c, -command   Set operation command (default: 0)
-    -h, --help     Show this help message
+    -d, -dir      Set root directory (default: current directory)
+    -f, -file     Set file to copy
+    -to           Set target directory
+    -m, -match    Set match pattern for directories
+    -c, -command  Set operation command (default: 0)
+    -h, --help    Show this help message
+
+Commands:
+    0: Copy files while maintaining directory structure
+    1: Reserved for future use
 
 Example:
-    $(basename "$0") -d /source/dir -f CONTCAR -to /dest/dir -m pattern
+    $(basename "$0") -d /source/dir -f CONTCAR -to /target/dir -m "pattern"
 EOF
 }
 
@@ -96,15 +102,15 @@ copy_file() {
     
     # 创建目标目录
     if ! mkdir -p "$dest_dir"; then
-        logging 3 "Failed to create directory: $dest_dir"
+        logging 1 "Failed to create directory: $dest_dir"
         return 1
     fi
     
     # 使用rsync复制文件
-    if rsync -av --include="${CONFIG[file]}" --exclude="*" "$source_dir/" "$dest_dir" 2>>"$work_dir/errors"; then
+    if rsync -av --include="${CONFIG[file]}" --exclude="*" "$source_dir/" "$dest_dir" 2>> "${PATHS[log_dir]}/errors" 1 >/dev/null; then
         logging 1 "Successfully copied ${CONFIG[file]} to $dest_dir"
     else
-        logging 3 "Failed to copy ${CONFIG[file]} to $dest_dir"
+        logging 1 "Failed to copy ${CONFIG[file]} to $dest_dir"
         return 1
     fi
 }
@@ -117,9 +123,6 @@ get_relative_path() {
 
 # 主程序
 main() {
-    # 确保我们在工作目录中
-    cd "$work_dir"
-    
     case "${CONFIG[command]}" in
         0)
             find "${CONFIG[root_dir]}" -type d | while read -r target_dir; do
@@ -150,6 +153,10 @@ main() {
             ;;
     esac
 }
+
+# 日志记录
+logging 0
+logging 1 "wk-cpy started"
 
 # 启动脚本
 parse_arguments "$@"

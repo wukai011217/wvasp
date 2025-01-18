@@ -10,34 +10,39 @@ set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
 # 加载配置和函数
-. config_file
 . functions
 
 # 默认变量
 declare -A CONFIG=(
     [root_dir]="$(pwd)"
-    [file]="file"
+    [file]="ACF.dat"
     [command]="0"
     [number]="1"
 )
 
-# 日志记录
-logging 1 "filename started"
+
 
 # 帮助信息
 show_help() {
     cat << EOF
 Usage: $(basename "$0") [OPTIONS]
+
+Description:
+    Extract specific data from files in leaf directories.
+
 Options:
-    -d, -dir       Set root directory (default: current directory)
-    -f, -file      Set input file name (default: file)
-    -c, -command   Set operation command (default: 0 - deal bader)
-    -n, -number    Set line number to extract (modified internally)
+    -d, -dir      Set root directory (default: current directory)
+    -f, -file     Set target file (default: ACF.dat)
+    -n, -number   Set line number to extract (default: 1)
+    -c, -command  Set operation command (default: 0)
+    -h, --help    Show this help message
 
 Commands:
-    0: Process Bader data, extract information and output to good_datas.
+    0: Extract data from specified line number
+    1: Reserved for future use
+
 Example:
-    $(basename "$0") -d /path/to/root -f file -c 0 -n 10
+    $(basename "$0") -d /path/to/dir -f ACF.dat -n 5
 EOF
 }
 
@@ -92,13 +97,16 @@ process_bader() {
 
 
     # 遍历目录
-    find "$root_dir" -type d | while read -r target_dir; do
-    echo "Checking directory: $target_dir"
+    find "$root_dir" -mindepth 1 -type d | while read -r target_dir; do
         if [[ -z "$(find "$target_dir" -mindepth 1 -type d)" ]]; then
-            if [[ -f "$target_dir/ACF.dat" ]]; then
+            if [[ -f "$target_dir/${CONFIG[file]}" ]]; then
                 # 使用 awk 提取指定行的指定列
-                echo "Processing $target_dir" >> "$good_datas_file"
-                awk "NR==$number {print \$5}" "$target_dir/ACF.dat" >> "$good_datas_file"
+                echo " 1 $target_dir" >> "${PATHS[work_dir]}/datas"
+                echo " $target_dir" >> "$good_datas_file"
+                awk "NR==$number {print \$5}" "$target_dir/${CONFIG[file]}" >> "$good_datas_file"
+            else
+                echo "Missing ${CONFIG[file]} file in: $target_dir" >> "${PATHS[work_dir]}/bad_datas"
+                echo " -1 $target_dir" >> "${PATHS[work_dir]}/datas"
             fi
         fi
     done
@@ -126,6 +134,15 @@ main() {
             ;;
     esac
 }
+
+# 日志记录
+logging 0
+logging 1 "filename started"
+
+{
+    printf '=%.0s' {1..100}
+    echo
+} | tee -a "${PATHS[work_dir]}/datas" "${PATHS[work_dir]}/good_datas" "${PATHS[work_dir]}/bad_datas" > /dev/null
 
 # 启动脚本
 parse_arguments "$@"

@@ -51,8 +51,8 @@ result() {
 #   $1 - 日志级别（0表示分隔符，1表示命令日志）
 #   $2 - [可选]命令描述（当$1=1时使用）
 logging() {
-    local level="$1"
-    local message="$2"
+    local level="${1}"
+    local message="${2:-$(basename "$0")}"
     local timestamp="$(date '+%Y-%m-%d %H:%M:%S')"
     local log_files=(
         "${PATHS[log_dir]}/logs"
@@ -73,18 +73,14 @@ logging() {
         0)  # 分隔符日志
             for log_file in "${log_files[@]}"; do
                 {
-                    printf '*%.0s' {1..100}
+                    printf '=%.0s' {1..50}
                     echo
                     echo "${timestamp}"
                 } >> "${log_file}"
             done
             ;;
         1)  # 命令日志
-            for log_file in "${log_files[@]}"; do
-                {
-                    echo "bash: ${message}"
-                } >> "${log_file}"
-            done
+            echo "bash: ${message}" >> "${PATHS[log_dir]}/logs"
             ;;
         *)  # 无效的日志级别
             echo "Error: Invalid logging level: ${level}" >&2
@@ -149,6 +145,14 @@ clean_logs() {
             : > "${log_file}"  # 清空文件内容
         fi
     done
+}
+
+# 函数：检查目标目录是否为空
+# 参数:
+#   $1 - 目标目录
+is_empty_dir() {
+    local dir="$1"
+    [[ -z "$(find "$dir" -mindepth 1 -type d)" ]]
 }
 
 # 初始化函数

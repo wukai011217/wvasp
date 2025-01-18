@@ -15,29 +15,38 @@ set -u  # 使用未定义变量时报错
 # 默认配置
 declare -A CONFIG=(
     [root_dir]="$(pwd)"
-    [file]="POSCAR"
+    [file]="$SCRIPT_DIR/data/KPOINTS"
     [command]="0"
     [to_dir]="$(pwd)"
     [match]=""
 )
 
-# 函数：显示帮助信息
+# 帮助信息
 show_help() {
     cat << EOF
 Usage: $(basename "$0") [OPTIONS]
+
+Description:
+    Copy files to multiple directories while maintaining structure.
+
 Options:
-    -from          Set source root directory
-    -f, -file      File to copy (default: POSCAR)
-    -to            Set target directory
-    -m, -match     Match pattern for target directories
-    -c, -command   Set copy command mode (0: copy file, 1: structured copy)
+    -d, -dir      Set root directory (default: current directory)
+    -f, -file     Set file to copy (default: KPOINTS)
+    -to           Set target directory
+    -m, -match    Set match pattern for directories
+    -c, -command  Set operation command (default: 0)
+    -h, --help    Show this help message
 
 Commands:
-    0: Copy the specified file to all matching target directories in TO_DIR.
-    1: Copy files between two folder structures based on relative paths.
+    0: Copy single file to matching directories
+    1: Copy files maintaining directory structure
 
-Example:
-    $(basename "$0") -f POSCAR -c 0 -from /path/to/source -to /path/to/destination
+Examples:
+    # Copy single file to matching directories
+    $(basename "$0") -f KPOINTS -to /target/dir -m "pattern"
+
+    # Copy files maintaining structure
+    $(basename "$0") -d /source/dir -to /target/dir -m "pattern" -c 1
 EOF
 }
 
@@ -87,21 +96,15 @@ parse_arguments() {
     done
 }
 
-# 函数：检查目标目录是否为空
-is_empty_dir() {
-    local dir="$1"
-    [[ -z "$(find "$dir" -mindepth 1 -type d)" ]]
-}
-
 # 函数：执行命令模式 0（单文件复制到多个目标目录）
 copy_file_to_all() {
     local to_dir="${CONFIG[to_dir]}"
     local file="${CONFIG[file]}"
     local match="${CONFIG[match]}"
 
-    find "$to_dir" -type d | while read -r target_dir; do
-        if is_empty_dir "$target_dir" && [[ "$target_dir" == *"$match"* ]]; then
-            cp "$file" "$target_dir" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
+    find "$to_dir" -mindepth 1 -type d | while read -r target_dir; do
+        if [ -z "$(find "$target_dir" -mindepth 1 -type d)" ] && [[ "$target_dir" == *"$match"* ]]; then
+            cp "$file" "$target_dir" 2>> "${PATHS[log_dir]}/errors" 
             logging 1 "Copied $file to $target_dir"
         fi
     done
@@ -113,7 +116,7 @@ structured_copy() {
     local to_dir="${CONFIG[to_dir]}"
     local match="${CONFIG[match]}"
 
-    find "$to_dir" -type d | while read -r target_dir; do
+    find "$to_dir" -mindepth 1 -type d | while read -r target_dir; do
         if is_empty_dir "$target_dir" && [[ "$target_dir" == *"$match"* ]]; then
             # 提取相对路径
             local relative_path="${target_dir#$to_dir}"
@@ -124,7 +127,7 @@ structured_copy() {
             
             # 执行复制
             if [[ -f "$source_file" ]]; then
-                cp "$source_file" "$target_file" 2>> "${PATHS[log_dir]}/errors" 1>> "${PATHS[log_dir]}/logs"
+                cp "$source_file" "$target_file" 2>> "${PATHS[log_dir]}/errors" 
                 logging 1 "Copied $source_file to $target_file"
             else
                 logging 1 "Warning: Source file $source_file not found"
@@ -156,6 +159,7 @@ main() {
 }
 
 # 启动脚本
+logging 0
 logging 1 "Starting mkf-in-loop"
 
 # 解析命令行参数

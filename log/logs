@@ -1,15 +1,362 @@
-bash: wk-del started
-bash: Root directory set to: test/bader
-bash: File to delete set to: vasp.sbatch
+bash: pos-to-all
+file: data/POSCAR_Ov1
+match: bader
+TO_DIR: test
 ****************************************************************************************************
-2025-01-18 16:50:59
+2025-01-18 19:10:05
+bash: pos-to-all
+file: data/POSCAR_Ov1
+match: bader
+TO_DIR: test
+==================================================
+2025-01-18 19:45:32
+==================================================
+2025-01-18 19:47:29
+bash: TO_DIR: test/bader
+bash: NO POSCAR in test/bader/Ca
+bash: Found POSCAR in test/bader/Ca/M-2H
+bash: Found POSCAR in test/bader/Ca/M
+bash: Found POSCAR in test/bader/Ca/2H
+bash: NO POSCAR in test/bader/Au
+bash: Found POSCAR in test/bader/Au/M-2H
+bash: Found POSCAR in test/bader/Au/M
+bash: Found POSCAR in test/bader/Au/2H
+==================================================
+2025-01-18 19:59:01
+bash: Starting mkf-in-loop
+bash: File set to: data/KPOINTS
+bash: TO_DIR set to: test/bader
+bash: Copied data/KPOINTS to test/bader/Ca
+bash: Copied data/KPOINTS to test/bader/Ca/M-2H
+bash: Copied data/KPOINTS to test/bader/Ca/M
+bash: Copied data/KPOINTS to test/bader/Ca/2H
+bash: Copied data/KPOINTS to test/bader/Au
+bash: Copied data/KPOINTS to test/bader/Au/M-2H
+bash: Copied data/KPOINTS to test/bader/Au/M
+bash: Copied data/KPOINTS to test/bader/Au/2H
+==================================================
+2025-01-18 20:05:16
+bash: Starting mkf-in-loop
+bash: File set to: data/KPOINTS
+bash: TO_DIR set to: test/bader
+bash: Copied data/KPOINTS to test/bader/Ca/M-2H
+bash: Copied data/KPOINTS to test/bader/Ca/M
+bash: Copied data/KPOINTS to test/bader/Ca/2H
+bash: Copied data/KPOINTS to test/bader/Au/M-2H
+bash: Copied data/KPOINTS to test/bader/Au/M
+bash: Copied data/KPOINTS to test/bader/Au/2H
+==================================================
+2025-01-18 20:07:53
 bash: Root directory set to: test/bader
-bash: File to delete set to: vasp.sbatch
-bash: File not found: test/bader/Ca/vasp.sbatch
-bash: Successfully deleted: test/bader/Ca/M-2H/vasp.sbatch
-bash: Successfully deleted: test/bader/Ca/M/vasp.sbatch
-bash: Successfully deleted: test/bader/Ca/2H/vasp.sbatch
-bash: File not found: test/bader/Au/vasp.sbatch
-bash: Successfully deleted: test/bader/Au/M-2H/vasp.sbatch
-bash: Successfully deleted: test/bader/Au/M/vasp.sbatch
-bash: Successfully deleted: test/bader/Au/2H/vasp.sbatch
+bash: Command set to: 1
+bash:  test/bader/Ca is not mindepth 1
+bash: Successfully deleted: test/bader/Ca/M-2H
+bash: Successfully deleted: test/bader/Ca/M
+bash: Successfully deleted: test/bader/Ca/2H
+bash:  test/bader/Au is not mindepth 1
+bash: Successfully deleted: test/bader/Au/M-2H
+bash: Successfully deleted: test/bader/Au/M
+bash: Successfully deleted: test/bader/Au/2H
+==================================================
+2025-01-18 20:09:25
+bash: pos-to-all
+file: data/POSCAR_Ov1
+match: bader
+TO_DIR: test
+==================================================
+2025-01-18 20:10:32
+bash: pos-to-all
+file: data/POSCAR_Ov1
+match: bader
+TO_DIR: test
+==================================================
+2025-01-18 20:16:07
+bash: TO_DIR: test/bader
+bash: NO POSCAR in test/bader/Ca
+bash: Found POSCAR in test/bader/Ca/M-2H
+bash: Found POSCAR in test/bader/Ca/M
+bash: Found POSCAR in test/bader/Ca/2H
+bash: NO POSCAR in test/bader/Au
+bash: Found POSCAR in test/bader/Au/M-2H
+bash: Found POSCAR in test/bader/Au/M
+bash: Found POSCAR in test/bader/Au/2H
+==================================================
+2025-01-18 20:17:55
+bash: Starting mkf-in-loop
+bash: File set to: data/KPOINTS
+bash: TO_DIR set to: test/bader
+bash: Copied data/KPOINTS to test/bader/Ca/M-2H
+bash: Copied data/KPOINTS to test/bader/Ca/M
+bash: Copied data/KPOINTS to test/bader/Ca/2H
+bash: Copied data/KPOINTS to test/bader/Au/M-2H
+bash: Copied data/KPOINTS to test/bader/Au/M
+bash: Copied data/KPOINTS to test/bader/Au/2H
+==================================================
+2025-01-18 20:23:31
+bash: wk-bdr started
+bash: Root directory set to: test/ads
+bash: ACF.dat already exists in: test/ads/Au/M-2H
+bash: ACF.dat already exists in: test/ads/Au/M
+bash: ACF.dat already exists in: test/ads/Ba/M-2H
+bash: ACF.dat already exists in: test/ads/Ba/M
+bash: Running Bader analysis in: test/ads/Ag/M-2H
+bash: chgsum.pl failed in: test/ads/Ag/M-2H
+bash: ACF.dat already exists in: test/ads/Ag/M
+==================================================
+2025-01-18 20:25:19
+bash: check-res started
+==================================================
+2025-01-18 20:26:00
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: Pattern for matching directories: ads
+bash: File to analyze: print_out
+bash: check-res completed
+==================================================
+2025-01-18 20:27:33
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: Pattern for matching directories: ads
+bash: File to analyze: print_out
+bash: check-res completed
+==================================================
+2025-01-18 20:28:58
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: Pattern for matching directories: ads
+bash: File to analyze: print_out
+bash: check-res completed
+==================================================
+2025-01-18 20:31:55
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: Pattern for matching directories: ads
+bash: File to analyze: print_out
+bash: check-res completed
+==================================================
+2025-01-18 20:32:35
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: Pattern for matching directories: ads
+bash: File to analyze: print_out
+bash: check-res completed
+==================================================
+2025-01-18 20:32:43
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: Pattern for matching directories: ads
+bash: File to analyze: print_out
+bash: check-res completed
+==================================================
+2025-01-18 20:32:59
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: Pattern for matching directories: ads
+bash: File to analyze: print_out
+bash: check-res completed
+==================================================
+2025-01-18 20:34:39
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: Pattern for matching directories: ads
+bash: File to analyze: print_out
+bash: check-res completed
+==================================================
+2025-01-18 20:40:07
+bash: filename started
+==================================================
+2025-01-18 20:42:42
+bash: filename started
+bash: ROOT_DIR set to: test/ads
+bash: Number set to: 7
+bash: Processing Bader data
+bash: Bader processing completed
+bash: filename completed
+==================================================
+2025-01-18 20:43:42
+bash: filename started
+bash: ROOT_DIR set to: test/ads
+bash: Number set to: 7
+bash: Processing Bader data
+bash: Bader processing completed
+bash: filename completed
+==================================================
+2025-01-18 21:15:29
+bash: wk-cpy started
+==================================================
+2025-01-18 21:16:09
+bash: wk-cpy started
+bash: Source directory set to: test
+bash: File to copy set to: POSCAR
+bash: Destination directory set to: pos-test
+==================================================
+2025-01-18 21:16:35
+bash: wk-cpy started
+bash: Source directory set to: test
+bash: File to copy set to: POSCAR
+bash: Destination directory set to: pos-test
+bash: Processing directory: bader/Ca/M-2H
+bash: Failed to copy POSCAR to pos-test/bader/Ca/M-2H
+==================================================
+2025-01-18 21:18:05
+bash: wk-cpy started
+bash: Source directory set to: test
+bash: File to copy set to: POSCAR
+bash: Destination directory set to: pos-test
+bash: Processing directory: bader/Ca/M-2H
+bash: Successfully copied POSCAR to pos-test/bader/Ca/M-2H
+bash: Processing directory: bader/Ca/M
+bash: Successfully copied POSCAR to pos-test/bader/Ca/M
+bash: Processing directory: bader/Ca/2H
+bash: Successfully copied POSCAR to pos-test/bader/Ca/2H
+bash: Processing directory: bader/Au/M-2H
+bash: Successfully copied POSCAR to pos-test/bader/Au/M-2H
+bash: Processing directory: bader/Au/M
+bash: Successfully copied POSCAR to pos-test/bader/Au/M
+bash: Processing directory: bader/Au/2H
+bash: Successfully copied POSCAR to pos-test/bader/Au/2H
+bash: Processing directory: ads/Au/M-2H
+bash: Successfully copied POSCAR to pos-test/ads/Au/M-2H
+bash: Processing directory: ads/Au/M
+bash: Successfully copied POSCAR to pos-test/ads/Au/M
+bash: Processing directory: ads/Ba/M-2H
+bash: Successfully copied POSCAR to pos-test/ads/Ba/M-2H
+bash: Processing directory: ads/Ba/M
+bash: Successfully copied POSCAR to pos-test/ads/Ba/M
+bash: Processing directory: ads/Ag/M-2H
+bash: Successfully copied POSCAR to pos-test/ads/Ag/M-2H
+bash: Processing directory: ads/Ag/M
+bash: Successfully copied POSCAR to pos-test/ads/Ag/M
+==================================================
+2025-01-18 21:18:54
+bash: wk-cpy started
+bash: Source directory set to: test
+bash: File to copy set to: POSCAR
+bash: Destination directory set to: pos-test
+bash: Processing directory: bader/Ca/M-2H
+bash: Successfully copied POSCAR to pos-test/bader/Ca/M-2H
+bash: Processing directory: bader/Ca/M
+bash: Successfully copied POSCAR to pos-test/bader/Ca/M
+bash: Processing directory: bader/Ca/2H
+bash: Successfully copied POSCAR to pos-test/bader/Ca/2H
+bash: Processing directory: bader/Au/M-2H
+bash: Successfully copied POSCAR to pos-test/bader/Au/M-2H
+bash: Processing directory: bader/Au/M
+bash: Successfully copied POSCAR to pos-test/bader/Au/M
+bash: Processing directory: bader/Au/2H
+bash: Successfully copied POSCAR to pos-test/bader/Au/2H
+bash: Processing directory: ads/Au/M-2H
+bash: Successfully copied POSCAR to pos-test/ads/Au/M-2H
+bash: Processing directory: ads/Au/M
+bash: Successfully copied POSCAR to pos-test/ads/Au/M
+bash: Processing directory: ads/Ba/M-2H
+bash: Successfully copied POSCAR to pos-test/ads/Ba/M-2H
+bash: Processing directory: ads/Ba/M
+bash: Successfully copied POSCAR to pos-test/ads/Ba/M
+bash: Processing directory: ads/Ag/M-2H
+bash: Successfully copied POSCAR to pos-test/ads/Ag/M-2H
+bash: Processing directory: ads/Ag/M
+bash: Successfully copied POSCAR to pos-test/ads/Ag/M
+****************************************************************************************************
+command: 执行批量vasp的流程
+****************************************************************************************************
+command: 执行批量vasp的流程
+==================================================
+2025-01-18 21:28:00
+bash: pos-to-all
+file: POSCAR
+TO_DIR: /home/wk/auto
+match: 
+****************************************************************************************************
+command: 执行批量vasp的流程
+==================================================
+2025-01-18 21:30:09
+bash: pos-to-all
+file: POSCAR
+TO_DIR: /home/wk/auto
+match: 
+****************************************************************************************************
+==================================================
+2025-01-18 21:34:45
+bash: Root directory set to: test/bader
+bash: File not found: test/bader/Ca/CHG
+bash: File not found: test/bader/Ca/M-2H/CHG
+bash: File not found: test/bader/Ca/M/CHG
+bash: File not found: test/bader/Ca/2H/CHG
+bash: File not found: test/bader/Au/CHG
+bash: File not found: test/bader/Au/M-2H/CHG
+bash: File not found: test/bader/Au/M/CHG
+bash: File not found: test/bader/Au/2H/CHG
+==================================================
+2025-01-18 21:34:56
+bash: Root directory set to: test/bader
+bash: Command set to: 1
+bash:  test/bader/Ca is not mindepth 1
+bash: Successfully deleted: test/bader/Ca/M-2H
+bash: Successfully deleted: test/bader/Ca/M
+bash: Successfully deleted: test/bader/Ca/2H
+bash:  test/bader/Au is not mindepth 1
+bash: Successfully deleted: test/bader/Au/M-2H
+bash: Successfully deleted: test/bader/Au/M
+bash: Successfully deleted: test/bader/Au/2H
+****************************************************************************************************
+file: data/POSCAR_Ov1
+TO_DIR: test/bader
+command: 执行批量vasp的流程
+==================================================
+2025-01-18 21:35:25
+bash: pos-to-all
+file: data/POSCAR_Ov1
+TO_DIR: test/bader
+match: 
+==================================================
+2025-01-18 21:35:25
+bash: TO_DIR: test/bader
+bash: match: 
+bash: NO POSCAR in test/bader/Ca
+bash: Found POSCAR in test/bader/Ca/M-2H
+bash: Found POSCAR in test/bader/Ca/M
+bash: Found POSCAR in test/bader/Ca/2H
+bash: NO POSCAR in test/bader/Au
+bash: Found POSCAR in test/bader/Au/M-2H
+bash: Found POSCAR in test/bader/Au/M
+bash: Found POSCAR in test/bader/Au/2H
+==================================================
+2025-01-18 21:35:26
+bash: Starting mkf-in-loop
+bash: File set to: /home/wk/auto/data/KPOINTS
+bash: Command set to: 0
+bash: TO_DIR set to: test/bader
+bash: Match pattern set to: 
+bash: Copied /home/wk/auto/data/KPOINTS to test/bader/Ca/M-2H
+bash: Copied /home/wk/auto/data/KPOINTS to test/bader/Ca/M
+bash: Copied /home/wk/auto/data/KPOINTS to test/bader/Ca/2H
+bash: Copied /home/wk/auto/data/KPOINTS to test/bader/Au/M-2H
+bash: Copied /home/wk/auto/data/KPOINTS to test/bader/Au/M
+bash: Copied /home/wk/auto/data/KPOINTS to test/bader/Au/2H
+==================================================
+2025-01-18 21:35:26
+bash: Starting mkf-in-loop
+bash: File set to: /home/wk/auto/data/vasp.sbatch
+bash: Command set to: 0
+bash: TO_DIR set to: test/bader
+bash: Match pattern set to: 
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/bader/Ca/M-2H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/bader/Ca/M
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/bader/Ca/2H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/bader/Au/M-2H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/bader/Au/M
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/bader/Au/2H
+****************************************************************************************************
+==================================================
+2025-01-18 21:35:36
+bash: Root directory set to: test/bader
+bash: Command set to: 1
+bash:  test/bader/Ca is not mindepth 1
+bash: Successfully deleted: test/bader/Ca/M-2H
+bash: Successfully deleted: test/bader/Ca/M
+bash: Successfully deleted: test/bader/Ca/2H
+bash:  test/bader/Au is not mindepth 1
+bash: Successfully deleted: test/bader/Au/M-2H
+bash: Successfully deleted: test/bader/Au/M
+bash: Successfully deleted: test/bader/Au/2H

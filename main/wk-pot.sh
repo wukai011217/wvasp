@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# 脚本名称: xsd-to-input
+# 脚本名称: wk-pot
 # 描述: 根据 POSCAR 创建 INCAR 和 POTCAR，复制 KPOINTS 和 vasp.sbatch
 # 用法: ./xsd-to-input.sh [OPTIONS]
 # 作者: wukai
@@ -19,16 +19,26 @@ declare -A CONFIG=(
     [match]=""
 )
 
-# 函数：显示帮助信息
+# 帮助信息
 show_help() {
     cat << EOF
 Usage: $(basename "$0") [OPTIONS]
+
+Description:
+    Generate POTCAR files for VASP calculations.
+
 Options:
     -to           Set target directory
-    -m, -match    Set match pattern
-    -c, -command  Set command (0: create POTCAR, 1: H addition for 2H)
+    -m, -match    Set match pattern for directories
+    -c, -command  Set operation command (default: 0)
+    -h, --help    Show this help message
+
+Commands:
+    0: Generate POTCAR based on POSCAR
+    1: Reserved for future use
+
 Example:
-    $(basename "$0") -to /path/to/dir -m "pattern" -c 0
+    $(basename "$0") -to /path/to/dir -m "pattern"
 EOF
 }
 
@@ -95,16 +105,6 @@ create_potcar() {
     fi
 }
 
-# 函数：处理2H的H添加
-process_2h() {
-    local target_dir="$1"
-    if [[ -f "$target_dir/POSCAR" ]]; then
-        cat "${PATHS[pot_dir]}/H/POTCAR" >> "$target_dir/POTCAR" 2>> "${PATHS[log_dir]}/errors"
-    else
-        logging 1 "NO POSCAR in $target_dir"
-    fi
-}
-
 # 主程序
 main() {
     local command="${CONFIG[command]}"
@@ -114,27 +114,20 @@ main() {
     case "$command" in
         0)  
         # 创建 POTCAR 文件
-            find "$to_dir" -type d | while read -r target_dir; do
-                if [[ -z "$(find "$target_dir" -mindepth 1 -type d)" ]]; then
-                    [[ "$target_dir" == *"$match"* ]] && create_potcar "$target_dir"
-                    :
-                fi
+            find "$to_dir" -mindepth 1 -type d | while read -r target_dir; do
+                [[ "$target_dir" == *"$match"* ]] && create_potcar "$target_dir"
+                :
             done
             ;;
         1)  
-        # 针对 2H 添加 POTCAR的处理
-            find "$to_dir" -type d | while read -r target_dir; do
-                if [[ -z "$(find "$target_dir" -mindepth 1 -type d)" ]]; then
-                    [[ "$target_dir" == *"2H"* ]] && process_2h "$target_dir"
-                    :
-                fi
-            done
+
+                :
             ;;
         help)
             show_help
             ;;
         *)
-            logging 1 "Invalid command: ${command}"
+            logging  "Invalid command: ${command}"
             show_help
             exit 1
             ;;
@@ -142,11 +135,11 @@ main() {
 }
 
 # 启动
-logging 1 "Starting mk-pot"
+logging 0
 
 # 解析命令行参数
 parse_arguments "$@"
 # 执行主程序
 main
 # 记录结果
-result $? "xsd-to-input"
+result $? "wk-pot"
