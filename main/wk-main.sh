@@ -38,6 +38,7 @@ Options:
     -to           Set target directory
     -m, -match    Set match pattern for directories
     -c, -command  Set operation command (default: 0)
+    -f, -file     Set input file (default: POSCAR)
     -h, --help    Show this help message
 
 Commands:
@@ -46,7 +47,7 @@ Commands:
 
 Examples:
     # Prepare and run calculations
-    $(basename "$0") -d /path/to/dir -m "pattern"
+    $(basename "$0") -to /path/to/dir -m "pattern" -c 0 -f POSCAR 
 
     # Check calculation results
     $(basename "$0") -d /path/to/dir -m "pattern" -c 1
@@ -91,7 +92,7 @@ run_m2h_to_2h() {
         error_exit "pos-to-all failed"
 
     # 执行 pot-to-all（命令 1）
-    wk-pot.sh -to "${to_dir}" -match "${match}" -command 1 || \
+    wk-pot.sh -to "${to_dir}" -match "${match}" -command 0 || \
         error_exit "pot-to-all failed"
 
     # 执行 mkf-in-loop

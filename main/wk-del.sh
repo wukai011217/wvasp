@@ -38,8 +38,8 @@ Commands:
     1: Delete all files from leaf directories
 
 Example:
-    $(basename "$0") -d /path/to/dir -f CHG
-    $(basename "$0") -d /path/to/dir -c 1    # Delete all files
+    $(basename "$0") -d /path/to/dir -d CeO2
+    $(basename "$0") -d /path/to/dir -d CeO2 -c 1    # Delete all files
 EOF
 }
 

@@ -136,6 +136,7 @@ main() {
 
 # 启动
 logging 0
+logging 1 "pot-to-all"
 
 # 解析命令行参数
 parse_arguments "$@"

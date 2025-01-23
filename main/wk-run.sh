@@ -54,9 +54,10 @@ parse_arguments() {
     while [[ $# -gt 0 ]]; do
         case "$1" in
             -dir|-D|-d)
-                if [[ "$2" == *"$WORK_DIR"* ]]; then
+                # 确保获得绝对路径
+                if [[ "$2" = /* ]]; then
                     CONFIG[to_dir]="$2"
-                else 
+                else
                     CONFIG[to_dir]="$(pwd)/$2"
                 fi
                 logging 1 "Target directory set to: ${CONFIG[to_dir]}"
@@ -105,16 +106,11 @@ check_vasp_files() {
 # 提交VASP作业
 submit_vasp_job() {
     local target_dir="$1"
-    
-    cd "$target_dir"
-    echo "$target_dir" 2>> "$WORK_DIR/errors" 1>> "$WORK_DIR/logs"
-    
-    # 记录作业信息
-    ((job_count++))
-    echo "$job_count $target_dir" >> "$WORK_DIR/job"
-    
+    cd "$target_dir" 
+    ((job_count+=1)) 
+    echo "$job_count $target_dir" >> "${PATHS[work_dir]}/job"
     # 实际的作业提交命令（取消注释以启用）
-    # sbatch vasp.sbatch >> "$WORK_DIR/job"
+    # sbatch vasp.sbatch >> "${PATHS[work_dir]}/job"
 }
 
 # 主程序
@@ -131,7 +127,7 @@ main() {
                             # 检查是否已经有输出文件
                             if ! compgen -G "$target_dir/*${CONFIG[screen]}*" > /dev/null; then
                                 submit_vasp_job "$target_dir"
-                                
+
                                 # 检查是否达到最大作业数
                                 if ((job_count >= MAX_JOBS)); then
                                     logging 1 "Reached maximum job count ($MAX_JOBS)"
@@ -154,6 +150,7 @@ main() {
 # 日志记录
 logging 0
 logging 1 "wk-run started"
+echo "time: $(date "+%Y-%m-%d %H:%M:%S")" >> "${PATHS[work_dir]}/job"
 
 # 启动脚本
 parse_arguments "$@"

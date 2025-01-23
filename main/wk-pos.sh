@@ -34,8 +34,8 @@ Options:
     -f, -file     Set input file (default: POSCAR)
     -to           Set target directory (required)
     -m, -match    Set match pattern for elements
-    -s, -start    Set start number (default: 0)
-    -e, -end      Set end number (default: 0)
+    -n, -number   Set line number (default: 0)  
+    -c, -command  Set operation command (default: 0)
     -h, --help    Show this help message
 
 Commands:
@@ -105,6 +105,9 @@ process_one_to_all() {
                     sed -i "s/Ag/$element/g" "$target_dir/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
                 fi
             done
+        else
+            echo "No matching directory found."
+            exit 1
         fi
     fi
 }

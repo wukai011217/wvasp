@@ -154,6 +154,8 @@ logging 1 "check-res started"
 {
     printf '=%.0s' {1..100}
     echo
+    echo time: $(date "+%Y-%m-%d %H:%M:%S")
+    echo
 } | tee -a "${PATHS[work_dir]}/datas" "${PATHS[work_dir]}/good_datas" "${PATHS[work_dir]}/bad_datas" > /dev/null
 
 # 启动脚本
