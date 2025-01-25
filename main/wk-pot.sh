@@ -25,20 +25,28 @@ show_help() {
 Usage: $(basename "$0") [OPTIONS]
 
 Description:
-    Generate POTCAR files for VASP calculations.
+    Generate POTCAR files for VASP calculations based on POSCAR files.
+    Creates POTCAR files by combining pseudopotentials for elements in POSCAR.
 
 Options:
-    -to           Set target directory
-    -m, -match    Set match pattern for directories
-    -c, -command  Set operation command (default: 0)
-    -h, --help    Show this help message
+    -to,                --to_dir    Set target directory (required): directory containing POSCAR files
+    -m|-M|-match,       --match     Set match pattern for directories: pattern to filter target directories
+    -c|-C|-command,     --command   Set operation command (default: 0)
+    -h|-help,           --help      Show this help message
 
 Commands:
-    0: Generate POTCAR based on POSCAR
+    0: Generate POTCAR files based on elements in POSCAR
     1: Reserved for future use
 
-Example:
-    $(basename "$0") -to /path/to/dir -m "pattern"
+Examples:
+    # Generate POTCAR for current directory
+    $(basename "$0") -to .
+
+    # Generate POTCAR for all matching directories
+    $(basename "$0") -to /path/to/calcs -m "Fe_*"
+
+    # Generate POTCAR for specific calculation
+    $(basename "$0") -to /path/to/calc/Fe2O3
 EOF
 }
 

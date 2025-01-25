@@ -27,26 +27,30 @@ show_help() {
 Usage: $(basename "$0") [OPTIONS]
 
 Description:
-    Copy files to multiple directories while maintaining structure.
+    Copy and organize files for VASP calculations across multiple directories.
+    Supports both single file distribution and structured directory copying.
 
 Options:
-    -d, -dir      Set root directory (default: current directory)
-    -f, -file     Set file to copy (default: KPOINTS)
-    -to           Set target directory
-    -m, -match    Set match pattern for directories
-    -c, -command  Set operation command (default: 0)
-    -h, --help    Show this help message
+    -d|-D|-dir,         --dir       Set root directory (default: current directory): source directory for files
+    -f|-F|-file,        --file      Set file to copy (default: KPOINTS): target file name
+    -to,                --to_dir    Set target directory: destination for copied files
+    -m|-M|-match,       --match     Set match pattern for directories: pattern to filter target directories
+    -c|-C|-command,     --command   Set operation command (default: 0)
+    -h|-help,           --help      Show this help message
 
 Commands:
-    0: Copy single file to matching directories
-    1: Copy files maintaining directory structure
+    0: Copy single file to matching directories (simple distribution)
+    1: Copy files maintaining directory structure (complex organization)
 
 Examples:
-    # Copy single file to matching directories
-    $(basename "$0") -f KPOINTS -to /target/dir -m "pattern"
+    # Copy KPOINTS file to all matching directories
+    $(basename "$0") -f KPOINTS -to /target/dir -m "Fe_*"
 
-    # Copy files maintaining structure
-    $(basename "$0") -d /source/dir -to /target/dir -m "pattern" -c 1
+    # Copy entire directory structure with pattern matching
+    $(basename "$0") -d /source/dir -to /target/dir -m "Fe_*" -c 1
+
+    # Copy default KPOINTS file to current directory
+    $(basename "$0") -to .
 EOF
 }
 

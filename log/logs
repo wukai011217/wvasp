@@ -497,3 +497,39 @@ bash: Target directory set to: /home/wk/auto/test
 2025-01-23 00:07:21
 bash: wk-run started
 bash: Target directory set to: /home/wk/auto/test/
+==================================================
+2025-01-23 16:52:53
+bash: pos-to-all
+TO_DIR: test/bader/
+file: data/POSCAR_Ov1
+match: 2H
+==================================================
+2025-01-23 16:53:57
+bash: pos-to-all
+TO_DIR: test/bader/
+file: data/POSCAR_Ov1
+match: 2H
+==================================================
+2025-01-23 16:55:34
+bash: pos-to-all
+TO_DIR: test/bader/
+file: data/POSCAR_Ov1
+match: M-2H
+==================================================
+2025-01-23 16:56:22
+bash: pos-to-all
+TO_DIR: test/bader/
+file: data/POSCAR_Ov1
+match: M-2H
+==================================================
+2025-01-23 16:56:44
+bash: pos-to-all
+TO_DIR: test/bader/
+file: data/POSCAR_Ov1
+match: M-2H
+==================================================
+2025-01-23 16:57:40
+bash: pos-to-all
+TO_DIR: test/bader/
+file: data/POSCAR_Ov1
+match: M-2H

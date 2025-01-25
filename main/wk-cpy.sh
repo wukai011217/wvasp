@@ -29,22 +29,27 @@ show_help() {
 Usage: $(basename "$0") [OPTIONS]
 
 Description:
-    Copy specified files between directories while maintaining structure.
+    Copy specified files between directories while maintaining directory structure.
+    Useful for organizing VASP calculation files across different setups.
 
 Options:
-    -d, -dir      Set root directory (default: current directory)
-    -f, -file     Set file to copy
-    -to           Set target directory
-    -m, -match    Set match pattern for directories
-    -c, -command  Set operation command (default: 0)
-    -h, --help    Show this help message
+    -d|-D|-dir,         --dir       Set root directory (default: current directory): source directory containing files
+    -f|-F|-file,        --file      Set file to copy (default: CONTCAR): target file name
+    -to,                --to_dir    Set target directory (default: current directory): destination for copied files
+    -m|-M|-match,       --match     Set match pattern for directories: pattern to filter source directories
+    -c|-C|-command,     --command   Set operation command (default: 0)
+    -h|-help,           --help      Show this help message
 
 Commands:
     0: Copy files while maintaining directory structure
     1: Reserved for future use
 
-Example:
-    $(basename "$0") -d /source/dir -f CONTCAR -to /target/dir -m "pattern"
+Examples:
+    # Copy CONTCAR files from current directory
+    $(basename "$0") -to /target/dir
+
+    # Copy specific files from source to target with pattern matching
+    $(basename "$0") -d /source/dir -f CONTCAR -to /target/dir -m "Fe_*"
 EOF
 }
 

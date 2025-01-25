@@ -28,21 +28,26 @@ show_help() {
 Usage: $(basename "$0") [OPTIONS]
 
 Description:
-    Extract specific data from files in leaf directories.
+    Process and analyze Bader charge analysis data from VASP calculations.
+    Extracts specific data from files and outputs results to a summary file.
 
 Options:
-    -d, -dir      Set root directory (default: current directory)
-    -f, -file     Set target file (default: ACF.dat)
-    -n, -number   Set line number to extract (default: 1)
-    -c, -command  Set operation command (default: 0)
-    -h, --help    Show this help message
+    -d|-D|-dir,         --dir       Set root directory (default: current directory): directory containing Bader output files
+    -f|-F|-file,        --file      Set target file (default: ACF.dat): file to extract data from
+    -n|-N|-number,      --number    Set line number to extract (default: 1): specific atomic number to process
+    -c|-C|-command,     --command   Set operation command (default: 0)
+    -h|-help,           --help      Show this help message
 
 Commands:
-    0: Extract data from specified line number
+    0: Extract and process data from specified line number in Bader output files
     1: Reserved for future use
 
-Example:
-    $(basename "$0") -d /path/to/dir -f ACF.dat -n 5
+Examples:
+    # Process default line from ACF.dat files
+    $(basename "$0")
+
+    # Process specific line from Bader analysis files in target directory
+    $(basename "$0") -d /path/to/calcs -f ACF.dat -n 5
 EOF
 }
 

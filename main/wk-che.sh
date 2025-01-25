@@ -28,20 +28,25 @@ show_help() {
 Usage: $(basename "$0") [OPTIONS]
 
 Description:
-    Check VASP calculation results and collect data.
+    Check VASP calculation results, validate output files, and collect data.
+    Lists successful calculations and records error information for failed ones.
 
 Options:
-    -d, -dir      Set root directory (default: current directory)
-    -m, -match    Set match pattern for directories
-    -c, -command  Set operation command (default: 0)
-    -h, --help    Show this help message
+    -d|-D|-dir,         --dir       Set root directory (default: current directory): directory containing VASP calculations
+    -m|-M|-match,       --match     Set match pattern for directories: pattern to filter target directories
+    -c|-C|-command,     --command   Set operation command (default: 0)
+    -h|-help,           --help      Show this help message
 
 Commands:
-    0: Check calculation status and collect data
+    0: Check calculation status and collect data from matching directories
     1: Reserved for future use
 
-Example:
-    $(basename "$0") -d /path/to/dir -m "pattern"
+Examples:
+    # Check calculations in current directory
+    $(basename "$0")
+
+    # Check calculations in specific directory with pattern matching
+    $(basename "$0") -d /path/to/calcs -m "Fe_*"
 EOF
 }
 

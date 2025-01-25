@@ -25,21 +25,28 @@ show_help() {
 Usage: $(basename "$0") [OPTIONS]
 
 Description:
-    Delete specified files from leaf directories.
+    Delete specified files from VASP calculation directories.
+    Can selectively remove specific files or clean up all files in target directories.
 
 Options:
-    -d, -dir      Set root directory (default: current directory)
-    -f, -file     Set file to delete (default: CHG)
-    -c, -command  Set operation command (default: 0)
-    -h, --help    Show this help message
+    -d|-D|-dir,         --dir       Set root directory (default: current directory): directory containing files to delete
+    -f|-F|-file,        --file      Set file to delete (default: CHG): target file name
+    -c|-C|-command,     --command   Set operation command (default: 0)
+    -h|-help,           --help      Show this help message
 
 Commands:
-    0: Delete specified file from leaf directories
-    1: Delete all files from leaf directories
+    0: Delete specified file from target directories
+    1: Delete all files from target directories (use with caution)
 
-Example:
-    $(basename "$0") -d /path/to/dir -d CeO2
-    $(basename "$0") -d /path/to/dir -d CeO2 -c 1    # Delete all files
+Examples:
+    # Delete CHG files from current directory
+    $(basename "$0")
+
+    # Delete specific file from target directory
+    $(basename "$0") -d /path/to/calcs -f WAVECAR
+
+    # Delete all files from target directory (use with caution)
+    $(basename "$0") -d /path/to/calcs -c 1
 EOF
 }
 

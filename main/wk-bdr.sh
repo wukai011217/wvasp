@@ -26,19 +26,23 @@ show_help() {
 Usage: $(basename "$0") [OPTIONS]
 
 Description:
-    Run Bader charge analysis on VASP output files.
+    Execute Bader charge analysis on VASP output files (AECCAR0, AECCAR2, CHGCAR).
 
 Options:
-    -d, -dir      Set root directory (default: current directory)
-    -c, -command  Set operation command (default: 0)
-    -h, --help    Show this help message
+    -d|-D|-dir,         --dir       Set root directory (default: current directory): directory containing VASP output files
+    -c|-C|-command,     --command   Set operation command (default: 0)
+    -h|-help,           --help      Show this help message
 
 Commands:
-    0: Run Bader analysis in leaf directories
+    0: Run Bader charge analysis in leaf directories
     1: Reserved for future use
 
-Example:
-    $(basename "$0") -d /path/to/dir
+Examples:
+    # Run Bader analysis in current directory
+    $(basename "$0")
+
+    # Run Bader analysis in specific directory
+    $(basename "$0") -d /path/to/vasp/output
 EOF
 }
 

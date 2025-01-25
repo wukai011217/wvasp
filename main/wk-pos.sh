@@ -28,23 +28,31 @@ show_help() {
 Usage: $(basename "$0") [OPTIONS]
 
 Description:
-    This script handles POSCAR file operations for different structures.
+    Process and manipulate POSCAR structure files for VASP calculations.
+    Supports copying structures, generating M-2H structures, and converting between different phases.
 
 Options:
-    -f, -file     Set input file (default: POSCAR)
-    -to           Set target directory (required)
-    -m, -match    Set match pattern for elements
-    -n, -number   Set line number (default: 0)  
-    -c, -command  Set operation command (default: 0)
-    -h, --help    Show this help message
+    -f|-F|-file,        --file      Set input file (default: POSCAR): source structure file
+    -to,                --to_dir    Set target directory (required): destination for processed structures
+    -m|-M|-match,       --match     Set match pattern for elements: filter for target elements/structures
+    -n|-N|-number,      --number    Set atomic number (default: 0): specific atom to process
+    -c|-C|-command,     --command   Set operation command (default: 0)
+    -h|-help,           --help      Show this help message
 
 Commands:
     0: Copy POSCAR to specified elements directories
-    1: Generate M-2H structure from M structure
-    2: Convert M-2H to 2H structure
+    1: Generate M-2H structure from M structure (removes H atoms)
+    2: Convert M-2H to 2H structure (structural phase transformation)
 
-Example:
-    $(basename "$0") -f POSCAR -to /path/to/dir -m "pattern"
+Examples:
+    # Copy POSCAR to directories matching element pattern
+    $(basename "$0") -f POSCAR -to /path/to/calcs -m "Fe_*"
+
+    # Generate M-2H structure from M structure
+    $(basename "$0") -f POSCAR -to /path/to/M2H -c 1
+
+    # Convert M-2H structure to 2H phase
+    $(basename "$0") -f POSCAR -to /path/to/2H -c 2
 EOF
 }
 
@@ -98,6 +106,7 @@ process_one_to_all() {
     local target_dir="$1"
     
     if [ -z "$(find "$target_dir" -mindepth 1 -type d)" ]; then
+        echo $target_dir
         if [[ "$target_dir" == *"${CONFIG[match]}"* ]]; then
             for element in "${elements[@]}"; do
                 if [[ $target_dir == *"/$element/"* ]]; then
@@ -106,8 +115,7 @@ process_one_to_all() {
                 fi
             done
         else
-            echo "No matching directory found."
-            exit 1
+            echo "$target_dir not match ${CONFIG[match]} found."
         fi
     fi
 }
@@ -159,6 +167,7 @@ main() {
     case "$command" in
         0)  # one to all
             find "${CONFIG[to_dir]}" -mindepth 1 -type d | while read -r target_dir; do
+                echo 1 $target_dir
                 process_one_to_all "$target_dir"
             done
             ;;

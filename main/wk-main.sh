@@ -34,26 +34,22 @@ Description:
     Main script for managing VASP calculations workflow.
 
 Options:
-    -d, -dir      Set root directory (default: current directory)
-    -to           Set target directory
-    -m, -match    Set match pattern for directories
-    -c, -command  Set operation command (default: 0)
-    -f, -file     Set input file (default: POSCAR)
-    -h, --help    Show this help message
+    -d|-D|-dir,         --dir       Set root directory (default: current directory): directory for existing files to be operated
+    -m|-M|-match,       --match     Set match pattern for directories
+    -c|-C|-command,     --command   Set operation command (default: 0)
+    -f|-F|-file,        --file      Set input file (default: POSCAR): file for operation
+    -to,                --to_dir    Set target directory: directory for generated files
+    -screen,            --screen    Set screen file (default: OUTCAR): file for checking calculation status
+    -job,               --job       Set job ID for calculation (default: 0): VASP calculation ID in the form of (start,end)
+    -h|-help,           --help      Show this help message
 
 Commands:
     0: Prepare and run VASP calculations
-    1: Check calculation results
 
 Examples:
     # Prepare and run calculations
-    $(basename "$0") -to /path/to/dir -m "pattern" -c 0 -f POSCAR 
-
-    # Check calculation results
-    $(basename "$0") -d /path/to/dir -m "pattern" -c 1
-
-    # Run Bader analysis
-    $(basename "$0") -d /path/to/dir -m "pattern" -c 2
+    $(basename "$0") -to /path/to/dir -m "pattern" -c 0 -f POSCAR
+    $(basename "$0") -help
 EOF
 }
 
