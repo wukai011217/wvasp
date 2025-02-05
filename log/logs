@@ -533,3 +533,260 @@ bash: pos-to-all
 TO_DIR: test/bader/
 file: data/POSCAR_Ov1
 match: M-2H
+==================================================
+2025-02-05 01:46:46
+bash: pos-to-all
+command: 1
+==================================================
+2025-02-05 01:47:06
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 01:48:09
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 01:58:33
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 01:59:24
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 01:59:35
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:02:11
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:02:24
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:05:17
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:05:54
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:06:15
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:07:38
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:09:17
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:10:01
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:18:36
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:27:17
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:27:53
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:29:14
+bash: pos-to-all
+command: 1
+TO_DIR: test/
+==================================================
+2025-02-05 02:56:02
+bash: wk-cpy started
+bash: Destination directory set to: test/
+bash: File to copy set to: data/KPOINTS
+bash: Match pattern set to: M-H
+bash: Processing directory: ads/Au/M-H
+bash: Successfully copied data/KPOINTS to test//ads/Au/M-H
+bash: Processing directory: ads/Ag/M-H
+bash: Successfully copied data/KPOINTS to test//ads/Ag/M-H
+==================================================
+2025-02-05 02:57:24
+bash: wk-cpy started
+bash: Destination directory set to: test/
+bash: File to copy set to: KPOINTS
+bash: Match pattern set to: M-H
+bash: Source directory set to: data
+==================================================
+2025-02-05 02:59:52
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M-H
+bash: Found POSCAR in test/ads/Au/M-H
+bash: Found POSCAR in test/ads/Ag/M-H
+==================================================
+2025-02-05 03:14:23
+bash: wk-cpy started
+bash: Destination directory set to: test/
+bash: File to copy set to: data/KPOINTS
+bash: Match pattern set to: M-H
+bash: Processing directory: ads/Au/M-H
+bash: Successfully copied data/KPOINTS to test//ads/Au/M-H
+bash: Processing directory: ads/Ag/M-H
+bash: Successfully copied data/KPOINTS to test//ads/Ag/M-H
+==================================================
+2025-02-05 03:17:36
+bash: wk-cpy started
+bash: Destination directory set to: test/
+bash: File to copy set to: data/KPOINTS
+bash: Match pattern set to: M-H
+bash: Successfully copied data/KPOINTS to test/
+bash: Successfully copied data/KPOINTS to test/
+==================================================
+2025-02-05 03:18:58
+bash: Starting mkf-in-loop
+bash: TO_DIR set to: test/
+bash: File set to: data/KPOINTS
+bash: Match pattern set to: M-H
+bash: Copied data/KPOINTS to test/ads/Au/M-H
+bash: Copied data/KPOINTS to test/ads/Ag/M-H
+==================================================
+2025-02-05 09:56:49
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M-H
+bash: Found POSCAR in test/ads/Ag/M-H
+****************************************************************************************************
+****************************************************************************************************
+TO_DIR: test/
+match: ads
+command: 1
+command: 执行批量vaspM to M-H的流程
+==================================================
+2025-02-05 10:21:05
+bash: pos-to-all
+file: POSCAR
+TO_DIR: test/
+command: 1
+==================================================
+2025-02-05 10:21:05
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: ads
+bash: command: 0
+bash: NO POSCAR in test/ads
+bash: NO POSCAR in test/ads/Au
+bash: Found POSCAR in test/ads/Au/M-H
+bash: NO POSCAR in test/ads/Ba
+bash: NO POSCAR in test/ads/Ag
+bash: Found POSCAR in test/ads/Ag/M-H
+==================================================
+2025-02-05 10:21:05
+bash: Starting mkf-in-loop
+bash: File set to: /home/wk/auto/data/KPOINTS
+bash: Command set to: 0
+bash: TO_DIR set to: test/
+bash: Match pattern set to: ads
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Au/M-2H
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Au/M-H
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Au/M
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Ba/M-2H
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Ba/M
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Ag/M-2H
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Ag/M-H
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Ag/M
+==================================================
+2025-02-05 10:21:05
+bash: Starting mkf-in-loop
+bash: File set to: /home/wk/auto/data/vasp.sbatch
+bash: Command set to: 0
+bash: TO_DIR set to: test/
+bash: Match pattern set to: ads
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Au/M-2H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Au/M-H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Au/M
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ba/M-2H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ba/M
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ag/M-2H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ag/M-H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ag/M
+****************************************************************************************************
+****************************************************************************************************
+TO_DIR: test/
+match: ads
+command: 1
+command: 执行批量vaspM to M-H的流程
+==================================================
+2025-02-05 10:23:02
+bash: pos-to-all
+file: POSCAR
+TO_DIR: test/
+command: 1
+==================================================
+2025-02-05 10:23:02
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: ads
+bash: command: 0
+bash: NO POSCAR in test/ads
+bash: NO POSCAR in test/ads/Au
+bash: Found POSCAR in test/ads/Au/M-H
+bash: NO POSCAR in test/ads/Ba
+bash: Found POSCAR in test/ads/Ba/M-H
+bash: NO POSCAR in test/ads/Ag
+bash: Found POSCAR in test/ads/Ag/M-H
+==================================================
+2025-02-05 10:23:02
+bash: Starting mkf-in-loop
+bash: File set to: /home/wk/auto/data/KPOINTS
+bash: Command set to: 0
+bash: TO_DIR set to: test/
+bash: Match pattern set to: ads
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Au/M-2H
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Au/M-H
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Au/M
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Ba/M-2H
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Ba/M-H
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Ba/M
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Ag/M-2H
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Ag/M-H
+bash: Copied /home/wk/auto/data/KPOINTS to test/ads/Ag/M
+==================================================
+2025-02-05 10:23:02
+bash: Starting mkf-in-loop
+bash: File set to: /home/wk/auto/data/vasp.sbatch
+bash: Command set to: 0
+bash: TO_DIR set to: test/
+bash: Match pattern set to: ads
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Au/M-2H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Au/M-H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Au/M
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ba/M-2H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ba/M-H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ba/M
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ag/M-2H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ag/M-H
+bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ag/M
+****************************************************************************************************

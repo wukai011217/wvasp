@@ -120,33 +120,23 @@ process_one_to_all() {
     fi
 }
 
-# 函数：M to M-2H
-process_m_to_m2h() {
-    local target_dir="$1"
-    
-    if [ -z "$(find "$target_dir" -mindepth 1 -type d)" ]; then
-        if [[ "$target_dir" == *"${CONFIG[match]}"* ]]; then
-            mkdir -p "$target_dir/../M-2H" 2>> "${PATHS[log_dir]}/errors"
-            cp "${CONFIG[file]}" "$target_dir/../M-2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
-            sed -i "s/Ag/$element/g" "$target_dir/../M-2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
-        fi
-    fi
-}
-
-# 函数：M-2H to 2H
-process_m2h_to_2h() {
+# 函数：M to M-H|M-2H
+process_m_to_mh() {
     local target_dir="$1"
     
     if [ -z "$(find "$target_dir" -mindepth 1 -type d)" ]; then
         
         if [[ "$target_dir" == *"${CONFIG[match]}"* ]]; then
-            if [[ "$target_dir" == *"M-2H"* ]]; then
+            if [[ "$target_dir" == *"M" ]]; then
                 if [ -f "$target_dir/CONTCAR" ]; then
-                    mkdir -p "$target_dir/../2H" 2>> "${PATHS[log_dir]}/errors"
-                    cp "$target_dir/CONTCAR" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
-                    sed -i "6c\ H" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
-                    sed -i "7c\ 2" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
-                    sed -i "${CONFIG[start]},${CONFIG[end]}d" "$target_dir/../2H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
+                    mkdir -p "$target_dir/../M-H" 2>> "${PATHS[log_dir]}/errors"
+                    cp "$target_dir/CONTCAR" "$target_dir/../M-H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
+                    num=$(awk 'NR==7 {print}' "$target_dir/../M-H/POSCAR" | awk '{sum=0; for(i=1; i<=NF; i++) sum+=$i; print sum}')
+                    num=$(($num + 9))
+                    dos2unix "$target_dir/../M-H/POSCAR"
+                    sed -i '6s/$/ H/' "$target_dir/../M-H/POSCAR" 
+                    sed -i "${num}a\0.446598 0.216020 0.433410 T T T " "$target_dir/../M-H/POSCAR" 
+                    sed -i '7s/$/ 1/' "$target_dir/../M-H/POSCAR" 
                 else
                     echo "NO CONTCAR in $target_dir" >&2
                 fi
@@ -171,14 +161,9 @@ main() {
                 process_one_to_all "$target_dir"
             done
             ;;
-        1)  # M to M-2H
+        1)  # M to M-2H|M-2H
             find "${CONFIG[to_dir]}" -mindepth 1 -type d | while read -r target_dir; do
-                process_m_to_m2h "$target_dir"
-            done
-            ;;
-        2)  # M-2H to 2H
-            find "${CONFIG[to_dir]}" -mindepth 1 -type d | while read -r target_dir; do
-                process_m2h_to_2h "$target_dir"
+                process_m_to_mh "$target_dir"
             done
             ;;
         help)
