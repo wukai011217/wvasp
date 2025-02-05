@@ -79,12 +79,11 @@ run_batch_vasp() {
 
 # 函数：执行 M to M-H 流程
 run_m_to_m-h() {
-    local file="$1"
-    local to_dir="$2"
-    local match="$3"
+    local to_dir="$1"
+    local match="$2"
 
     # 执行 pos-to-all（命令 1）
-    wk-pos.sh -f "${file}" -to "${to_dir}"  -command 1 || \
+    wk-pos.sh -to "${to_dir}"  -command 1 || \
         error_exit "pos-to-all failed"
 
     # 执行 pot-to-all（命令 0）
@@ -174,7 +173,7 @@ main() {
             ;;
         1)  # 执行批量 M to M-H 流程
             echo "command: 执行批量vaspM to M-H的流程" >> "${PATHS[log_dir]}/logs"
-            run_m_to_m-h "${file}" "${to_dir}" "${match}"
+            run_m_to_m-h  "${to_dir}" "${match}"
             ;;
         2) #结果处理
             echo "command: 结果处理" >> "${PATHS[log_dir]}/logs"

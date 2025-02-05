@@ -133,7 +133,10 @@ process_m_to_mh() {
                     cp "$target_dir/CONTCAR" "$target_dir/../M-H/POSCAR" 2>> "${PATHS[log_dir]}/errors" 
                     num=$(awk 'NR==7 {print}' "$target_dir/../M-H/POSCAR" | awk '{sum=0; for(i=1; i<=NF; i++) sum+=$i; print sum}')
                     num=$(($num + 9))
-                    dos2unix "$target_dir/../M-H/POSCAR"
+                    if ! check_file "$target_dir/../M-H/POSCAR"; then
+                        error_exit "POSCAR is not a linux format in $target_dir/../M-H/POSCAR"
+                        dos2unix "$target_dir/../M-H/POSCAR"
+                    fi
                     sed -i '6s/$/ H/' "$target_dir/../M-H/POSCAR" 
                     sed -i "${num}a\0.446598 0.216020 0.433410 T T T " "$target_dir/../M-H/POSCAR" 
                     sed -i '7s/$/ 1/' "$target_dir/../M-H/POSCAR" 
@@ -145,6 +148,24 @@ process_m_to_mh() {
     fi
 }
 
+process_ads_to_bader() {
+    local target_dir="$1"
+    if [ -z "$(find "$target_dir" -mindepth 1 -type d)" ]; then
+        if [[ "$target_dir" == *"${CONFIG[match]}"* ]]; then
+            if [[ "$target_dir" == *"/ads" ]]; then
+                if ! validate_poscar "$target_dir/CONTCAR"; then
+                    mkdir -p "$target_dir/../bader" 2>> "${PATHS[log_dir]}/errors"
+                    cp "$target_dir/CONTCAR" "$target_dir/../bader/POSCAR" 
+                    cp "$target_dir/POTCAR" "$target_dir/../bader/POTCAR"
+                    cp "$target_dir/KPOINTS" "$target_dir/../bader/KPOINTS"
+                    cp "$target_dir/vasp.sbatch" "$target_dir/../bader/vasp.sbatch"
+                else
+                    echo "NO CONTCAR in $target_dir" >&2
+                fi
+            fi
+        fi
+    fi
+}
 # 函数：主程序
 main() {
     local command="${CONFIG[command]}"
@@ -157,13 +178,17 @@ main() {
     case "$command" in
         0)  # one to all
             find "${CONFIG[to_dir]}" -mindepth 1 -type d | while read -r target_dir; do
-                echo 1 $target_dir
                 process_one_to_all "$target_dir"
             done
             ;;
         1)  # M to M-2H|M-2H
             find "${CONFIG[to_dir]}" -mindepth 1 -type d | while read -r target_dir; do
                 process_m_to_mh "$target_dir"
+            done
+            ;;
+        2)  # ads to bader
+            find "${CONFIG[to_dir]}" -mindepth 1 -type d | while read -r target_dir; do
+                process_ads_to_bader "$target_dir"
             done
             ;;
         help)

@@ -790,3 +790,94 @@ bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ag/M-2H
 bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ag/M-H
 bash: Copied /home/wk/auto/data/vasp.sbatch to test/ads/Ag/M
 ****************************************************************************************************
+==================================================
+2025-02-05 12:32:17
+bash: pot-to-all
+==================================================
+2025-02-05 12:32:32
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M/ads
+==================================================
+2025-02-05 12:32:33
+bash: pos-to-all
+TO_DIR: test/
+match: M/ads
+==================================================
+2025-02-05 12:33:36
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M/ads
+bash: command: 2
+==================================================
+2025-02-05 12:33:45
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M/ads
+bash: command: 2
+==================================================
+2025-02-05 12:34:38
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M/ads
+bash: command: help
+==================================================
+2025-02-05 12:34:38
+bash: pos-to-all
+TO_DIR: test/
+match: M/ads
+command: help
+==================================================
+2025-02-05 12:35:06
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M/ads
+bash: command: 2
+==================================================
+2025-02-05 12:41:01
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M/ads
+bash: command: 2
+==================================================
+2025-02-05 12:41:28
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M/ads
+bash: command: 2
+==================================================
+2025-02-05 12:42:03
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M/ads
+bash: command: 2
+==================================================
+2025-02-05 12:42:31
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M/ads
+bash: command: 2
+==================================================
+2025-02-05 12:43:16
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M/ads
+bash: command: 2
+==================================================
+2025-02-05 12:43:24
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M/ads
+bash: command: 2
+==================================================
+2025-02-05 12:43:35
+bash: pot-to-all
+bash: TO_DIR: test/
+bash: match: M/ads
+bash: command: 2
+==================================================
+2025-02-05 12:47:02
+bash: pos-to-all
+TO_DIR: test/
+match: M/ads
+command: 2

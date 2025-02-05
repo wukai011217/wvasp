@@ -86,57 +86,6 @@ parse_arguments() {
     done
 }
 
-# 函数：验证POSCAR格式
-validate_poscar() {
-    local poscar_file="$1"
-    
-    # 检查文件是否存在
-    if [[ ! -f "$poscar_file" ]]; then
-        echo "Error: POSCAR file does not exist: $poscar_file" >&2
-        return 1
-    fi
-
-    # 检查文件是否至少有8行
-    if [[ $(wc -l < "$poscar_file") -lt 8 ]]; then
-        echo "Error: POSCAR file is too short" >&2
-        return 1
-    fi
-
-    # 检查第2行是否为数字（scaling factor）
-    if ! awk 'NR==2 {exit !($1+0==$1)}' "$poscar_file"; then
-        echo "Error: Line 2 (scaling factor) must be a number" >&2
-        return 1
-    fi
-
-    # 检查第3-5行是否为3个数字（晶格向量）
-    for i in {3..5}; do
-        if ! awk -v line=$i 'NR==line {exit !(NF==3 && $1+0==$1 && $2+0==$2 && $3+0==$3)}' "$poscar_file"; then
-            echo "Error: Line $i must contain 3 numbers (lattice vectors)" >&2
-            return 1
-        fi
-    done
-
-    # 检查第6行是否包含元素名称
-    if ! awk 'NR==6 {exit (NF==0)}' "$poscar_file"; then
-        echo "Error: Line 6 must contain element names" >&2
-        return 1
-    fi
-
-    # 检查第7行是否包含对应数量的数字
-    if ! awk 'NR==6{elements=NF} NR==7{exit !(NF==elements && $1+0==$1)}' "$poscar_file"; then
-        echo "Error: Line 7 must contain the same number of integers as elements in line 6" >&2
-        return 1
-    fi
-
-    # 检查第8/9行是否包含 "Direct" 或 "Cartesian"
-    if ! awk 'NR==8{if($0~/^[Ss]elective[[:space:]]*[Dd]ynamics/){next} else{coord=$0}} NR==9{if(NR==9 && coord==""){coord=$0}} END{exit !(coord~/^[Dd]irect/ || coord~/^[Cc]artesian/)}' "$poscar_file"; then
-        echo "Error: Coordinates must be specified as either Direct or Cartesian" >&2
-        return 1
-    fi
-
-    return 0
-}
-
 # 函数：创建 POTCAR 文件
 create_potcar() {
     local target_dir="$1"

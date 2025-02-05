@@ -51,8 +51,9 @@ result() {
 #   $1 - 日志级别（0表示分隔符，1表示命令日志）
 #   $2 - [可选]命令描述（当$1=1时使用）
 logging() {
-    local level="${1}"
-    local message="${2:-$(basename "$0")}"
+    local level="$1"
+    local message="${2:-$(basename "${BASH_SOURCE[1]}")}"
+    local source_file="${BASH_SOURCE[1]##*/}"  # Get the source filename
     local timestamp="$(date '+%Y-%m-%d %H:%M:%S')"
     local log_files=(
         "${PATHS[log_dir]}/logs"
@@ -81,6 +82,9 @@ logging() {
             ;;
         1)  # 命令日志
             echo "bash: ${message}" >> "${PATHS[log_dir]}/logs"
+            ;;
+        2)  # 错误日志
+            echo "[${source_file}] Error: ${message}" >> "${PATHS[log_dir]}/errors"
             ;;
         *)  # 无效的日志级别
             echo "Error: Invalid logging level: ${level}" >&2
@@ -155,6 +159,57 @@ is_empty_dir() {
     [[ -z "$(find "$dir" -mindepth 1 -type d)" ]]
 }
 
+# 函数：验证POSCAR格式
+validate_poscar() {
+    local poscar_file="$1"
+    
+    # 检查文件是否存在
+    if [[ ! -f "$poscar_file" ]]; then
+        echo "Error: POSCAR file does not exist: $poscar_file" >&2
+        return 1
+    fi
+
+    # 检查文件是否至少有8行
+    if [[ $(wc -l < "$poscar_file") -lt 8 ]]; then
+        echo "Error: POSCAR file is too short" >&2
+        return 1
+    fi
+
+    # 检查第2行是否为数字（scaling factor）
+    if ! awk 'NR==2 {exit !($1+0==$1)}' "$poscar_file"; then
+        echo "Error: Line 2 (scaling factor) must be a number" >&2
+        return 1
+    fi
+
+    # 检查第3-5行是否为3个数字（晶格向量）
+    for i in {3..5}; do
+        if ! awk -v line=$i 'NR==line {exit !(NF==3 && $1+0==$1 && $2+0==$2 && $3+0==$3)}' "$poscar_file"; then
+            echo "Error: Line $i must contain 3 numbers (lattice vectors)" >&2
+            return 1
+        fi
+    done
+
+    # 检查第6行是否包含元素名称
+    if ! awk 'NR==6 {exit (NF==0)}' "$poscar_file"; then
+        echo "Error: Line 6 must contain element names" >&2
+        return 1
+    fi
+
+    # 检查第7行是否包含对应数量的数字
+    if ! awk 'NR==6{elements=NF} NR==7{exit !(NF==elements && $1+0==$1)}' "$poscar_file"; then
+        echo "Error: Line 7 must contain the same number of integers as elements in line 6" >&2
+        return 1
+    fi
+
+    # 检查第8/9行是否包含 "Direct" 或 "Cartesian"
+    if ! awk 'NR==8{if($0~/^[Ss]elective[[:space:]]*[Dd]ynamics/){next} else{coord=$0}} NR==9{if(NR==9 && coord==""){coord=$0}} END{exit !(coord~/^[Dd]irect/ || coord~/^[Cc]artesian/)}' "$poscar_file"; then
+        echo "Error: Coordinates must be specified as either Direct or Cartesian" >&2
+        return 1
+    fi
+
+    return 0
+}
+
 # 初始化函数
 init_functions() {
     # 检查必要的变量
@@ -194,6 +249,31 @@ error_exit() {
     exit 1
 }
 
+# 检查文件是否是linux格式
+check_file() {
+    local file="$1"
+    
+    # 检查文件是否存在
+    if [[ ! -f "$file" ]]; then
+        echo "Error: File does not exist: $file" >&2
+        return 1
+    fi
+
+    # 使用file命令检查文件格式
+    if file "$file" | grep -q "CRLF"; then
+        echo "Warning: File contains CRLF line endings: $file" >&2
+        return 1
+    fi
+
+    # 使用grep检查是否包含^M字符（Windows行尾）
+    if grep -l $'\r' "$file" &>/dev/null; then
+        echo "Warning: File contains Windows-style line endings: $file" >&2
+        return 1
+    fi
+
+    return 0
+}
+
 # 如果直接执行此文件，显示用法说明
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     cat << EOF
@@ -207,6 +287,7 @@ Available functions:
     logging    - Log messages to log files
     is_valid_element - Check if element symbol is valid
     clean_logs - Clean all log files
+    validate_poscar - Validate POSCAR file format
     
 Available variables:
     elements   - Array of supported elements
