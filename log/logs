@@ -881,3 +881,244 @@ bash: pos-to-all
 TO_DIR: test/
 match: M/ads
 command: 2
+==================================================
+2025-02-13 14:44:39
+bash: wk-run started
+bash: Target directory set to: /home/wk/auto/test
+bash: Match pattern set to: ads
+bash: Output file already exists in /home/wk/auto/test/ads/Au/M-2H
+bash: Missing required VASP files in /home/wk/auto/test/ads/Au/M-H
+bash: Missing required VASP files in /home/wk/auto/test/ads/Au/M/bader
+bash: Output file already exists in /home/wk/auto/test/ads/Au/M/ads
+bash: Output file already exists in /home/wk/auto/test/ads/Ba/M-2H
+bash: Missing required VASP files in /home/wk/auto/test/ads/Ba/M-H
+bash: Missing required VASP files in /home/wk/auto/test/ads/Ba/M/bader
+bash: Output file already exists in /home/wk/auto/test/ads/Ba/M/ads
+bash: Output file already exists in /home/wk/auto/test/ads/Ag/M-2H
+bash: Missing required VASP files in /home/wk/auto/test/ads/Ag/M-H
+bash: Missing required VASP files in /home/wk/auto/test/ads/Ag/M/bader
+==================================================
+2025-02-13 23:18:09
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: test/ads
+==================================================
+2025-02-13 23:18:46
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:19:49
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:20:12
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:20:54
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:23:05
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:23:41
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:24:37
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:24:58
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:25:36
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:27:21
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:29:16
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:30:50
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:32:21
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:33:18
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:33:34
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:36:26
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:36:52
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:37:48
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:40:29
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:43:14
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:44:32
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:45:40
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:47:25
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:48:10
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:49:54
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:53:35
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:56:19
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:56:48
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-13 23:56:59
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-14 00:01:20
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-14 00:05:14
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-14 00:18:44
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-14 00:19:13
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-14 00:20:04
+bash: pos-to-all
+command: 3
+TO_DIR: test
+match: M/ads
+==================================================
+2025-02-14 00:28:28
+bash: Starting mkf-in-loop
+==================================================
+2025-02-14 10:53:17
+bash: pos-to-all
+TO_DIR: test
+command: 4
+match: Ba/M-2H
+==================================================
+2025-02-14 10:55:09
+bash: pos-to-all
+TO_DIR: test
+command: 4
+match: Ba/M-2H

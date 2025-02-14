@@ -131,17 +131,21 @@ main() {
                     # 检查目录名是否匹配模式
                     if [[ -z "${CONFIG[match]}" || "$target_dir" == *"${CONFIG[match]}"* ]]; then
                         # 检查必要的VASP文件
-                        if check_vasp_files "$target_dir"; then
+                        if check_vasp_files "$target_dir" ; then
                             # 检查是否已经有输出文件
                             if ! compgen -G "$target_dir/*${CONFIG[screen]}*" > /dev/null; then
-                                submit_vasp_job "$target_dir"
+                                submit_vasp_job "$target_dir" || echo "Failed to submit job for $target_dir"
 
                                 # 检查是否达到最大作业数
                                 if ((job_count >= MAX_JOBS)); then
                                     logging 1 "Reached maximum job count ($MAX_JOBS)"
                                     break
                                 fi
+                            else
+                                logging 1 "Output file already exists in $target_dir"
                             fi
+                        else
+                            logging 1 "Missing required VASP files in $target_dir"
                         fi
                     fi
                 fi

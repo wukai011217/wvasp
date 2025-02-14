@@ -1,5 +1,8 @@
 #!/bin/bash
 # 检查并设置脚本目录
+sj() {
+  scontrol show job "$1" | grep -e 'WorkDir' -e 'JobId'
+}
 if ! declare -p SCRIPT_DIR &>/dev/null; then
     readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 fi
