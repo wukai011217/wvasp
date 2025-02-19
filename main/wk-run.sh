@@ -14,6 +14,7 @@ set -u  # 使用未定义变量时报错
 
 # 默认配置
 declare -A CONFIG=(
+    [run_dir]="$(pwd)"
     [to_dir]="$(pwd)"
     [match]=""
     [screen]="OUTCAR"
@@ -79,6 +80,11 @@ parse_arguments() {
             -screen|-S|-s)
                 CONFIG[screen]="$2"
                 logging 1 "Screen file set to: ${CONFIG[screen]}"
+                shift 2
+                ;;
+            -command|-c|-C)
+                CONFIG[command]="$2"
+                logging 1 "Command set to: ${CONFIG[command]}"
                 shift 2
                 ;;
             -h|--help)
@@ -150,6 +156,17 @@ main() {
                     fi
                 fi
             done
+            ;;
+        1) # 再计算一些有问题的作业
+            if [[ -f "${PATHS[work_dir]}/bad_datas" ]]; then
+                logging 1 "Processing bad datas..."
+                while read -r target_dir; do
+                    submit_vasp_job "$target_dir" || echo "Failed to submit job for $target_dir"
+                    cd "${CONFIG[run_dir]}"
+                done < <(grep "unexpected end of calculation |" "${PATHS[work_dir]}/bad_datas" | cut -d'|' -f2 | tr -d ' ')
+            else
+                logging 1 "No bad datas found."
+            fi
             ;;
         *)
             echo "Error: ${CONFIG[command]} is not a valid command" >&2

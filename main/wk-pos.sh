@@ -29,7 +29,8 @@ Usage: $(basename "$0") [OPTIONS]
 
 Description:
     Process and manipulate POSCAR structure files for VASP calculations.
-    Supports copying structures, generating M-2H structures, and converting between different phases.
+    Supports various operations including structure copying, phase transformations,
+    hydrogen removal, and charge density analysis.
 
 Options:
     -f|-F|-file,        --file      Set input file (default: POSCAR): source structure file
@@ -43,16 +44,24 @@ Commands:
     0: Copy POSCAR to specified elements directories
     1: Generate M-2H structure from M structure (removes H atoms)
     2: Convert M-2H to 2H structure (structural phase transformation)
+    3: Process structure for Bader charge analysis
+    4: Process structure with FFF (Fixed Fractional Format)
 
 Examples:
     # Copy POSCAR to directories matching element pattern
     $(basename "$0") -f POSCAR -to /path/to/calcs -m "Fe_*"
 
     # Generate M-2H structure from M structure
-    $(basename "$0") -f POSCAR -to /path/to/M2H -c 1
+    $(basename "$0")  -to /path/to/M2H -c 1 -m M-H/ads
 
     # Convert M-2H structure to 2H phase
-    $(basename "$0") -f POSCAR -to /path/to/2H -c 2
+    $(basename "$0")  -to /path/to/2H -c 2 -m M-H/ads
+
+    # Prepare structure for Bader analysis
+    $(basename "$0") -to /path/to/bader -c 3 -m M-H/ads
+
+    # Process structure with FFF format
+    $(basename "$0")  -to /path/to/fff -c 4 -m M-H/ads
 EOF
 }
 

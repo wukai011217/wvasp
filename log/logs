@@ -1122,3 +1122,248 @@ bash: pos-to-all
 TO_DIR: test
 command: 4
 match: Ba/M-2H
+==================================================
+2025-02-18 21:29:27
+bash: wk-cpy started
+bash: Source directory set to: test/ads
+bash: File to copy set to: CONTCAR
+bash: Match pattern set to: ads
+bash: Destination directory set to: pos
+bash: Processing directory: Au/M-2H/ads
+bash: Successfully copied CONTCAR to pos/Au/M-2H/ads
+bash: Processing directory: ads/Au/M-H
+bash: Successfully copied CONTCAR to pos/ads/Au/M-H
+bash: Processing directory: Au/M/bader
+bash: Successfully copied CONTCAR to pos/Au/M/bader
+bash: Processing directory: Au/M/ads
+bash: Successfully copied CONTCAR to pos/Au/M/ads
+bash: Processing directory: Ba/M-2H/ads
+bash: Successfully copied CONTCAR to pos/Ba/M-2H/ads
+bash: Processing directory: ads/Ba/M-H
+bash: Successfully copied CONTCAR to pos/ads/Ba/M-H
+bash: Processing directory: Ba/M/bader
+bash: Successfully copied CONTCAR to pos/Ba/M/bader
+bash: Processing directory: Ba/M/ads
+bash: Successfully copied CONTCAR to pos/Ba/M/ads
+bash: Processing directory: Ag/M-2H/ads
+bash: Successfully copied CONTCAR to pos/Ag/M-2H/ads
+bash: Processing directory: ads/Ag/M-H
+bash: Successfully copied CONTCAR to pos/ads/Ag/M-H
+bash: Processing directory: Ag/M/bader
+bash: Successfully copied CONTCAR to pos/Ag/M/bader
+bash: Processing directory: Ag/M/ads
+bash: Successfully copied CONTCAR to pos/Ag/M/ads
+==================================================
+2025-02-18 21:31:57
+bash: wk-cpy started
+bash: Source directory set to: test/ads
+bash: File to copy set to: CONTCAR
+bash: Match pattern set to: ads
+bash: Destination directory set to: pos
+bash: Processing directory: Au/M-2H/ads
+bash: Successfully copied CONTCAR to pos/Au/M-2H/ads
+bash: Processing directory: ads/Au/M-H
+bash: Successfully copied CONTCAR to pos/ads/Au/M-H
+bash: Processing directory: Au/M/bader
+bash: Successfully copied CONTCAR to pos/Au/M/bader
+bash: Processing directory: Au/M/ads
+bash: Successfully copied CONTCAR to pos/Au/M/ads
+bash: Processing directory: Ba/M-2H/ads
+bash: Successfully copied CONTCAR to pos/Ba/M-2H/ads
+bash: Processing directory: ads/Ba/M-H
+bash: Successfully copied CONTCAR to pos/ads/Ba/M-H
+bash: Processing directory: Ba/M/bader
+bash: Successfully copied CONTCAR to pos/Ba/M/bader
+bash: Processing directory: Ba/M/ads
+bash: Successfully copied CONTCAR to pos/Ba/M/ads
+bash: Processing directory: Ag/M-2H/ads
+bash: Successfully copied CONTCAR to pos/Ag/M-2H/ads
+bash: Processing directory: ads/Ag/M-H
+bash: Successfully copied CONTCAR to pos/ads/Ag/M-H
+bash: Processing directory: Ag/M/bader
+bash: Successfully copied CONTCAR to pos/Ag/M/bader
+bash: Processing directory: Ag/M/ads
+bash: Successfully copied CONTCAR to pos/Ag/M/ads
+==================================================
+2025-02-18 21:32:35
+bash: wk-cpy started
+bash: Source directory set to: test/ads
+bash: File to copy set to: CONTCAR
+bash: Match pattern set to: M/ads
+bash: Destination directory set to: pos
+bash: Processing directory: Au/M/ads
+bash: Successfully copied CONTCAR to pos/Au/M/ads
+bash: Processing directory: Ba/M/ads
+bash: Successfully copied CONTCAR to pos/Ba/M/ads
+bash: Processing directory: Ag/M/ads
+bash: Successfully copied CONTCAR to pos/Ag/M/ads
+==================================================
+2025-02-18 21:35:14
+bash: wk-cpy started
+bash: Source directory set to: test/ads
+bash: File to copy set to: CONTCAR
+bash: Match pattern set to: M/ads
+bash: Destination directory set to: pos
+bash: Processing directory: Au/M/ads
+bash: Successfully copied CONTCAR to pos/Au/M/ads
+bash: Processing directory: Ba/M/ads
+bash: Successfully copied CONTCAR to pos/Ba/M/ads
+bash: Processing directory: Ag/M/ads
+bash: Successfully copied CONTCAR to pos/Ag/M/ads
+==================================================
+2025-02-18 21:36:22
+bash: wk-cpy started
+bash: Source directory set to: test/ads
+bash: File to copy set to: CONTCAR
+bash: Match pattern set to: M/ads
+bash: Destination directory set to: pos
+bash: Processing directory: Au/M/ads
+bash: Successfully copied CONTCAR to pos/Au/M/ads
+bash: Processing directory: Ba/M/ads
+bash: Successfully copied CONTCAR to pos/Ba/M/ads
+bash: Processing directory: Ag/M/ads
+bash: Successfully copied CONTCAR to pos/Ag/M/ads
+==================================================
+2025-02-18 21:37:56
+bash: wk-cpy started
+bash: Source directory set to: test/ads
+bash: File to copy set to: CONTCAR
+bash: Match pattern set to: M/ads
+bash: Destination directory set to: pos
+bash: Processing directory: Au/M/ads
+bash: Successfully copied CONTCAR to pos/Au/M/ads
+bash: Processing directory: Ba/M/ads
+bash: Successfully copied CONTCAR to pos/Ba/M/ads
+bash: Processing directory: Ag/M/ads
+bash: Successfully copied CONTCAR to pos/Ag/M/ads
+==================================================
+2025-02-18 21:38:02
+bash: wk-cpy started
+bash: Source directory set to: test/ads
+bash: File to copy set to: CONTCAR
+bash: Match pattern set to: M/ads
+bash: Destination directory set to: pos
+bash: Processing directory: Au/M/ads
+bash: Successfully copied CONTCAR to pos/Au/M/ads
+bash: Processing directory: Ba/M/ads
+bash: Successfully copied CONTCAR to pos/Ba/M/ads
+bash: Processing directory: Ag/M/ads
+bash: Successfully copied CONTCAR to pos/Ag/M/ads
+==================================================
+2025-02-18 21:39:37
+bash: wk-cpy started
+bash: Source directory set to: test/ads
+bash: File to copy set to: CONTCAR
+bash: Match pattern set to: M/ads
+bash: Destination directory set to: pos
+bash: Processing directory: Au/M/ads
+bash: Successfully copied CONTCAR to pos/Au/M/ads
+bash: Processing directory: Ba/M/ads
+bash: Successfully copied CONTCAR to pos/Ba/M/ads
+bash: Processing directory: Ag/M/ads
+bash: Successfully copied CONTCAR to pos/Ag/M/ads
+==================================================
+2025-02-19 09:07:01
+bash: check-res started
+==================================================
+2025-02-19 09:07:28
+bash: check-res started
+bash: ROOT_DIR set to: test
+==================================================
+2025-02-19 09:08:57
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: check-res completed
+==================================================
+2025-02-19 09:10:43
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: check-res completed
+==================================================
+2025-02-19 09:16:14
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: check-res completed
+==================================================
+2025-02-19 09:17:29
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: check-res completed
+==================================================
+2025-02-19 09:19:03
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: check-res completed
+==================================================
+2025-02-19 09:26:44
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: check-res completed
+==================================================
+2025-02-19 09:27:38
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: check-res completed
+==================================================
+2025-02-19 09:36:27
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: check-res completed
+==================================================
+2025-02-19 09:36:56
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: check-res completed
+==================================================
+2025-02-19 09:44:11
+bash: wk-run started
+==================================================
+2025-02-19 09:45:08
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing bad datas...
+==================================================
+2025-02-19 09:47:55
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing bad datas...
+==================================================
+2025-02-19 09:48:19
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing bad datas...
+==================================================
+2025-02-19 09:53:23
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing bad datas...
+==================================================
+2025-02-19 09:53:38
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing bad datas...
+==================================================
+2025-02-19 09:56:00
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing bad datas...
+==================================================
+2025-02-19 09:56:32
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing bad datas...
+==================================================
+2025-02-19 10:03:47
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing bad datas...
+==================================================
+2025-02-19 10:04:44
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing bad datas...
+==================================================
+2025-02-19 10:04:56
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing bad datas...

@@ -112,7 +112,7 @@ copy_file() {
     fi
     
     # 使用rsync复制文件
-    if rsync -av --include="${CONFIG[file]}" --exclude="*" "$source_dir/" "$dest_dir" 2>> "${PATHS[log_dir]}/errors" 1 >/dev/null; then
+    if rsync -a --quiet --include="${CONFIG[file]}" --exclude="*" "$source_dir/" "$dest_dir" 2>> "${PATHS[log_dir]}/errors" ; then
         logging 1 "Successfully copied ${CONFIG[file]} to $dest_dir"
     else
         logging 1 "Failed to copy ${CONFIG[file]} to $dest_dir"

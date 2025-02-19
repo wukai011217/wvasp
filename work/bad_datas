@@ -1,7 +1,76 @@
-****************************************************************************************************
-****************************************************************************************************
-****************************************************************************************************
-****************************************************************************************************
-Missing ACF.dat file in: test/ads/Ag/M-2H
-****************************************************************************************************
-Missing ACF.dat file in: test/ads/Ag/M-2H
+====================================================================================================
+time: 2025-02-19 09:36:56
+
+=====================================================
+unexpected end of calculation | test/bader/Ca/M-2H
+
+tail: cannot open 'test/bader/Ca/M-2H/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/bader/Ca/M
+
+tail: cannot open 'test/bader/Ca/M/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/bader/Ca/2H
+
+tail: cannot open 'test/bader/Ca/2H/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/bader/Au/M-2H
+
+tail: cannot open 'test/bader/Au/M-2H/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/bader/Au/M
+
+tail: cannot open 'test/bader/Au/M/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/bader/Au/2H
+
+tail: cannot open 'test/bader/Au/2H/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/ads/Au/M-2H/ads
+
+tail: cannot open 'test/ads/Au/M-2H/ads/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/ads/Au/M-H
+
+tail: cannot open 'test/ads/Au/M-H/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/ads/Au/M/bader
+
+tail: cannot open 'test/ads/Au/M/bader/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/ads/Ba/M-2H/ads
+
+tail: cannot open 'test/ads/Ba/M-2H/ads/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/ads/Ba/M-H
+
+tail: cannot open 'test/ads/Ba/M-H/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/ads/Ba/M/bader
+
+tail: cannot open 'test/ads/Ba/M/bader/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/ads/Ag/M-2H/ads
+
+tail: cannot open 'test/ads/Ag/M-2H/ads/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/ads/Ag/M-H
+
+tail: cannot open 'test/ads/Ag/M-H/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/ads/Ag/M/bader
+
+tail: cannot open 'test/ads/Ag/M/bader/print_out' for reading: No such file or directory
+=====================================================
+unexpected end of calculation | test/ads/Ag/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     

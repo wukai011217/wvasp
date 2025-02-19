@@ -112,7 +112,10 @@ check_directory() {
                 # 检查是否存在 OUTCAR 且包含 "reached" 字符
                 if [[ ! -f "${outcar}" ]] || ! grep -q "reached" "${outcar}"; then
                     echo " -1 $target_dir" >> "${work_dir}/datas"
+                    echo "=====================================================" >> "${work_dir}/bad_datas"
                     echo "unexpected end of calculation | $target_dir" >> "${work_dir}/bad_datas"
+                    echo "" >> "${work_dir}/bad_datas"
+                    tail -n 10 "${target_dir}/print_out" >> "${work_dir}/bad_datas" 2>> "${work_dir}/bad_datas" || echo "Missing print_out file in: $target_dir"
                 else
                     # 计算结果正确
                     echo " 1 $target_dir" >> "${work_dir}/datas"
