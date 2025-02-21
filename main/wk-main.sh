@@ -97,6 +97,17 @@ run_m_to_m-h() {
     done
 }
 
+result_processing() {
+    local file="$1"
+    local to_dir="$2"
+    local match="$3"
+    
+    # 执行 pos-to-all
+    echo "pos-to-all"
+    wk-che.sh  -to "${to_dir}" -match "${match}" || \
+        error_exit "pos-to-all failed"
+}
+
 # 函数：解析命令行参数
 parse_arguments() {
     while [[ $# -gt 0 ]]; do

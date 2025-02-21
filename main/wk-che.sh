@@ -93,7 +93,7 @@ parse_arguments() {
 
 # 函数：检查单个目录
 check_directory() {
-    local root_dir="$1"             # 从 CONFIG 中获取根目录
+    local root_dir="$1"              # 从 CONFIG 中获取根目录
     local match="${CONFIG[match]}"   # 从 CONFIG 中获取匹配模式
     local file="${CONFIG[file]}"     # 从 CONFIG 中获取要分析的文件
     local work_dir="${PATHS[work_dir]}"
@@ -124,7 +124,13 @@ check_directory() {
                     # 提取 print_out 中的 "E0"，记录最后一行
                     if [[ -f "${output_file}" ]]; then
                         grep "E0" "${output_file}" | tail -n 1 >> "${work_dir}/good_datas"
-                        grep  "reached" "${output_file}" >> "${work_dir}/good_datas"|| echo "unreached" >> "${work_dir}/good_datas"
+                        if ! grep "reached" "${output_file}" >> "${work_dir}/good_datas"; then
+                            echo "unreached" >> "${work_dir}/good_datas" && echo " -2 $target_dir" >> "${work_dir}/datas"
+                            echo "=====================================================" >> "${work_dir}/bad_datas"
+                            echo "unreached | $target_dir" >> "${work_dir}/bad_datas"
+                            echo "" >> "${work_dir}/bad_datas"
+                            tail -n 10 "${target_dir}/print_out" >> "${work_dir}/bad_datas" 2>> "${work_dir}/bad_datas" || echo "Missing print_out file in: $target_dir"
+                        fi
                     fi
                 fi
             fi

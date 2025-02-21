@@ -45,7 +45,7 @@
                 fi
             done ;;
         1)
-            :
+            find "$ROOT_DIR" -type d -path "*/ddnstor/ecust_gongxq/data/wukai/CeO2/Doped-111/Ov1/Sec-1/Re/M-2H/ads*"
             ;;
         help)
             echo 'this is help'
@@ -59,27 +59,6 @@
 
 
 
-# Append the text " This is the appended text." to the line number 3 in a file named "filename".
-sed -i '3s/$/ This is the appended text./' filename
-
-# Append the text "This is the new line." to the line number 3 in a file named "filename".
-sed '3a\This is the new line.' filename
-
-# Delete the last line in a file named "filename".
-sed -i '$d' filename
-
-# rewrite the line number 3 in a file named "filename".
-sed '行号c\新内容' 文件名
-
-# Modify the third column of the 89th and 91st lines in a file named "data.txt".
-awk 'NR==63 {line=$0} {print} NR==90 {print line}' data.txt > temp.txt && mv temp.txt data.txt
-
-# Add 0.09 to the third column of the 91st line in a file named "data.txt".
-awk 'NR==91 {$3 += 0.09} {print}' data.txt > temp.txt && mv temp.txt data.txt
-
-# Rename the .txt files in the current directory.
-rename 's/\.txt$//' *.txt
-
-# view the current directory size
-du -h --max-depth=1
+JobId=638407 JobName=CeO2-100-CeO4-H2ads2-new-CONTCAR
+   WorkDir=/ddnstor/ecust_gongxq/data/wukai/CeO2/Doped-111/Ov1/Sec-1/Re/M-2H/ads
 

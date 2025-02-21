@@ -158,14 +158,14 @@ main() {
             done
             ;;
         1) # 再计算一些有问题的作业
-            if [[ -f "${PATHS[work_dir]}/bad_datas" ]]; then
-                logging 1 "Processing bad datas..."
+            if [[ -f "${PATHS[work_dir]}/datas" ]]; then
+                logging 1 "Processing failed calculations..."
                 while read -r target_dir; do
                     submit_vasp_job "$target_dir" || echo "Failed to submit job for $target_dir"
                     cd "${CONFIG[run_dir]}"
-                done < <(grep "unexpected end of calculation |" "${PATHS[work_dir]}/bad_datas" | cut -d'|' -f2 | tr -d ' ')
+                done < <(grep " -[12] " "${PATHS[work_dir]}/datas" | awk '{print $2}' | tr -d ' ')
             else
-                logging 1 "No bad datas found."
+                logging 1 "No datas file found."
             fi
             ;;
         *)

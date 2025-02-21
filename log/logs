@@ -1367,3 +1367,38 @@ bash: Processing bad datas...
 bash: wk-run started
 bash: Command set to: 1
 bash: Processing bad datas...
+==================================================
+2025-02-20 14:55:28
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing bad datas...
+==================================================
+2025-02-20 14:58:37
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing failed calculations...
+==================================================
+2025-02-20 14:59:52
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing failed calculations...
+==================================================
+2025-02-20 15:00:26
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing failed calculations...
+==================================================
+2025-02-20 15:07:47
+bash: check-res started
+bash: ROOT_DIR set to: test
+bash: check-res completed
+==================================================
+2025-02-20 16:27:13
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing failed calculations...
+==================================================
+2025-02-20 16:28:11
+bash: wk-run started
+bash: Command set to: 1
+bash: Processing failed calculations...
