@@ -1,68 +1,1111 @@
 ====================================================================================================
-time: 2025-02-20 15:07:47
+time: 2025-02-26 21:48:24
+
+====================================================================================================
+Time: 2025-02-26 21:55:06
 
 =====================================================
-unexpected end of calculation | test/bader/Ca/M-2H
+OUTCAR file missing | test/Ov1/Fir/Au/M-2H/bader
 
-tail: cannot open 'test/bader/Ca/M-2H/print_out' for reading: No such file or directory
+Missing output file: test/Ov1/Fir/Au/M-2H/bader/print_out
 =====================================================
-unexpected end of calculation | test/bader/Ca/M
+OUTCAR file missing | test/Ov1/Fir/Au/M-2H/ads
 
-tail: cannot open 'test/bader/Ca/M/print_out' for reading: No such file or directory
+Missing output file: test/Ov1/Fir/Au/M-2H/ads/print_out
 =====================================================
-unexpected end of calculation | test/bader/Ca/2H
+OUTCAR file missing | test/Ov1/Fir/Au/M-H/bader
 
-tail: cannot open 'test/bader/Ca/2H/print_out' for reading: No such file or directory
+Missing output file: test/Ov1/Fir/Au/M-H/bader/print_out
 =====================================================
-unexpected end of calculation | test/bader/Au/M-2H
+OUTCAR file missing | test/Ov1/Fir/Au/M-H/ads
 
-tail: cannot open 'test/bader/Au/M-2H/print_out' for reading: No such file or directory
+Missing output file: test/Ov1/Fir/Au/M-H/ads/print_out
 =====================================================
-unexpected end of calculation | test/bader/Au/M
+Convergence not reached | test/Ov1/Fir/Au/M/bader
 
-tail: cannot open 'test/bader/Au/M/print_out' for reading: No such file or directory
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
 =====================================================
-unexpected end of calculation | test/bader/Au/2H
+Convergence not reached | test/Ov1/Fir/Au/M/ads
 
-tail: cannot open 'test/bader/Au/2H/print_out' for reading: No such file or directory
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
 =====================================================
-unexpected end of calculation | test/ads/Au/M-2H/ads
+OUTCAR file missing | test/Ov1/Fir/Ba/M-2H/bader
 
-tail: cannot open 'test/ads/Au/M-2H/ads/print_out' for reading: No such file or directory
+Missing output file: test/Ov1/Fir/Ba/M-2H/bader/print_out
 =====================================================
-unexpected end of calculation | test/ads/Au/M-H
+OUTCAR file missing | test/Ov1/Fir/Ba/M-2H/ads
 
-tail: cannot open 'test/ads/Au/M-H/print_out' for reading: No such file or directory
+Missing output file: test/Ov1/Fir/Ba/M-2H/ads/print_out
 =====================================================
-unexpected end of calculation | test/ads/Au/M/bader
+OUTCAR file missing | test/Ov1/Fir/Ba/M-H/bader
 
-tail: cannot open 'test/ads/Au/M/bader/print_out' for reading: No such file or directory
+Missing output file: test/Ov1/Fir/Ba/M-H/bader/print_out
 =====================================================
-unexpected end of calculation | test/ads/Ba/M-2H/ads
+OUTCAR file missing | test/Ov1/Fir/Ba/M-H/ads
 
-tail: cannot open 'test/ads/Ba/M-2H/ads/print_out' for reading: No such file or directory
+Missing output file: test/Ov1/Fir/Ba/M-H/ads/print_out
 =====================================================
-unexpected end of calculation | test/ads/Ba/M-H
+Convergence not reached | test/Ov1/Fir/Ba/M/bader
 
-tail: cannot open 'test/ads/Ba/M-H/print_out' for reading: No such file or directory
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
 =====================================================
-unexpected end of calculation | test/ads/Ba/M/bader
+Convergence not reached | test/Ov1/Fir/Ba/M/ads
 
-tail: cannot open 'test/ads/Ba/M/bader/print_out' for reading: No such file or directory
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
 =====================================================
-unexpected end of calculation | test/ads/Ag/M-2H/ads
+OUTCAR file missing | test/Ov1/Fir/Ag/M-2H/bader
 
-tail: cannot open 'test/ads/Ag/M-2H/ads/print_out' for reading: No such file or directory
+Missing output file: test/Ov1/Fir/Ag/M-2H/bader/print_out
 =====================================================
-unexpected end of calculation | test/ads/Ag/M-H
+OUTCAR file missing | test/Ov1/Fir/Ag/M-2H/ads
 
-tail: cannot open 'test/ads/Ag/M-H/print_out' for reading: No such file or directory
+Missing output file: test/Ov1/Fir/Ag/M-2H/ads/print_out
 =====================================================
-unexpected end of calculation | test/ads/Ag/M/bader
+OUTCAR file missing | test/Ov1/Fir/Ag/M-H/bader
 
-tail: cannot open 'test/ads/Ag/M/bader/print_out' for reading: No such file or directory
+Missing output file: test/Ov1/Fir/Ag/M-H/bader/print_out
 =====================================================
-unexpected end of calculation | test/ads/Ag/M/ads
+OUTCAR file missing | test/Ov1/Fir/Ag/M-H/ads
+
+Missing output file: test/Ov1/Fir/Ag/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/Fir/Ag/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/Fir/Ag/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Au/M-2H/bader
+
+Missing output file: test/Ov1/sub/Au/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Au/M-2H/ads
+
+Missing output file: test/Ov1/sub/Au/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Au/M-H/bader
+
+Missing output file: test/Ov1/sub/Au/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Au/M-H/ads
+
+Missing output file: test/Ov1/sub/Au/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/sub/Au/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/sub/Au/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ba/M-2H/bader
+
+Missing output file: test/Ov1/sub/Ba/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ba/M-2H/ads
+
+Missing output file: test/Ov1/sub/Ba/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ba/M-H/bader
+
+Missing output file: test/Ov1/sub/Ba/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ba/M-H/ads
+
+Missing output file: test/Ov1/sub/Ba/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/sub/Ba/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/sub/Ba/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ag/M-2H/bader
+
+Missing output file: test/Ov1/sub/Ag/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ag/M-2H/ads
+
+Missing output file: test/Ov1/sub/Ag/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ag/M-H/bader
+
+Missing output file: test/Ov1/sub/Ag/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ag/M-H/ads
+
+Missing output file: test/Ov1/sub/Ag/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/sub/Ag/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/sub/Ag/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov0/None/Au/M-2H/bader
+
+Missing output file: test/Ov0/None/Au/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Au/M-2H/ads
+
+Missing output file: test/Ov0/None/Au/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Au/M-H/bader
+
+Missing output file: test/Ov0/None/Au/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Au/M-H/ads
+
+Missing output file: test/Ov0/None/Au/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov0/None/Au/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov0/None/Au/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ba/M-2H/bader
+
+Missing output file: test/Ov0/None/Ba/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ba/M-2H/ads
+
+Missing output file: test/Ov0/None/Ba/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ba/M-H/bader
+
+Missing output file: test/Ov0/None/Ba/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ba/M-H/ads
+
+Missing output file: test/Ov0/None/Ba/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov0/None/Ba/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov0/None/Ba/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M-2H/bader
+
+Missing output file: test/Ov0/None/Ag/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M-2H/ads
+
+Missing output file: test/Ov0/None/Ag/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M-H/bader
+
+Missing output file: test/Ov0/None/Ag/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M-H/ads
+
+Missing output file: test/Ov0/None/Ag/M-H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M/bader
+
+Missing output file: test/Ov0/None/Ag/M/bader/print_out
+=====================================================
+Convergence not reached | test/Ov0/None/Ag/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+====================================================================================================
+Time: 2025-02-26 21:55:41
+
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Au/M-2H/bader
+
+Missing output file: test/Ov1/Fir/Au/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Au/M-2H/ads
+
+Missing output file: test/Ov1/Fir/Au/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Au/M-H/bader
+
+Missing output file: test/Ov1/Fir/Au/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Au/M-H/ads
+
+Missing output file: test/Ov1/Fir/Au/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/Fir/Au/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/Fir/Au/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ba/M-2H/bader
+
+Missing output file: test/Ov1/Fir/Ba/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ba/M-2H/ads
+
+Missing output file: test/Ov1/Fir/Ba/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ba/M-H/bader
+
+Missing output file: test/Ov1/Fir/Ba/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ba/M-H/ads
+
+Missing output file: test/Ov1/Fir/Ba/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/Fir/Ba/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/Fir/Ba/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ag/M-2H/bader
+
+Missing output file: test/Ov1/Fir/Ag/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ag/M-2H/ads
+
+Missing output file: test/Ov1/Fir/Ag/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ag/M-H/bader
+
+Missing output file: test/Ov1/Fir/Ag/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ag/M-H/ads
+
+Missing output file: test/Ov1/Fir/Ag/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/Fir/Ag/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/Fir/Ag/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Au/M-2H/bader
+
+Missing output file: test/Ov1/sub/Au/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Au/M-2H/ads
+
+Missing output file: test/Ov1/sub/Au/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Au/M-H/bader
+
+Missing output file: test/Ov1/sub/Au/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Au/M-H/ads
+
+Missing output file: test/Ov1/sub/Au/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/sub/Au/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/sub/Au/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ba/M-2H/bader
+
+Missing output file: test/Ov1/sub/Ba/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ba/M-2H/ads
+
+Missing output file: test/Ov1/sub/Ba/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ba/M-H/bader
+
+Missing output file: test/Ov1/sub/Ba/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ba/M-H/ads
+
+Missing output file: test/Ov1/sub/Ba/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/sub/Ba/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/sub/Ba/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ag/M-2H/bader
+
+Missing output file: test/Ov1/sub/Ag/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ag/M-2H/ads
+
+Missing output file: test/Ov1/sub/Ag/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ag/M-H/bader
+
+Missing output file: test/Ov1/sub/Ag/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ag/M-H/ads
+
+Missing output file: test/Ov1/sub/Ag/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/sub/Ag/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/sub/Ag/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov0/None/Au/M-2H/bader
+
+Missing output file: test/Ov0/None/Au/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Au/M-2H/ads
+
+Missing output file: test/Ov0/None/Au/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Au/M-H/bader
+
+Missing output file: test/Ov0/None/Au/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Au/M-H/ads
+
+Missing output file: test/Ov0/None/Au/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov0/None/Au/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov0/None/Au/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ba/M-2H/bader
+
+Missing output file: test/Ov0/None/Ba/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ba/M-2H/ads
+
+Missing output file: test/Ov0/None/Ba/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ba/M-H/bader
+
+Missing output file: test/Ov0/None/Ba/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ba/M-H/ads
+
+Missing output file: test/Ov0/None/Ba/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov0/None/Ba/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov0/None/Ba/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M-2H/bader
+
+Missing output file: test/Ov0/None/Ag/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M-2H/ads
+
+Missing output file: test/Ov0/None/Ag/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M-H/bader
+
+Missing output file: test/Ov0/None/Ag/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M-H/ads
+
+Missing output file: test/Ov0/None/Ag/M-H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M/bader
+
+Missing output file: test/Ov0/None/Ag/M/bader/print_out
+=====================================================
+Convergence not reached | test/Ov0/None/Ag/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+====================================================================================================
+Time: 2025-02-26 21:56:40
+
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Au/M-2H/bader
+
+Missing output file: test/Ov1/Fir/Au/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Au/M-2H/ads
+
+Missing output file: test/Ov1/Fir/Au/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Au/M-H/bader
+
+Missing output file: test/Ov1/Fir/Au/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Au/M-H/ads
+
+Missing output file: test/Ov1/Fir/Au/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/Fir/Au/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/Fir/Au/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ba/M-2H/bader
+
+Missing output file: test/Ov1/Fir/Ba/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ba/M-2H/ads
+
+Missing output file: test/Ov1/Fir/Ba/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ba/M-H/bader
+
+Missing output file: test/Ov1/Fir/Ba/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ba/M-H/ads
+
+Missing output file: test/Ov1/Fir/Ba/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/Fir/Ba/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/Fir/Ba/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ag/M-2H/bader
+
+Missing output file: test/Ov1/Fir/Ag/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ag/M-2H/ads
+
+Missing output file: test/Ov1/Fir/Ag/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ag/M-H/bader
+
+Missing output file: test/Ov1/Fir/Ag/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/Fir/Ag/M-H/ads
+
+Missing output file: test/Ov1/Fir/Ag/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/Fir/Ag/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/Fir/Ag/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Au/M-2H/bader
+
+Missing output file: test/Ov1/sub/Au/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Au/M-2H/ads
+
+Missing output file: test/Ov1/sub/Au/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Au/M-H/bader
+
+Missing output file: test/Ov1/sub/Au/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Au/M-H/ads
+
+Missing output file: test/Ov1/sub/Au/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/sub/Au/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/sub/Au/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ba/M-2H/bader
+
+Missing output file: test/Ov1/sub/Ba/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ba/M-2H/ads
+
+Missing output file: test/Ov1/sub/Ba/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ba/M-H/bader
+
+Missing output file: test/Ov1/sub/Ba/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ba/M-H/ads
+
+Missing output file: test/Ov1/sub/Ba/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/sub/Ba/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/sub/Ba/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ag/M-2H/bader
+
+Missing output file: test/Ov1/sub/Ag/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ag/M-2H/ads
+
+Missing output file: test/Ov1/sub/Ag/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ag/M-H/bader
+
+Missing output file: test/Ov1/sub/Ag/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov1/sub/Ag/M-H/ads
+
+Missing output file: test/Ov1/sub/Ag/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov1/sub/Ag/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov1/sub/Ag/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov0/None/Au/M-2H/bader
+
+Missing output file: test/Ov0/None/Au/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Au/M-2H/ads
+
+Missing output file: test/Ov0/None/Au/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Au/M-H/bader
+
+Missing output file: test/Ov0/None/Au/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Au/M-H/ads
+
+Missing output file: test/Ov0/None/Au/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov0/None/Au/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov0/None/Au/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ba/M-2H/bader
+
+Missing output file: test/Ov0/None/Ba/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ba/M-2H/ads
+
+Missing output file: test/Ov0/None/Ba/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ba/M-H/bader
+
+Missing output file: test/Ov0/None/Ba/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ba/M-H/ads
+
+Missing output file: test/Ov0/None/Ba/M-H/ads/print_out
+=====================================================
+Convergence not reached | test/Ov0/None/Ba/M/bader
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+Convergence not reached | test/Ov0/None/Ba/M/ads
+
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+ total        electrons  0.999709939415049     
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M-2H/bader
+
+Missing output file: test/Ov0/None/Ag/M-2H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M-2H/ads
+
+Missing output file: test/Ov0/None/Ag/M-2H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M-H/bader
+
+Missing output file: test/Ov0/None/Ag/M-H/bader/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M-H/ads
+
+Missing output file: test/Ov0/None/Ag/M-H/ads/print_out
+=====================================================
+OUTCAR file missing | test/Ov0/None/Ag/M/bader
+
+Missing output file: test/Ov0/None/Ag/M/bader/print_out
+=====================================================
+Convergence not reached | test/Ov0/None/Ag/M/ads
 
  total        electrons  0.999709939415049     
  total        electrons  0.999709939415049     

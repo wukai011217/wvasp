@@ -11,11 +11,11 @@ cdj() {
 if ! declare -p SCRIPT_DIR &>/dev/null; then
     readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 fi
+
 # 定义项目相关目录
 declare -A PATHS=(
     ["pot_dir"]="${SCRIPT_DIR}/doc/pot"     # POTCAR 文件目录
     ["data_dir"]="${SCRIPT_DIR}/data"       # 数据文件目录
-    ["result_dir"]="${SCRIPT_DIR}/result"   # 结果文件目录
     ["log_dir"]="${SCRIPT_DIR}/log"         # 日志文件目录
     ["script_dir"]="${SCRIPT_DIR}/main"     # 脚本目录
     ["func_dir"]="${SCRIPT_DIR}/function"   # 函数目录
