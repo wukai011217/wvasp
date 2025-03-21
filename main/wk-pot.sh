@@ -1,48 +1,43 @@
 #!/bin/bash
 #==============================================================================
-#
-#    wk-pot - Generate VASP POTCAR files from POSCAR elements
-#
-#    Author:  Wu Kai
-#    Created: 2024-10-23
-#    Updated: 2025-02-24
-#    Version: 1.0.0
-#
+# 脚本信息
+#==============================================================================
+# 名称: wk-pot
+# 描述: 生成 VASP POTCAR 文件
+# 用法: wk-pot [OPTIONS] -to <directory>
+# 作者: wukai
+# 版本: 1.0.0
+# 日期: 2024-10-23
+
+#==============================================================================
+# 初始化
 #==============================================================================
 
-#==============================================================================
-# Global Settings
-#==============================================================================
+# 错误处理
+set -e  # 遇到错误立即退出
+set -u  # 使用未定义变量时报错
 
-# Exit on error, undefined var
-set -e
-set -u
-
-# Version information
-VERSION="1.0.0"
-
-# Load shared functions
+# 加载外部依赖
 . functions
 
-#==============================================================================
-# Global Variables
-#==============================================================================
+# 版本信息
+VERSION="1.0.0"
 
-# Reset statistics
+# 重置统计信息
 reset_stats
 
-# Configuration options
+# 默认配置
 declare -A CONFIG=(
-    # Core settings
-    [command]="0"                      # Operation command
-    [to_dir]="$(pwd)"                  # Target directory
-    [match]=""                         # Match pattern
-    [source_file]="$(basename "$0")"   # Script name
-
-    # Runtime modes
-    [dry_run]=false                    # Preview mode
-    [verbose]=false                    # Verbose output
-    [backup]=true                      # Backup mode
+    # 基本配置
+    [command]="0"                      # 命令
+    [to_dir]="$(pwd)"                  # 目标目录
+    [match]=""                         # 匹配模式
+    [source_file]="$(basename "$0")"   # 脚本文件
+    
+    # 运行模式
+    [dry_run]=false                    # 模拟运行模式
+    [verbose]=false                    # 详细输出模式
+    [backup]=true                      # 备份模式
 )
 
 
@@ -50,17 +45,14 @@ declare -A CONFIG=(
 # Function Definitions
 #==============================================================================
 
-#------------------------------------------------------------------------------
-# show_help
-#
-# Display help information for this script
-#
-# Arguments:
-#     None
-#
-# Returns:
-#     0 on success
-#------------------------------------------------------------------------------
+#==============================================================================
+# 函数定义
+#==============================================================================
+
+# 函数: show_help
+# 描述: 显示脚本的帮助信息
+# 参数: 无
+# 返回: 0=成功
 show_help() {
     cat << EOF
 ================================================================================
@@ -152,18 +144,11 @@ EOF
 
 
 
-#------------------------------------------------------------------------------
-# parse_arguments
-#
-# Parse command line arguments and set configuration
-#
-# Arguments:
-#     Command line arguments ($@)
-#
-# Returns:
-#     0 on success
-#     1 on failure
-#------------------------------------------------------------------------------
+# 函数: parse_arguments
+# 描述: 解析命令行参数并设置配置
+# 参数:
+#   $@ - 命令行参数
+# 返回: 0=成功, 1=失败
 parse_arguments() {
     while [[ $# -gt 0 ]]; do
         case "$1" in
@@ -227,13 +212,11 @@ parse_arguments() {
             # 常规选项
             -h|--help)
                 show_help
-                shift 1
-                return 0
+                exit 0
                 ;;
             --version)
                 echo "${CONFIG[source_file]} : version $VERSION"
-                shift 1
-                return 0
+                exit 0
                 ;;
             --)
                 shift
@@ -363,18 +346,14 @@ create_potcar() {
 
 
 
-#------------------------------------------------------------------------------
-# main
-#
-# Main script function, process command line arguments and execute operations
-#
-# Arguments:
-#     None
-#
-# Returns:
-#     0 on success
-#     1 on error
-#------------------------------------------------------------------------------
+#==============================================================================
+# 程序入口
+#==============================================================================
+
+# 函数: main
+# 描述: 主程序入口
+# 参数: 无
+# 返回: 0=成功
 main() {
     local command="${CONFIG[command]}"
     local start_time=$(date +%s)

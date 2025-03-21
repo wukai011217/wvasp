@@ -29,7 +29,7 @@ declare -A CONFIG=(
     [file]="POSCAR"                    # 输入文件
     [command]="0"                      # 命令
     [to_dir]="$(pwd)"                  # 目标目录
-    [match]=""                         # 匹配模式
+    [match]=""                         # 匹配字符
     [source_file]="$(basename "$0")"   # 脚本文件
     
     # 运行模式
@@ -41,6 +41,9 @@ declare -A CONFIG=(
 # 重置统计信息
 reset_stats
 
+#==============================================================================
+# 函数定义
+#==============================================================================
 
 # 函数: show_help
 # 描述: 显示脚本的帮助信息
@@ -114,16 +117,16 @@ Examples:
        $(basename "$0") -f POSCAR -to /path/to/M -c 0 -m "Fe_*" 
 
     1. Process M to M-H:
-       $(basename "$0") -to /path/to/M -c 1 -m "M-H/ads"
+       $(basename "$0") -to /path/to/M -c 1 -m "M/ads"
 
     2. process ads to bader:
-       $(basename "$0") -to /path/to/ads  -c 2 -m "M-H/ads" 
+       $(basename "$0") -to /path/to/ads  -c 2 -m "M/ads" 
 
     3. Process M to M-2H:
-       $(basename "$0") -to /path/to/M -c 3 -m "M-H/ads"
+       $(basename "$0") -to /path/to/M -c 3 -m "M/ads"
 
     4. Process FFF Format:
-       $(basename "$0") -to /path/to/fff -c 4 -m "M-H/ads"
+       $(basename "$0") -to /path/to/fff -c 4 -m "M/ads"
 
 Best Practices:
     • Always use --dry-run first to preview changes
@@ -132,10 +135,6 @@ Best Practices:
     • Verify input files before processing
 EOF
 }
-
-#==============================================================================
-# 函数定义
-#==============================================================================
 
 # 函数: parse_arguments
 # 描述: 解析命令行参数并设置配置
@@ -208,13 +207,11 @@ parse_arguments() {
                 ;;
             -h|--help)
                 show_help
-                shift 1 
-                return 0
+                exit 0
                 ;;
             --version)
                 echo "${CONFIG[source_file]} : version $VERSION"
-                shift 1 
-                return 0
+                exit 0
                 ;;
             --)
                 shift
@@ -224,7 +221,7 @@ parse_arguments() {
                 if [[ "$1" == -* ]]; then
                     logging 2 "${CONFIG[source_file]}: Invalid option: $1"
                     show_help
-                    return 1
+                    return 1 # wukai_test
                 fi
                 break
                 ;;
@@ -347,7 +344,7 @@ process_m_to_mh() {
     fi
 
     # 创建 M-H 目录
-    local mh_dir="$target_dir/../../M-H/ads"
+    local mh_dir="$target_dir/../../M-H/ads" #wukai
     if [[ "${CONFIG[dry_run]}" == true ]]; then
         logging 1 "[DRY RUN] Would create directory: $mh_dir"
         return 0
@@ -536,7 +533,9 @@ process_m_to_m2h() {
         update_stats "failed"
         return 0
     fi
-    
+
+    rm "$target_file.temp"
+
     # 更新统计信息
     update_stats "processed"
     logging 1 "Successfully processed: $target_file"
@@ -711,7 +710,7 @@ process_FFF() {
     
     # 转换 T/F 标志
     local temp_file="$target_dir/POSCAR.tmp"
-    if ! awk 'NR>=10 {if ($3 < 0.2) gsub("T", "F")}1' "$poscar_file" > "$temp_file" 2>> "${PATHS[log_dir]}/logs"; then
+    if ! awk 'NR>=10 {if ($3 < 0.2) gsub("T", "F")}1' "$poscar_file" > "$temp_file" 2>> "${PATHS[log_dir]}/logs"; then #wukai 使用变量替换z轴
         logging 2 "Failed to process POSCAR in $target_dir"
         update_stats "failed"
         rm -f "$temp_file"
@@ -784,13 +783,13 @@ main() {
             local description="${cmd_info[0]}"
             local processor="${cmd_info[1]}"
             logging 1 "Processing: $description"
-            echo "${CONFIG[source_file]} : Processing: $description"
+            echo "${CONFIG[source_file]} Processing: $description"
             echo "$target_dir"
             while IFS= read -r dir; do
                 # 检查目录是否有子目录
                 if [ ! -z "$(find "$dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null)" ]; then
                     continue
-                fi
+                fi #wukai
                 
                 $processor "$dir" || {
                     local exit_code=$?
@@ -818,10 +817,10 @@ main() {
 initialize || { logging 2 "${CONFIG[source_file]} : Failed to initialize script"; exit 1; }
 
 # 解析命令行参数
-parse_arguments "$@"
+parse_arguments "$@" || { logging 2 "${CONFIG[source_file]} : Failed to parse arguments"; exit 1; }
 
 # 记录运行环境
 log_environment
 
 # 执行主程序
-main
+main || { logging 2 "${CONFIG[source_file]} : Failed to execute main function"; exit 1; }

@@ -6682,3 +6682,1780 @@ cp: cannot stat '/home/wk/auto/test/Ov0/None/Ag/M/ads/KPOINTS': No such file or 
 [2025-02-26 22:34:38] [INFO]   Successfully processed:    0
 [2025-02-26 22:34:38] [INFO]   Failed operations:         0
 [2025-02-26 22:34:38] [INFO]   Processing time:          1s
+[2025-02-26 22:36:33] [ERROR] Operation interrupted by signal: SIGTERM
+===============================================================
+2025-03-21 18:24:53
+[2025-03-21 18:24:53] [INFO] Environment:
+[2025-03-21 18:24:53] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:24:53] [INFO]   - Target Directory /home/wk/auto
+[2025-03-21 18:24:53] [INFO]   - Command 0
+[2025-03-21 18:24:53] [INFO]   - Match Pattern 
+[2025-03-21 18:24:53] [INFO]   - Dry Run false
+[2025-03-21 18:24:53] [INFO]   - Backup true
+[2025-03-21 18:24:53] [INFO]   - Verbose false
+[2025-03-21 18:24:53] [INFO] Processing: Element Substitution
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/data
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/log
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Au/M-2H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Au/M-2H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Au/M-2H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Au/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Au/M-H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Au/M-H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Au/M-H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Au/M-H/ads/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Au/M/bader
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Au/M/bader/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Au/M/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Au/M/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Au/M/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Au/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ba/M-2H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ba/M-2H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ba/M-2H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ba/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ba/M-H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ba/M-H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ba/M-H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ba/M-H/ads/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ba/M/bader
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ba/M/bader/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ba/M/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ba/M/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ba/M/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ba/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ag/M-2H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ag/M-2H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ag/M-2H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ag/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ag/M-H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ag/M-H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ag/M-H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ag/M-H/ads/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ag/M/bader
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ag/M/bader/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ag/M/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ag/M/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ag/M/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ag/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Au/M-2H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Au/M-2H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Au/M-2H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Au/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Au/M-H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Au/M-H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Au/M-H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Au/M-H/ads/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Au/M/bader
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Au/M/bader/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Au/M/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Au/M/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Au/M/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Au/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ba/M-2H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ba/M-2H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ba/M-2H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ba/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ba/M-H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ba/M-H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ba/M-H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ba/M-H/ads/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ba/M/bader
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ba/M/bader/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ba/M/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ba/M/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ba/M/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ba/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ag/M-2H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ag/M-2H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ag/M-2H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ag/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ag/M-H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ag/M-H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ag/M-H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ag/M-H/ads/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ag/M/bader
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ag/M/bader/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ag/M/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ag/M/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ag/M/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ag/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Au/M-2H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Au/M-2H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Au/M-2H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Au/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Au/M-H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Au/M-H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Au/M-H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Au/M-H/ads/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Au/M/bader
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Au/M/bader/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Au/M/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Au/M/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Au/M/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Au/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ba/M-2H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ba/M-2H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ba/M-2H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ba/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ba/M-H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ba/M-H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ba/M-H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ba/M-H/ads/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ba/M/bader
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ba/M/bader/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ba/M/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ba/M/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ba/M/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ba/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ag/M-2H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ag/M-2H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M-2H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ag/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ag/M-H/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ag/M-H/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M-H/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ag/M-H/ads/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ag/M/bader
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/bader/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ag/M/bader/POSCAR
+[2025-03-21 18:24:53] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-21 18:24:53] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR.bak
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:53] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pb_sv_GW
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Th
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Fe_GW
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Si
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Dy
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cd_GW
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tm_3
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ru
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tm
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Al_GW
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Zn_sv_GW
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Na_sv_GW
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Fr_sv
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pu_s
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Fe_sv_GW
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H_AE
+[2025-03-21 18:24:53] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pu
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/S_h
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Yb_3
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tl_d_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pd_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sn_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Er
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pd_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N_h_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cr_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ti_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pb
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Yb_2
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cr_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ge_h
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/F_GW_new
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/V
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ga_d
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Eu_3
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Y_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ni_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pm_3
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/C_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Po_d
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Nd
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/As
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Xe_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/V_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ga_d_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sb_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ir_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Be_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tc_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Zr_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/I
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ru_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sr_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/C_s
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Kr
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ga_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ge_d_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ru_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/S
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/W_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.33
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/C_GW_new
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Xe
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mn_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mg_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/I_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Eu_2
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rb_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/He_AE
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tl_d
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Er_3
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rn_d_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Li_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pr
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ge_d
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ga
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ba_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ne
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tc
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O_h
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H_h_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Os_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Po_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Co_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mn_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Np_s
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mg_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Th_s
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Li_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/V_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rn_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H1.33
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/C_h
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ag_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Nb_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mo_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Zn_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.5
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Au
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/W
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H_h
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mo_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cu_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mg_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N_h
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H_s
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/F
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tb
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Se_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.58
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Dy_3
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Te_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ne_s_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Gd
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Nb_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ag_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Li
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H1.66
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/F_h_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ca_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Si_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Co_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ce_3
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sc_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sm
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cl_h
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cs_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ba_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Al_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Xe_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/At
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mo_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ne_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Y_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pt_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mg_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/B_s
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Bi
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Am
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Au_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/P_h
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rh_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.42
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cf
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cu_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rh_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/K_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ra_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/F_s
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ni
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tc_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ar
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N_s_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ge
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pt_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Te_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Be
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Bi_d
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sn_d_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mn_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ar_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cu
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/At_d_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Fe_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pa_s
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tb_3
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Bi_d_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rh_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/P_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/In_d_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rn
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Np
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Os_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Gd_3
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sc
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/At_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ir
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Hf
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.25
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pt
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/C
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ru_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ag
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Na_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Po_d_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Li_AE_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Kr_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/K_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/As_d
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ca_pv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N_GW_new
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/In_d
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Br
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Re_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sb_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cr_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ni_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ge_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/B_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Li_sv
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O_s_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/He_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/I_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mg
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pa
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tl_sv_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Nd_3
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Bi_GW
+[2025-03-21 18:24:54] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/La_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Po
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Fe
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/As_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cl_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O_GW_new
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pb_d
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/In_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ni_pv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Co_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mg_pv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Co
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O_s
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/F_h
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Zr_sv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rb_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Hf_pv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pr_3
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Hf_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/In
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Yb
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pd
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mn
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ta
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ta_pv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cs_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Os
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ce
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Si_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Nb_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cu_pv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cd
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ho
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tc_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N_s
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sc_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ga_h
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.66
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Re
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/He
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ho_3
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pm
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H1.25
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Re_pv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ta_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sb_d_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ti_sv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ge_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/K_sv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Hg
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/P
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Be_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H1.75
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ce_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rh
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Au_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Eu
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Br_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pb_d_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pt_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ag_pv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/S_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cm
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sr_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Bi_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ac
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Er_2
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sn_d
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/C_h_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H1.5
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rb_sv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ca_sv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/U_s
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Lu_3
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mo
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Hg_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Se_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ga_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ce_h
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/La
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sb
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pd_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/La_s
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Te
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Na_pv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ti
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Co_pv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/As_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cl
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Fe_sv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Br_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O_h_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/U
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/B_h
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cd_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/B
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Al
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mn_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Be_sv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/F_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ti_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sn
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tl
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Se
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.75
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Hf_sv
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Zn
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/V_sv_GW
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sm_3
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cr
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Lu
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Na
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/main
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Au/M-2H/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Au/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Au/M-H/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Au/M-H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Au/M/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Au/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ba/M-2H/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ba/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ba/M-H/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ba/M-H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ba/M/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ba/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ag/M-2H/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ag/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ag/M-H/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ag/M-H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ag/M/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:24:55] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ag/M/ads/POSCAR
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/work
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/function
+[2025-03-21 18:24:55] [INFO] No matching element found in directory: /home/wk/auto/result
+===============================================================
+2025-03-21 18:24:55
+[2025-03-21 18:24:55] [INFO]   Total files processed:     404
+[2025-03-21 18:24:55] [INFO]   Successfully processed:    0
+[2025-03-21 18:24:55] [INFO]   Failed operations:         72
+[2025-03-21 18:24:55] [INFO]   Skipped files:            332
+[2025-03-21 18:24:55] [INFO]   Backups created:          36
+[2025-03-21 18:24:55] [INFO]   Processing time:          2s
+===============================================================
+2025-03-21 18:26:09
+===============================================================
+2025-03-21 18:26:46
+[2025-03-21 18:26:46] [INFO] Environment:
+[2025-03-21 18:26:46] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:26:46] [INFO]   - Target Directory /home/wk/auto
+[2025-03-21 18:26:46] [INFO]   - Command 0
+[2025-03-21 18:26:46] [INFO]   - Match Pattern 
+[2025-03-21 18:26:46] [INFO]   - Dry Run false
+[2025-03-21 18:26:46] [INFO]   - Backup true
+[2025-03-21 18:26:46] [INFO]   - Verbose false
+[2025-03-21 18:26:46] [INFO] Processing: Element Substitution
+[2025-03-21 18:26:46] [INFO] No matching element found in directory: /home/wk/auto/data
+[2025-03-21 18:26:46] [INFO] No matching element found in directory: /home/wk/auto/log
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Au/M-2H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Au/M-2H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Au/M-2H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Au/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Au/M-H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Au/M-H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Au/M-H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Au/M-H/ads/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Au/M/bader
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Au/M/bader/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Au/M/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Au/M/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Au/M/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Au/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ba/M-2H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ba/M-2H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ba/M-2H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ba/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ba/M-H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ba/M-H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ba/M-H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ba/M-H/ads/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ba/M/bader
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ba/M/bader/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ba/M/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ba/M/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ba/M/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ba/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ag/M-2H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ag/M-2H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ag/M-2H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ag/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ag/M-H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ag/M-H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ag/M-H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ag/M-H/ads/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ag/M/bader
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ag/M/bader/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ag/M/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/Fir/Ag/M/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/Fir/Ag/M/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/Fir/Ag/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Au/M-2H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Au/M-2H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Au/M-2H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Au/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Au/M-H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Au/M-H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Au/M-H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Au/M-H/ads/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Au/M/bader
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Au/M/bader/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Au/M/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Au/M/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Au/M/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Au/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ba/M-2H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ba/M-2H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ba/M-2H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ba/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ba/M-H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ba/M-H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ba/M-H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ba/M-H/ads/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ba/M/bader
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ba/M/bader/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ba/M/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ba/M/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ba/M/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ba/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ag/M-2H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ag/M-2H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ag/M-2H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ag/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ag/M-H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ag/M-H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ag/M-H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ag/M-H/ads/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ag/M/bader
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ag/M/bader/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ag/M/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov1/sub/Ag/M/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov1/sub/Ag/M/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov1/sub/Ag/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Au/M-2H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Au/M-2H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Au/M-2H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Au/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Au/M-H/bader/POSCAR
+[2025-03-21 18:26:46] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Au/M-H/ads
+[2025-03-21 18:26:46] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Au/M-H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:46] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Au/M-H/ads/POSCAR
+[2025-03-21 18:26:47] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Au/M/bader
+[2025-03-21 18:26:47] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Au/M/bader/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Au/M/bader/POSCAR
+[2025-03-21 18:26:47] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Au/M/ads
+[2025-03-21 18:26:47] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Au/M/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Au/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ba/M-2H/bader/POSCAR
+[2025-03-21 18:26:47] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ba/M-2H/ads
+[2025-03-21 18:26:47] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ba/M-2H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ba/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ba/M-H/bader/POSCAR
+[2025-03-21 18:26:47] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ba/M-H/ads
+[2025-03-21 18:26:47] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ba/M-H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ba/M-H/ads/POSCAR
+[2025-03-21 18:26:47] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ba/M/bader
+[2025-03-21 18:26:47] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ba/M/bader/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ba/M/bader/POSCAR
+[2025-03-21 18:26:47] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ba/M/ads
+[2025-03-21 18:26:47] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ba/M/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ba/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ag/M-2H/bader/POSCAR
+[2025-03-21 18:26:47] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ag/M-2H/ads
+[2025-03-21 18:26:47] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M-2H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ag/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ag/M-H/bader/POSCAR
+[2025-03-21 18:26:47] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ag/M-H/ads
+[2025-03-21 18:26:47] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M-H/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ag/M-H/ads/POSCAR
+[2025-03-21 18:26:47] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ag/M/bader
+[2025-03-21 18:26:47] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/bader/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ag/M/bader/POSCAR
+[2025-03-21 18:26:47] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-21 18:26:47] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR.bak.1
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:47] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pb_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Th
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Fe_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Si
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Dy
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cd_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tm_3
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ru
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tm
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Al_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Zn_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Na_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Fr_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pu_s
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Fe_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H_AE
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pu
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/S_h
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Yb_3
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tl_d_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pd_pv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sn_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Er
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pd_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N_h_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cr_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ti_pv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pb
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Yb_2
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cr_pv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ge_h
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/F_GW_new
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/V
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ga_d
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Eu_3
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Y_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ni_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pm_3
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/C_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Po_d
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Nd
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/As
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Xe_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/V_pv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ga_d_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sb_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ir_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Be_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tc_pv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Zr_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/I
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ru_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sr_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/C_s
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Kr
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ga_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ge_d_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ru_pv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/S
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/W_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.33
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/C_GW_new
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Xe
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mn_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mg_pv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/I_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Eu_2
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rb_pv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/He_AE
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tl_d
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Er_3
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rn_d_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Li_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pr
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ge_d
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ga
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ba_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ne
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tc
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O_h
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H_h_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Os_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Po_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Co_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mn_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Np_s
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mg_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Th_s
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Li_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/V_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rn_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H1.33
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/C_h
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ag_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Nb_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mo_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Zn_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.5
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Au
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/W
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H_h
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mo_pv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cu_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mg_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N_h
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H_s
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/F
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tb
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Se_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.58
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Dy_3
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Te_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ne_s_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Gd
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Nb_pv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ag_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Li
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H1.66
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/F_h_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ca_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Si_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Co_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ce_3
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sc_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sm
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cl_h
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cs_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ba_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Al_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Xe_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/At
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mo_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ne_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Y_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pt_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mg_sv_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/B_s
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Bi
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Am
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Au_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/P_h
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rh_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.42
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cf
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cu_GW
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rh_pv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/K_pv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ra_sv
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/F_s
+[2025-03-21 18:26:47] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ni
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tc_sv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ar
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N_s_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ge
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pt_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Te_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Be
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Bi_d
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sn_d_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mn_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ar_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cu
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/At_d_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Fe_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pa_s
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tb_3
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Bi_d_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rh_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/P_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/In_d_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rn
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Np
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Os_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Gd_3
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sc
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/At_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ir
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Hf
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.25
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pt
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/C
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ru_sv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ag
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Na_sv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Po_d_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Li_AE_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Kr_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/K_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/As_d
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ca_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N_GW_new
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/In_d
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Br
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Re_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sb_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cr_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ni_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ge_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/B_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Li_sv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O_s_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/He_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/I_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mg
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pa
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tl_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Nd_3
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Bi_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/La_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Po
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Fe
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/As_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cl_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O_GW_new
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pb_d
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/In_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ni_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Co_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mg_pv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Co
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O_s
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/F_h
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Zr_sv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rb_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Hf_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pr_3
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Hf_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/In
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Yb
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pd
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mn
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ta
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ta_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cs_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Os
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ce
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Si_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Nb_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cu_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cd
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ho
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tc_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N_s
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sc_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ga_h
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.66
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Re
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/He
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ho_3
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pm
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H1.25
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Re_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ta_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sb_d_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ti_sv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ge_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/K_sv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Hg
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/P
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Be_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H1.75
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ce_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rh
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Au_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Eu
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Br_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pb_d_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pt_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ag_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/S_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cm
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sr_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Bi_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ac
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Er_2
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sn_d
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/C_h_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H1.5
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Rb_sv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ca_sv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/U_s
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Lu_3
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mo
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Hg_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Se_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ga_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ce_h
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/La
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sb
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Pd_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/La_s
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Te
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Na_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ti
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Co_pv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/As_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cl
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Fe_sv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Br_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/O_h_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/U
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/B_h
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cd_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/B
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Al
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Mn_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Be_sv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/F_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Ti_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sn
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Tl
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Se
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/H.75
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Hf_sv
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Zn
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/V_sv_GW
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Sm_3
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Cr
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Lu
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/N
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/doc/pot/Na
+[2025-03-21 18:26:48] [INFO] No matching element found in directory: /home/wk/auto/main
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:48] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Au/M-2H/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:48] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Au/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:48] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Au/M-H/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:48] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Au/M-H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:48] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Au/M/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:48] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Au/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:48] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ba/M-2H/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:49] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ba/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:49] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ba/M-H/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:49] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ba/M-H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:49] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ba/M/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:49] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ba/M/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:49] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ag/M-2H/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:49] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ag/M-2H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:49] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ag/M-H/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:49] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ag/M-H/ads/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:49] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ag/M/bader/POSCAR
+cp: cannot stat 'POSCAR': No such file or directory
+[2025-03-21 18:26:49] [ERROR] wk-pos.sh: Failed to copy file to /home/wk/auto/con/Ag/M/ads/POSCAR
+[2025-03-21 18:26:49] [INFO] No matching element found in directory: /home/wk/auto/work
+[2025-03-21 18:26:49] [INFO] No matching element found in directory: /home/wk/auto/function
+[2025-03-21 18:26:49] [INFO] No matching element found in directory: /home/wk/auto/result
+===============================================================
+2025-03-21 18:26:49
+[2025-03-21 18:26:49] [INFO]   Total files processed:     404
+[2025-03-21 18:26:49] [INFO]   Successfully processed:    0
+[2025-03-21 18:26:49] [INFO]   Failed operations:         72
+[2025-03-21 18:26:49] [INFO]   Skipped files:            332
+[2025-03-21 18:26:49] [INFO]   Backups created:          36
+[2025-03-21 18:26:49] [INFO]   Processing time:          3s
+===============================================================
+2025-03-21 18:27:08
+===============================================================
+2025-03-21 18:33:43
+===============================================================
+2025-03-21 18:35:21
+[2025-03-21 18:35:21] [INFO] Input file set to: data/POSCAR_Ov1
+[2025-03-21 18:35:21] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/ads/
+[2025-03-21 18:35:21] [INFO] Command set to: 0
+[2025-03-21 18:35:21] [INFO] Environment:
+[2025-03-21 18:35:21] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:35:21] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/ads/
+[2025-03-21 18:35:21] [INFO]   - Command 0
+[2025-03-21 18:35:21] [INFO]   - Match Pattern 
+[2025-03-21 18:35:21] [INFO]   - Dry Run false
+[2025-03-21 18:35:21] [INFO]   - Backup true
+[2025-03-21 18:35:21] [INFO]   - Verbose false
+[2025-03-21 18:35:21] [INFO] Processing: Element Substitution
+===============================================================
+2025-03-21 18:35:21
+[2025-03-21 18:35:21] [INFO]   Total files processed:     0
+[2025-03-21 18:35:21] [INFO]   Successfully processed:    0
+[2025-03-21 18:35:21] [INFO]   Failed operations:         0
+[2025-03-21 18:35:21] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 18:36:46
+[2025-03-21 18:36:46] [INFO] Input file set to: data/POSCAR_Ov1
+[2025-03-21 18:36:46] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:36:46] [INFO] Command set to: 0
+[2025-03-21 18:36:46] [INFO] Environment:
+[2025-03-21 18:36:46] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:36:46] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:36:46] [INFO]   - Command 0
+[2025-03-21 18:36:46] [INFO]   - Match Pattern 
+[2025-03-21 18:36:46] [INFO]   - Dry Run false
+[2025-03-21 18:36:46] [INFO]   - Backup true
+[2025-03-21 18:36:46] [INFO]   - Verbose false
+[2025-03-21 18:36:46] [INFO] Processing: Element Substitution
+[2025-03-21 18:36:46] [INFO] Successfully processed: /home/wk/auto/test/Ov0/None/Ag/M/bader/POSCAR
+[2025-03-21 18:36:46] [INFO] Successfully processed: /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR
+===============================================================
+2025-03-21 18:36:46
+[2025-03-21 18:36:46] [INFO]   Total files processed:     2
+[2025-03-21 18:36:46] [INFO]   Successfully processed:    2
+[2025-03-21 18:36:46] [INFO]   Failed operations:         0
+[2025-03-21 18:36:46] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 18:37:10
+[2025-03-21 18:37:10] [INFO] Input file set to: data/POSCAR_Ov1
+[2025-03-21 18:37:10] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-21 18:37:10] [INFO] Command set to: 0
+[2025-03-21 18:37:10] [INFO] Environment:
+[2025-03-21 18:37:10] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:37:10] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-21 18:37:10] [INFO]   - Command 0
+[2025-03-21 18:37:10] [INFO]   - Match Pattern 
+[2025-03-21 18:37:10] [INFO]   - Dry Run false
+[2025-03-21 18:37:10] [INFO]   - Backup true
+[2025-03-21 18:37:10] [INFO]   - Verbose false
+[2025-03-21 18:37:10] [INFO] Processing: Element Substitution
+===============================================================
+2025-03-21 18:37:10
+[2025-03-21 18:37:10] [INFO]   Total files processed:     0
+[2025-03-21 18:37:10] [INFO]   Successfully processed:    0
+[2025-03-21 18:37:10] [INFO]   Failed operations:         0
+[2025-03-21 18:37:10] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 18:37:42
+[2025-03-21 18:37:42] [INFO] Input file set to: data/POSCAR_Ov1
+[2025-03-21 18:37:42] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:37:42] [INFO] Command set to: 0
+[2025-03-21 18:37:42] [INFO] Environment:
+[2025-03-21 18:37:42] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:37:42] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:37:42] [INFO]   - Command 0
+[2025-03-21 18:37:42] [INFO]   - Match Pattern 
+[2025-03-21 18:37:42] [INFO]   - Dry Run false
+[2025-03-21 18:37:42] [INFO]   - Backup true
+[2025-03-21 18:37:42] [INFO]   - Verbose false
+[2025-03-21 18:37:42] [INFO] Processing: Element Substitution
+[2025-03-21 18:37:42] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ag/M/bader
+[2025-03-21 18:37:42] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/bader/POSCAR.bak
+[2025-03-21 18:37:42] [INFO] Successfully processed: /home/wk/auto/test/Ov0/None/Ag/M/bader/POSCAR
+[2025-03-21 18:37:42] [INFO] Successfully processed: /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR
+===============================================================
+2025-03-21 18:37:42
+[2025-03-21 18:37:42] [INFO]   Total files processed:     2
+[2025-03-21 18:37:42] [INFO]   Successfully processed:    2
+[2025-03-21 18:37:42] [INFO]   Failed operations:         0
+[2025-03-21 18:37:42] [INFO]   Backups created:          1
+[2025-03-21 18:37:42] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 18:39:47
+[2025-03-21 18:39:47] [INFO] Input file set to: data/POSCAR_Ov1
+[2025-03-21 18:39:47] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:39:47] [INFO] Command set to: 0
+[2025-03-21 18:39:47] [INFO] Match pattern set to: ads
+[2025-03-21 18:39:47] [INFO] Environment:
+[2025-03-21 18:39:47] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:39:47] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:39:47] [INFO]   - Command 0
+[2025-03-21 18:39:47] [INFO]   - Match Pattern ads
+[2025-03-21 18:39:47] [INFO]   - Dry Run false
+[2025-03-21 18:39:47] [INFO]   - Backup true
+[2025-03-21 18:39:47] [INFO]   - Verbose false
+[2025-03-21 18:39:47] [INFO] Processing: Element Substitution
+[2025-03-21 18:39:47] [INFO] Directory does not match pattern: /home/wk/auto/test/Ov0/None/Ag/M/bader
+[2025-03-21 18:39:47] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-21 18:39:47] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR.bak
+[2025-03-21 18:39:47] [INFO] Successfully processed: /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR
+===============================================================
+2025-03-21 18:39:47
+[2025-03-21 18:39:47] [INFO]   Total files processed:     1
+[2025-03-21 18:39:47] [INFO]   Successfully processed:    1
+[2025-03-21 18:39:47] [INFO]   Failed operations:         0
+[2025-03-21 18:39:47] [INFO]   Skipped files:            1
+[2025-03-21 18:39:47] [INFO]   Backups created:          1
+[2025-03-21 18:39:47] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 18:41:41
+[2025-03-21 18:41:41] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:41:41] [INFO] Command set to: 1
+[2025-03-21 18:41:41] [INFO] Match pattern set to: M-H/ads
+[2025-03-21 18:41:41] [INFO] Environment:
+[2025-03-21 18:41:41] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:41:41] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:41:41] [INFO]   - Command 1
+[2025-03-21 18:41:41] [INFO]   - Match Pattern M-H/ads
+[2025-03-21 18:41:41] [INFO]   - Dry Run false
+[2025-03-21 18:41:41] [INFO]   - Backup true
+[2025-03-21 18:41:41] [INFO]   - Verbose false
+[2025-03-21 18:41:41] [INFO] Processing: M to M-H Conversion
+[2025-03-21 18:41:41] [INFO] Directory does not match pattern: /home/wk/auto/test/Ov0/None/Ag/M/bader
+[2025-03-21 18:41:41] [INFO] Directory does not match pattern: /home/wk/auto/test/Ov0/None/Ag/M/ads
+===============================================================
+2025-03-21 18:41:41
+[2025-03-21 18:41:41] [INFO]   Total files processed:     0
+[2025-03-21 18:41:41] [INFO]   Successfully processed:    0
+[2025-03-21 18:41:41] [INFO]   Failed operations:         0
+[2025-03-21 18:41:41] [INFO]   Skipped files:            2
+[2025-03-21 18:41:41] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 18:46:09
+[2025-03-21 18:46:09] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:46:09] [INFO] Command set to: 1
+[2025-03-21 18:46:09] [INFO] Environment:
+[2025-03-21 18:46:09] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:46:09] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:46:09] [INFO]   - Command 1
+[2025-03-21 18:46:09] [INFO]   - Match Pattern 
+[2025-03-21 18:46:09] [INFO]   - Dry Run false
+[2025-03-21 18:46:09] [INFO]   - Backup true
+[2025-03-21 18:46:09] [INFO]   - Verbose false
+[2025-03-21 18:46:09] [INFO] Processing: M to M-H Conversion
+[2025-03-21 18:46:09] [INFO] Not a M directory: /home/wk/auto/test/Ov0/None/Ag/M/bader
+[2025-03-21 18:46:09] [ERROR] File does not exist: /home/wk/auto/test/Ov0/None/Ag/M/ads/CONTCAR
+[2025-03-21 18:46:09] [ERROR] File does not exist: /home/wk/auto/test/Ov0/None/Ag/M/ads/CONTCAR
+[2025-03-21 18:46:09] [ERROR] POSCAR file is too short: /home/wk/auto/test/Ov0/None/Ag/M/ads/CONTCAR
+cp: cannot stat '/home/wk/auto/test/Ov0/None/Ag/M/ads/CONTCAR': No such file or directory
+[2025-03-21 18:46:09] [ERROR] wk-pos.sh: Failed to copy CONTCAR to /home/wk/auto/test/Ov0/None/Ag/M/ads/../../M-H/ads/POSCAR
+===============================================================
+2025-03-21 18:46:09
+[2025-03-21 18:46:09] [INFO]   Total files processed:     1
+[2025-03-21 18:46:09] [INFO]   Successfully processed:    0
+[2025-03-21 18:46:09] [INFO]   Failed operations:         1
+[2025-03-21 18:46:09] [INFO]   Skipped files:            1
+[2025-03-21 18:46:09] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 18:47:13
+[2025-03-21 18:47:13] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:47:13] [INFO] Command set to: 1
+[2025-03-21 18:47:13] [INFO] Environment:
+[2025-03-21 18:47:13] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:47:13] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:47:13] [INFO]   - Command 1
+[2025-03-21 18:47:13] [INFO]   - Match Pattern 
+[2025-03-21 18:47:13] [INFO]   - Dry Run false
+[2025-03-21 18:47:13] [INFO]   - Backup true
+[2025-03-21 18:47:13] [INFO]   - Verbose false
+[2025-03-21 18:47:13] [INFO] Processing: M to M-H Conversion
+[2025-03-21 18:47:13] [INFO] Not a M directory: /home/wk/auto/test/Ov0/None/Ag/M/bader
+dos2unix: converting file /home/wk/auto/test/Ov0/None/Ag/M/ads/CONTCAR to Unix format...
+[2025-03-21 18:47:13] [INFO] Successfully processed: /home/wk/auto/test/Ov0/None/Ag/M/ads/../../M-H/ads/POSCAR
+===============================================================
+2025-03-21 18:47:13
+[2025-03-21 18:47:13] [INFO]   Total files processed:     1
+[2025-03-21 18:47:13] [INFO]   Successfully processed:    1
+[2025-03-21 18:47:13] [INFO]   Failed operations:         0
+[2025-03-21 18:47:13] [INFO]   Skipped files:            1
+[2025-03-21 18:47:13] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 18:49:38
+[2025-03-21 18:49:38] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:49:38] [INFO] Command set to: 2
+[2025-03-21 18:49:38] [INFO] Environment:
+[2025-03-21 18:49:38] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:49:38] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:49:38] [INFO]   - Command 2
+[2025-03-21 18:49:38] [INFO]   - Match Pattern 
+[2025-03-21 18:49:38] [INFO]   - Dry Run false
+[2025-03-21 18:49:38] [INFO]   - Backup true
+[2025-03-21 18:49:38] [INFO]   - Verbose false
+[2025-03-21 18:49:38] [INFO] Processing: Bader Analysis Preparation
+[2025-03-21 18:49:38] [INFO] Not an ads directory: /home/wk/auto/test/Ov0/None/Ag/M/bader
+[2025-03-21 18:49:38] [ERROR] File does not exist: /home/wk/auto/test/Ov0/None/Ag/M/ads/POTCAR
+[2025-03-21 18:49:38] [ERROR] File does not exist: /home/wk/auto/test/Ov0/None/Ag/M/ads/KPOINTS
+[2025-03-21 18:49:38] [ERROR] File does not exist: /home/wk/auto/test/Ov0/None/Ag/M/ads/vasp.sbatch
+[2025-03-21 18:49:38] [INFO] Warning: Files already exist in /home/wk/auto/test/Ov0/None/Ag/M/ads/../bader
+[2025-03-21 18:49:38] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/ads/../bader/POSCAR.bak.1
+cp: cannot stat '/home/wk/auto/test/Ov0/None/Ag/M/ads/POTCAR': No such file or directory
+[2025-03-21 18:49:38] [ERROR] Failed to copy POTCAR to /home/wk/auto/test/Ov0/None/Ag/M/ads/../bader/POTCAR
+===============================================================
+2025-03-21 18:49:38
+[2025-03-21 18:49:38] [INFO]   Total files processed:     1
+[2025-03-21 18:49:38] [INFO]   Successfully processed:    0
+[2025-03-21 18:49:38] [INFO]   Failed operations:         1
+[2025-03-21 18:49:38] [INFO]   Skipped files:            1
+[2025-03-21 18:49:38] [INFO]   Backups created:          1
+[2025-03-21 18:49:38] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 18:50:13
+[2025-03-21 18:50:13] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:50:13] [INFO] Command set to: 3
+[2025-03-21 18:50:13] [INFO] Environment:
+[2025-03-21 18:50:13] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:50:13] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:50:13] [INFO]   - Command 3
+[2025-03-21 18:50:13] [INFO]   - Match Pattern 
+[2025-03-21 18:50:13] [INFO]   - Dry Run false
+[2025-03-21 18:50:13] [INFO]   - Backup true
+[2025-03-21 18:50:13] [INFO]   - Verbose false
+[2025-03-21 18:50:13] [INFO] Processing: M to M-2H Conversion
+[2025-03-21 18:50:13] [INFO] Not a M/ads directory: /home/wk/auto/test/Ov0/None/Ag/M/bader
+[2025-03-21 18:50:14] [INFO] Successfully processed: /home/wk/auto/test/Ov0/None/Ag/M/ads/../../M-2H/ads/POSCAR
+===============================================================
+2025-03-21 18:50:14
+[2025-03-21 18:50:14] [INFO]   Total files processed:     1
+[2025-03-21 18:50:14] [INFO]   Successfully processed:    1
+[2025-03-21 18:50:14] [INFO]   Failed operations:         0
+[2025-03-21 18:50:14] [INFO]   Skipped files:            1
+[2025-03-21 18:50:14] [INFO]   Processing time:          1s
+===============================================================
+2025-03-21 18:50:39
+[2025-03-21 18:50:39] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:50:39] [INFO] Command set to: 3
+[2025-03-21 18:50:39] [INFO] Environment:
+[2025-03-21 18:50:39] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:50:39] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:50:39] [INFO]   - Command 3
+[2025-03-21 18:50:39] [INFO]   - Match Pattern 
+[2025-03-21 18:50:39] [INFO]   - Dry Run false
+[2025-03-21 18:50:39] [INFO]   - Backup true
+[2025-03-21 18:50:39] [INFO]   - Verbose false
+[2025-03-21 18:50:39] [INFO] Processing: M to M-2H Conversion
+[2025-03-21 18:50:39] [INFO] Not a M/ads directory: /home/wk/auto/test/Ov0/None/Ag/M/bader
+[2025-03-21 18:50:39] [INFO] Successfully processed: /home/wk/auto/test/Ov0/None/Ag/M/ads/../../M-2H/ads/POSCAR
+===============================================================
+2025-03-21 18:50:39
+[2025-03-21 18:50:39] [INFO]   Total files processed:     1
+[2025-03-21 18:50:39] [INFO]   Successfully processed:    1
+[2025-03-21 18:50:39] [INFO]   Failed operations:         0
+[2025-03-21 18:50:39] [INFO]   Skipped files:            1
+[2025-03-21 18:50:39] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 18:53:24
+[2025-03-21 18:53:24] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:53:24] [INFO] Command set to: 3
+[2025-03-21 18:53:24] [INFO] Environment:
+[2025-03-21 18:53:24] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:53:24] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:53:24] [INFO]   - Command 3
+[2025-03-21 18:53:24] [INFO]   - Match Pattern 
+[2025-03-21 18:53:24] [INFO]   - Dry Run false
+[2025-03-21 18:53:24] [INFO]   - Backup true
+[2025-03-21 18:53:24] [INFO]   - Verbose false
+[2025-03-21 18:53:24] [INFO] Processing: M to M-2H Conversion
+[2025-03-21 18:53:24] [INFO] Not a M/ads directory: /home/wk/auto/test/Ov0/None/Ag/M/bader
+[2025-03-21 18:53:25] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ag/M/ads/../../M-2H/ads
+[2025-03-21 18:53:25] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/ads/../../M-2H/ads/POSCAR.bak
+[2025-03-21 18:53:25] [INFO] Successfully processed: /home/wk/auto/test/Ov0/None/Ag/M/ads/../../M-2H/ads/POSCAR
+===============================================================
+2025-03-21 18:53:25
+[2025-03-21 18:53:25] [INFO]   Total files processed:     1
+[2025-03-21 18:53:25] [INFO]   Successfully processed:    1
+[2025-03-21 18:53:25] [INFO]   Failed operations:         0
+[2025-03-21 18:53:25] [INFO]   Skipped files:            1
+[2025-03-21 18:53:25] [INFO]   Backups created:          1
+[2025-03-21 18:53:25] [INFO]   Processing time:          1s
+===============================================================
+2025-03-21 18:56:32
+[2025-03-21 18:56:32] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:56:32] [INFO] Command set to: 4
+[2025-03-21 18:56:32] [INFO] Environment:
+[2025-03-21 18:56:32] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:56:32] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:56:32] [INFO]   - Command 4
+[2025-03-21 18:56:32] [INFO]   - Match Pattern 
+[2025-03-21 18:56:32] [INFO]   - Dry Run false
+[2025-03-21 18:56:32] [INFO]   - Backup true
+[2025-03-21 18:56:32] [INFO]   - Verbose false
+[2025-03-21 18:56:32] [INFO] Processing: FFF Mode Conversion
+[2025-03-21 18:56:33] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/bader/POSCAR.bak.2
+[2025-03-21 18:56:33] [INFO] Successfully processed FFF mode in /home/wk/auto/test/Ov0/None/Ag/M/bader
+[2025-03-21 18:56:33] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR.bak.1
+[2025-03-21 18:56:33] [INFO] Successfully processed FFF mode in /home/wk/auto/test/Ov0/None/Ag/M/ads
+===============================================================
+2025-03-21 18:56:33
+[2025-03-21 18:56:33] [INFO]   Total files processed:     2
+[2025-03-21 18:56:33] [INFO]   Successfully processed:    2
+[2025-03-21 18:56:33] [INFO]   Failed operations:         0
+[2025-03-21 18:56:33] [INFO]   Backups created:          2
+[2025-03-21 18:56:33] [INFO]   Processing time:          1s
+===============================================================
+2025-03-21 18:56:52
+[2025-03-21 18:56:52] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:56:52] [INFO] Command set to: 4
+[2025-03-21 18:56:52] [INFO] Environment:
+[2025-03-21 18:56:52] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 18:56:52] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 18:56:52] [INFO]   - Command 4
+[2025-03-21 18:56:52] [INFO]   - Match Pattern 
+[2025-03-21 18:56:52] [INFO]   - Dry Run false
+[2025-03-21 18:56:52] [INFO]   - Backup true
+[2025-03-21 18:56:52] [INFO]   - Verbose false
+[2025-03-21 18:56:52] [INFO] Processing: FFF Mode Conversion
+[2025-03-21 18:56:52] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/bader/POSCAR.bak.3
+[2025-03-21 18:56:52] [INFO] Successfully processed FFF mode in /home/wk/auto/test/Ov0/None/Ag/M/bader
+[2025-03-21 18:56:52] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR.bak.2
+[2025-03-21 18:56:52] [INFO] Successfully processed FFF mode in /home/wk/auto/test/Ov0/None/Ag/M/ads
+===============================================================
+2025-03-21 18:56:52
+[2025-03-21 18:56:52] [INFO]   Total files processed:     2
+[2025-03-21 18:56:52] [INFO]   Successfully processed:    2
+[2025-03-21 18:56:52] [INFO]   Failed operations:         0
+[2025-03-21 18:56:52] [INFO]   Backups created:          2
+[2025-03-21 18:56:52] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 19:02:36
+===============================================================
+2025-03-21 19:09:24
+===============================================================
+2025-03-21 19:10:56
+[2025-03-21 19:10:56] [INFO] Target file set to: POSCAR
+[2025-03-21 19:10:56] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:10:56] [INFO] Match pattern set to: M/ads
+[2025-03-21 19:10:56] [INFO] Command set to: 0
+[2025-03-21 19:10:56] [INFO] Regex mode enabled
+[2025-03-21 19:10:56] [INFO] Environment:
+===============================================================
+2025-03-21 19:13:35
+[2025-03-21 19:13:35] [INFO] Target file set to: POSCAR
+[2025-03-21 19:13:35] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:13:35] [INFO] Match pattern set to: M/ads
+[2025-03-21 19:13:35] [INFO] Command set to: 0
+[2025-03-21 19:13:35] [INFO] Regex mode enabled
+[2025-03-21 19:13:35] [INFO] Environment:
+===============================================================
+2025-03-21 19:14:34
+[2025-03-21 19:14:34] [INFO] Target file set to: POSCAR
+[2025-03-21 19:14:34] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:14:34] [INFO] Match pattern set to: M/ads
+[2025-03-21 19:14:34] [INFO] Command set to: 0
+[2025-03-21 19:14:34] [INFO] Regex mode enabled
+[2025-03-21 19:14:34] [INFO] Environment:
+[2025-03-21 19:14:34] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 19:14:34] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:14:34] [INFO]   - Command 0
+[2025-03-21 19:14:34] [INFO]   - Match Pattern M/ads
+[2025-03-21 19:14:34] [INFO]   - Dry Run false
+[2025-03-21 19:14:34] [INFO]   - Verbose false
+===============================================================
+2025-03-21 19:14:37
+[2025-03-21 19:14:37] [INFO] Target file set to: POSCAR
+[2025-03-21 19:14:37] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:14:37] [INFO] Match pattern set to: M/ads
+[2025-03-21 19:14:37] [INFO] Command set to: 0
+[2025-03-21 19:14:37] [INFO] Regex mode enabled
+[2025-03-21 19:14:37] [INFO] Environment:
+[2025-03-21 19:14:37] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 19:14:37] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:14:37] [INFO]   - Command 0
+[2025-03-21 19:14:37] [INFO]   - Match Pattern M/ads
+[2025-03-21 19:14:37] [INFO]   - Dry Run false
+[2025-03-21 19:14:37] [INFO]   - Verbose false
+===============================================================
+2025-03-21 19:15:20
+[2025-03-21 19:15:20] [INFO] Target file set to: POSCAR
+[2025-03-21 19:15:20] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:15:20] [INFO] Match pattern set to: M/ads
+[2025-03-21 19:15:20] [INFO] Command set to: 0
+[2025-03-21 19:15:20] [INFO] Regex mode enabled
+[2025-03-21 19:15:20] [INFO] Environment:
+[2025-03-21 19:15:20] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 19:15:20] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:15:20] [INFO]   - Command 0
+[2025-03-21 19:15:20] [INFO]   - Match Pattern M/ads
+[2025-03-21 19:15:20] [INFO]   - Dry Run false
+[2025-03-21 19:15:20] [INFO]   - Verbose false
+[2025-03-21 19:15:20] [INFO] Processing: Delete specific files
+===============================================================
+2025-03-21 19:15:20
+[2025-03-21 19:15:20] [INFO]   Total files processed:     0
+[2025-03-21 19:15:20] [INFO]   Successfully processed:    0
+[2025-03-21 19:15:20] [INFO]   Failed operations:         0
+[2025-03-21 19:15:20] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 19:16:21
+[2025-03-21 19:16:21] [INFO] Target file set to: POSCAR.bak
+[2025-03-21 19:16:21] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:16:21] [INFO] Match pattern set to: M/bader
+[2025-03-21 19:16:21] [INFO] Command set to: 0
+[2025-03-21 19:16:21] [INFO] Environment:
+[2025-03-21 19:16:21] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 19:16:21] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:16:21] [INFO]   - Command 0
+[2025-03-21 19:16:21] [INFO]   - Match Pattern M/bader
+[2025-03-21 19:16:21] [INFO]   - Dry Run false
+[2025-03-21 19:16:21] [INFO]   - Verbose false
+[2025-03-21 19:16:21] [INFO] Processing: Delete specific files
+===============================================================
+2025-03-21 19:16:21
+[2025-03-21 19:16:21] [INFO]   Total files processed:     0
+[2025-03-21 19:16:21] [INFO]   Successfully processed:    0
+[2025-03-21 19:16:21] [INFO]   Failed operations:         0
+[2025-03-21 19:16:21] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 19:17:30
+[2025-03-21 19:17:30] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:17:30] [INFO] Match pattern set to: M/bader
+[2025-03-21 19:17:30] [INFO] Command set to: 1
+[2025-03-21 19:17:30] [INFO] Environment:
+[2025-03-21 19:17:30] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 19:17:30] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:17:30] [INFO]   - Command 1
+[2025-03-21 19:17:30] [INFO]   - Match Pattern M/bader
+[2025-03-21 19:17:30] [INFO]   - Dry Run false
+[2025-03-21 19:17:30] [INFO]   - Verbose false
+[2025-03-21 19:17:30] [INFO] WARNING: Command 1 will delete ALL files in target directories!
+[2025-03-21 19:17:30] [INFO] Use --dry-run to preview what will be deleted.
+[2025-03-21 19:17:35] [INFO] Processing: Delete all files (DANGEROUS)
+===============================================================
+2025-03-21 19:17:35
+[2025-03-21 19:17:35] [INFO]   Total files processed:     0
+[2025-03-21 19:17:35] [INFO]   Successfully processed:    0
+[2025-03-21 19:17:35] [INFO]   Failed operations:         0
+[2025-03-21 19:17:35] [INFO]   Processing time:          5s
+===============================================================
+2025-03-21 19:18:15
+[2025-03-21 19:18:15] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:18:15] [INFO] Match pattern set to: M/bader
+[2025-03-21 19:18:15] [INFO] Command set to: 1
+[2025-03-21 19:18:15] [INFO] Environment:
+[2025-03-21 19:18:15] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 19:18:15] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:18:15] [INFO]   - Command 1
+[2025-03-21 19:18:15] [INFO]   - Match Pattern M/bader
+[2025-03-21 19:18:15] [INFO]   - Dry Run false
+[2025-03-21 19:18:15] [INFO]   - Verbose false
+[2025-03-21 19:18:20] [INFO] Processing: Delete all files (DANGEROUS)
+===============================================================
+2025-03-21 19:18:20
+[2025-03-21 19:18:20] [INFO]   Total files processed:     0
+[2025-03-21 19:18:20] [INFO]   Successfully processed:    0
+[2025-03-21 19:18:20] [INFO]   Failed operations:         0
+[2025-03-21 19:18:20] [INFO]   Processing time:          5s
+===============================================================
+2025-03-21 19:21:05
+[2025-03-21 19:21:05] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-21 19:21:05] [INFO] Command set to: 1
+[2025-03-21 19:21:05] [INFO] Environment:
+[2025-03-21 19:21:05] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 19:21:05] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-21 19:21:05] [INFO]   - Command 1
+[2025-03-21 19:21:05] [INFO]   - Match Pattern 
+[2025-03-21 19:21:05] [INFO]   - Dry Run false
+[2025-03-21 19:21:05] [INFO]   - Verbose false
+[2025-03-21 19:21:10] [INFO] Processing: Delete all files (DANGEROUS)
+===============================================================
+2025-03-21 19:21:10
+[2025-03-21 19:21:10] [INFO]   Total files processed:     0
+[2025-03-21 19:21:10] [INFO]   Successfully processed:    0
+[2025-03-21 19:21:10] [INFO]   Failed operations:         0
+[2025-03-21 19:21:10] [INFO]   Processing time:          5s
+===============================================================
+2025-03-21 19:33:44
+[2025-03-21 19:33:44] [INFO] Environment:
+[2025-03-21 19:33:44] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 19:33:44] [INFO]   - Target Directory /home/wk/auto
+[2025-03-21 19:33:44] [INFO]   - Command 0
+[2025-03-21 19:33:44] [INFO]   - Match Pattern 
+[2025-03-21 19:33:44] [INFO]   - Dry Run false
+[2025-03-21 19:33:44] [INFO]   - Backup true
+[2025-03-21 19:33:44] [INFO]   - Verbose false
+[2025-03-21 19:33:44] [INFO] Processing: POTCAR Generation
+===============================================================
+2025-03-21 19:33:45
+[2025-03-21 19:33:45] [INFO]   Total files processed:     461
+[2025-03-21 19:33:45] [INFO]   Successfully processed:    2
+[2025-03-21 19:33:45] [INFO]   Failed operations:         0
+[2025-03-21 19:33:45] [INFO]   Skipped files:            459
+[2025-03-21 19:33:45] [INFO]   Processing time:          1s
+===============================================================
+2025-03-21 19:34:59
+[2025-03-21 19:34:59] [INFO] Target directory set to: /home/wk/auto/test
+[2025-03-21 19:34:59] [INFO] Match pattern set to: Ag
+[2025-03-21 19:34:59] [INFO] Environment:
+[2025-03-21 19:34:59] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 19:34:59] [INFO]   - Target Directory /home/wk/auto/test
+[2025-03-21 19:34:59] [INFO]   - Command 0
+[2025-03-21 19:34:59] [INFO]   - Match Pattern Ag
+[2025-03-21 19:34:59] [INFO]   - Dry Run false
+[2025-03-21 19:34:59] [INFO]   - Backup true
+[2025-03-21 19:34:59] [INFO]   - Verbose false
+[2025-03-21 19:34:59] [INFO] Processing: POTCAR Generation
+===============================================================
+2025-03-21 19:34:59
+[2025-03-21 19:34:59] [INFO]   Total files processed:     30
+[2025-03-21 19:34:59] [INFO]   Successfully processed:    0
+[2025-03-21 19:34:59] [INFO]   Failed operations:         0
+[2025-03-21 19:34:59] [INFO]   Skipped files:            95
+[2025-03-21 19:34:59] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 19:47:55
+===============================================================
+2025-03-21 19:48:58
+[2025-03-21 19:48:58] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 19:48:58] [INFO] Target file set to: data/INCAR
+[2025-03-21 19:48:58] [INFO] Command set to: 0
+[2025-03-21 19:48:58] [INFO] Environment:
+[2025-03-21 19:48:58] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 19:48:58] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M
+[2025-03-21 19:48:58] [INFO]   - Command 0
+[2025-03-21 19:48:58] [INFO]   - Match Pattern 
+[2025-03-21 19:48:58] [INFO]   - Dry Run false
+[2025-03-21 19:48:58] [INFO]   - Backup true
+[2025-03-21 19:48:58] [INFO]   - Verbose false
+[2025-03-21 19:48:58] [INFO] Processing: Copy single file to matching directories
+===============================================================
+2025-03-21 19:48:58
+[2025-03-21 19:48:58] [INFO]   Total files processed:     2
+[2025-03-21 19:48:58] [INFO]   Successfully processed:    0
+[2025-03-21 19:48:58] [INFO]   Failed operations:         0
+[2025-03-21 19:48:58] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 19:54:46
+===============================================================
+2025-03-21 19:57:30
+[2025-03-21 19:57:30] [INFO] File to copy set to: INCAR
+[2025-03-21 19:57:30] [INFO] Source directory set to: /home/wk/auto/test/Ov0/None/Ag/
+[2025-03-21 19:57:30] [INFO] Destination directory set to: /home/wk/auto/incar
+[2025-03-21 19:57:30] [INFO] Environment:
+[2025-03-21 19:57:30] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 19:57:30] [INFO]   - Target Directory /home/wk/auto/incar
+[2025-03-21 19:57:30] [INFO]   - Command 0
+[2025-03-21 19:57:30] [INFO]   - Match Pattern 
+[2025-03-21 19:57:30] [INFO]   - Dry Run false
+[2025-03-21 19:57:30] [INFO]   - Backup true
+[2025-03-21 19:57:30] [INFO]   - Verbose false
+[2025-03-21 19:57:30] [ERROR] Directory does not exist: /home/wk/auto/incar
+[2025-03-21 19:57:30] [INFO] Processing: Copy files to matching directories
+[2025-03-21 19:57:30] [INFO] Processing directory: Ag/M-2H/bader
+[2025-03-21 19:57:30] [ERROR] File does not exist: /home/wk/auto/incar/Ag/M-2H/bader/INCAR
+cp: cannot stat '/home/wk/auto/test/Ov0/None/Ag/M-2H/bader/INCAR': No such file or directory
+[2025-03-21 19:57:30] [INFO] Failed to copy INCAR to /home/wk/auto/incar/Ag/M-2H/bader/INCAR
+[2025-03-21 19:57:30] [INFO] Processing directory: Ag/M-2H/ads
+[2025-03-21 19:57:30] [ERROR] File does not exist: /home/wk/auto/incar/Ag/M-2H/ads/INCAR
+cp: cannot stat '/home/wk/auto/test/Ov0/None/Ag/M-2H/ads/INCAR': No such file or directory
+[2025-03-21 19:57:30] [INFO] Failed to copy INCAR to /home/wk/auto/incar/Ag/M-2H/ads/INCAR
+[2025-03-21 19:57:30] [INFO] Processing directory: Ag/M-H/bader
+[2025-03-21 19:57:30] [ERROR] File does not exist: /home/wk/auto/incar/Ag/M-H/bader/INCAR
+cp: cannot stat '/home/wk/auto/test/Ov0/None/Ag/M-H/bader/INCAR': No such file or directory
+[2025-03-21 19:57:30] [INFO] Failed to copy INCAR to /home/wk/auto/incar/Ag/M-H/bader/INCAR
+[2025-03-21 19:57:30] [INFO] Processing directory: Ag/M-H/ads
+[2025-03-21 19:57:30] [ERROR] File does not exist: /home/wk/auto/incar/Ag/M-H/ads/INCAR
+cp: cannot stat '/home/wk/auto/test/Ov0/None/Ag/M-H/ads/INCAR': No such file or directory
+[2025-03-21 19:57:30] [INFO] Failed to copy INCAR to /home/wk/auto/incar/Ag/M-H/ads/INCAR
+[2025-03-21 19:57:30] [INFO] Processing directory: Ag/M/bader
+[2025-03-21 19:57:30] [ERROR] File does not exist: /home/wk/auto/incar/Ag/M/bader/INCAR
+[2025-03-21 19:57:30] [INFO] Successfully copied INCAR to /home/wk/auto/incar/Ag/M/bader/INCAR
+[2025-03-21 19:57:30] [INFO] Processing directory: Ag/M/ads
+[2025-03-21 19:57:30] [ERROR] File does not exist: /home/wk/auto/incar/Ag/M/ads/INCAR
+[2025-03-21 19:57:30] [INFO] Successfully copied INCAR to /home/wk/auto/incar/Ag/M/ads/INCAR
+===============================================================
+2025-03-21 19:57:30
+[2025-03-21 19:57:30] [INFO]   Total files processed:     0
+[2025-03-21 19:57:30] [INFO]   Successfully processed:    0
+[2025-03-21 19:57:30] [INFO]   Failed operations:         0
+[2025-03-21 19:57:30] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 20:00:53
+[2025-03-21 20:00:53] [INFO] TO_DIR set to: test
+[2025-03-21 20:00:53] [INFO] Environment:
+[2025-03-21 20:00:53] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 20:00:53] [INFO]   - Target Directory test
+[2025-03-21 20:00:53] [INFO]   - Command 0
+[2025-03-21 20:00:53] [INFO]   - Match Pattern 
+[2025-03-21 20:00:53] [INFO]   - Dry Run false
+[2025-03-21 20:00:53] [INFO]   - Verbose false
+[2025-03-21 20:00:53] [INFO] Processing: Check calculation status
+===============================================================
+2025-03-21 20:00:53
+[2025-03-21 20:00:53] [INFO]   Total files processed:     54
+[2025-03-21 20:00:53] [INFO]   Successfully processed:    0
+[2025-03-21 20:00:53] [INFO]   Failed operations:         54
+[2025-03-21 20:00:53] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 20:02:06
+[2025-03-21 20:02:06] [INFO] TO_DIR set to: test
+[2025-03-21 20:02:06] [INFO] Environment:
+[2025-03-21 20:02:06] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 20:02:06] [INFO]   - Target Directory test
+[2025-03-21 20:02:06] [INFO]   - Command 0
+[2025-03-21 20:02:06] [INFO]   - Match Pattern 
+[2025-03-21 20:02:06] [INFO]   - Dry Run false
+[2025-03-21 20:02:06] [INFO]   - Verbose false
+[2025-03-21 20:02:06] [INFO] Processing: Check calculation status
+===============================================================
+2025-03-21 20:02:06
+[2025-03-21 20:02:06] [INFO]   Total files processed:     54
+[2025-03-21 20:02:06] [INFO]   Successfully processed:    0
+[2025-03-21 20:02:06] [INFO]   Failed operations:         54
+[2025-03-21 20:02:06] [INFO]   Processing time:          0s
+===============================================================
+2025-03-21 20:02:51
+[2025-03-21 20:02:51] [INFO] TO_DIR set to: test
+[2025-03-21 20:02:51] [INFO] Environment:
+[2025-03-21 20:02:51] [INFO]   - Working Directory /home/wk/auto
+[2025-03-21 20:02:51] [INFO]   - Target Directory test
+[2025-03-21 20:02:51] [INFO]   - Command 0
+[2025-03-21 20:02:51] [INFO]   - Match Pattern 
+[2025-03-21 20:02:51] [INFO]   - Dry Run false
+[2025-03-21 20:02:51] [INFO]   - Verbose false
+[2025-03-21 20:02:51] [INFO] Processing: Check calculation status
+[2025-03-21 20:02:51] [ERROR] Invalid stats key: success
+===============================================================
+2025-03-21 20:02:51
+[2025-03-21 20:02:51] [INFO]   Total files processed:     54
+[2025-03-21 20:02:51] [INFO]   Successfully processed:    0
+[2025-03-21 20:02:51] [INFO]   Failed operations:         53
+[2025-03-21 20:02:51] [INFO]   Processing time:          0s

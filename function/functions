@@ -31,21 +31,34 @@ declare -A STATS=(
     [deleted]=0     # 删除文件数
 )
 
+# 元素列表
+# 按周期表顺序排列，每行12个元素
+declare -a ELEMENTS=(
+    Mg Al Ca Sc Ti V  Cr Mn Fe Co Ni Cu
+    Zn Ga Ge Sr Y  Zr Nb Mo Tc Ru Rh Pd
+    Ag Cd In Sn Sb Ba Ce Hf Ta W  Re Os
+    Ir Pt Au Hg Tl Pb Bi
+)
+
+#==============================================================================
 # 统计信息管理
-#===============================================================================
+#==============================================================================
 
 # 函数: reset_stats
 # 描述: 重置统计信息
+# 参数: 无
+# 返回: 无
 reset_stats() {
     for key in "${!STATS[@]}"; do
         STATS[$key]=0
     done
 }
 
-# 更新统计信息
-# 参数:
-#   $1 - 统计项目名称
+# 函数: update_stats
+# 描述: 更新统计信息
+# 参数: $1 - 统计项目名称
 #   $2 - [可选]增加值，默认1
+# 返回: 0=成功
 update_stats() {
     local key="$1"
     local value="${2:-1}"
@@ -66,11 +79,10 @@ update_stats() {
     return 0
 }
 
-# 显示统计信息
-# 参数:
-#   $1 - 处理时间（秒）
-# 返回:
-#   0 - 成功
+# 函数: show_stats
+# 描述: 显示统计信息
+# 参数: $1 - 处理时间（秒）
+# 返回: 0=成功
 show_stats() {
     local duration="$1"
     
@@ -99,28 +111,13 @@ show_stats() {
     return 0
 }
 
-# 元素管理
-#===============================================================================
-
-# 元素列表
-# 按周期表顺序排列，每行12个元素
-declare -a ELEMENTS=(
-    # 主族元素
-    Mg Al Ca Sc Ti V  Cr Mn Fe Co Ni Cu
-    Zn Ga Ge Sr Y  Zr Nb Mo Tc Ru Rh Pd
-    Ag Cd In Sn Sb Ba Ce Hf Ta W  Re Os
-    Ir Pt Au Hg Tl Pb Bi
-)
-
-
 #==============================================================================
 # 日志和错误处理
 #==============================================================================
 
 # 函数: logging
 # 描述: 记录日志信息
-# 参数:
-#   $1 - 日志级别（0=分隔符，1=信息，2=错误）
+# 参数: $1 - 日志级别（0=分隔符，1=信息，2=错误）
 #   $2 - 日志消息
 # 返回: 0=成功, 1=失败
 logging() {
@@ -157,36 +154,10 @@ logging() {
     return 0
 }
 
-
-# 检查元素是否有效
-# 参数:
-#   $1 - 元素符号
-# 返回:
-#   0 - 元素有效
-#   1 - 元素无效
-is_valid_element() {
-    local element="$1"
-    
-    # 检查输入
-    if [[ -z "$element" ]]; then
-        logging 2 "Empty element symbol"
-        return 1
-    fi
-    
-    # 检查元素是否在列表中
-    for valid_element in "${ELEMENTS[@]}"; do
-        if [[ "$element" == "$valid_element" ]]; then
-            return 0
-        fi
-    done
-    
-    logging 2 "Invalid element: $element"
-    return 0
-}
-
-# 函数：验证POSCAR格式
-# 参数:
-#   $1 - POSCAR文件路径
+# 函数: validate_poscar
+# 描述: 验证POSCAR格式
+# 参数: $1 - POSCAR文件路径
+# 返回: 0=成功
 validate_poscar() {
     local poscar_file="$1"
     
@@ -244,18 +215,17 @@ validate_poscar() {
     
 }
 
+#==============================================================================
 # 文件和目录管理
-#===============================================================================
+#==============================================================================
 
 # 函数: check_path
 # 描述: 检查路径是否存在及其类型
-# 参数:
-#   $1 - 路径
+# 参数: $1 - 路径
 #   $2 - 类型（file 或 directory）
 #   $3 - [可选]检查目录是否为空（仅当 type 为 directory 时有效）
 #   $4 - [可选]检查目录是否匹配模式（仅当 type 为 directory 时有效）
-# 返回:
-#   0 - 成功
+# 返回: 0=成功
 check_path() {
     local path="$1"
     local type="$2"
@@ -314,10 +284,8 @@ check_path() {
 
 # 函数: create_backup
 # 描述: 创建文件备份
-# 参数:
-#   $1 - 要备份的文件路径
-# 返回:
-#   0 - 成功
+# 参数: $1 - 要备份的文件路径
+# 返回: 0=成功
 create_backup() {
     local file="$1"
     
@@ -353,11 +321,9 @@ create_backup() {
 }
 
 # 函数: check_file_format
-# 描述: 检查文件格式是否符合要求
-# 参数:
-#   $1 - 要检查的文件路径
-# 返回:
-#   0 - 成功
+# 描述: 检查文件格式是否符合linux要求
+# 参数: $1 - 要检查的文件路径
+# 返回: 0=成功
 check_file_format() {
     local file="$1"
     
@@ -390,20 +356,21 @@ check_file_format() {
     return 0
 }
 
+#==============================================================================
 # 配置检查和显示
-#===============================================================================
+#==============================================================================
 
-# 检查目标目录并显示配置模式
-# 参数:
-#   无
-# 返回:
-#   0 - 成功
+# 函数: check_config_and_display
+# 描述: 检查目标目录并显示配置模式
+# 参数: 无
+# 返回: 0=成功
 check_config_and_display() {
     local target_dir="${CONFIG[to_dir]}"
     
     # 检查目标目录
     if ! check_path "$target_dir" "directory"; then
         logging 2 "${CONFIG[source_file]} : Target directory $target_dir does not exist"
+        echo "${CONFIG[source_file]} : Target directory $target_dir does not exist"
         return 0
     fi
 
@@ -412,25 +379,23 @@ check_config_and_display() {
         echo  "${CONFIG[source_file]} : Running in DRY RUN mode - no files will be modified"
     fi
     
-    if [[ "${CONFIG[verbose]}" == true ]]; then
+    [[ ${CONFIG[verbose]+x} ]] && [[ "${CONFIG[verbose]}" == true ]] && \
         echo "${CONFIG[source_file]} : Verbose mode enabled"
-    fi
     
-    if [[ "${CONFIG[backup]}" != true ]]; then
+    [[ ${CONFIG[backup]+x} ]] && [[ "${CONFIG[backup]}" != true ]] && \
         echo "${CONFIG[source_file]} : Backup disabled - files will be modified without backup"
-    fi
 
     return 0
 }
 
+#==============================================================================
 # 清理和退出处理
-#===============================================================================
+#==============================================================================
 
-# 清理临时文件并记录结果
-# 参数:
-#   无
-# 返回:
-#   无
+# 函数: cleanup
+# 描述: 清理临时文件并记录结果
+# 参数: 无
+# 返回: 无
 cleanup() {
     local exit_code=$?
     local target_dir="${CONFIG[to_dir]}"
@@ -453,11 +418,10 @@ cleanup() {
     exit $exit_code
 }
 
-# 处理信号中断
-# 参数:
-#   $1 - 信号编号
-# 返回:
-#   无
+# 函数: signal_handler
+# 描述: 处理信号中断
+# 参数: 无
+# 返回: 无
 signal_handler() {
     local signal_name="${1:-UNKNOWN}"
     logging 2 "Operation interrupted by signal: $signal_name"
@@ -465,11 +429,10 @@ signal_handler() {
     exit 0
 }
 
-# 初始化函数
-# 参数:
-#   无
-# 返回:
-#   0 - 成功
+# 函数: initialize
+# 描述: 初始化环境和配置
+# 参数: 无
+# 返回: 0=成功
 initialize() {
     # 设置退出和信号处理
     trap cleanup EXIT
@@ -491,28 +454,25 @@ initialize() {
     return 0
 }
 
-# 记录运行环境
-# 参数:
-#   无
-# 返回:
-#   0 - 成功
+# 函数: log_environment
+# 描述: 记录当前运行环境信息
+# 参数: 无
+# 返回: 0=成功
 log_environment() {
     logging 1 "Environment:"
     
     # 记录基本信息
-    local env_info=(
-        "Working Directory:$(pwd)"
-        "Target Directory:${CONFIG[to_dir]}"
-        "Command:${CONFIG[command]}"
-        "Match Pattern:${CONFIG[match]}"
-    )
+    local env_info=()
+    env_info+=("Working Directory:$(pwd)")
+    [[ ${CONFIG[to_dir]+x} ]] && env_info+=("Target Directory:${CONFIG[to_dir]}")
+    [[ ${CONFIG[command]+x} ]] && env_info+=("Command:${CONFIG[command]}")
+    [[ ${CONFIG[match]+x} ]] && env_info+=("Match Pattern:${CONFIG[match]}")
     
     # 记录配置标志
-    local config_flags=(
-        "Dry Run:${CONFIG[dry_run]}"
-        "Backup:${CONFIG[backup]}"
-        "Verbose:${CONFIG[verbose]}"
-    )
+    local config_flags=()
+    [[ ${CONFIG[dry_run]+x} ]] && config_flags+=("Dry Run:${CONFIG[dry_run]}")
+    [[ ${CONFIG[backup]+x} ]] && config_flags+=("Backup:${CONFIG[backup]}")
+    [[ ${CONFIG[verbose]+x} ]] && config_flags+=("Verbose:${CONFIG[verbose]}")
     
     # 输出信息
     for info in "${env_info[@]}"; do
@@ -548,7 +508,6 @@ Core Functions:
     logging()           - Log messages (0=Separator, 1=Info, 2=Error)
 
 Validation Functions:
-    is_valid_element()  - Check if an element symbol is valid
     validate_poscar()   - Validate POSCAR/CONTCAR file format
     check_path()        - Verify path existence and type
     check_file_format() - Check file format and encoding

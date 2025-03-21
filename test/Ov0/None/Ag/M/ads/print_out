@@ -9,6 +9,7 @@
  scaLAPACK will be used
  LDA part: xc-table for Pade appr. of Perdew
  POSCAR, INCAR and KPOINTS ok, starting setup
+ reached
  FFT: planning ...
  WAVECAR not read
  augmentation electrons   649.123168590345     

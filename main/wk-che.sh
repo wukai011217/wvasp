@@ -1,15 +1,23 @@
 #!/bin/bash
-#
-# 脚本名称: check-res
+#==============================================================================
+# 脚本信息
+#==============================================================================
+# 名称: wk-che
 # 描述: 检查计算结果是否正确，对正确的结果列出文件夹，对错误的结果记录错误信息
-# 用法: ./check-res [OPTIONS]
+# 用法: wk-che [OPTIONS]
 # 作者: wukai
+# 版本: 1.0.0
 # 日期: 2024-10-23
 
+#==============================================================================
+# 初始化
+#==============================================================================
+
+# 错误处理
 set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
-# 加载配置和函数
+# 加载外部依赖
 . functions
 
 # 版本信息
@@ -17,17 +25,17 @@ VERSION="1.0.0"
 
 # 默认配置
 declare -A CONFIG=(
-    [to_dir]=""
-    [file]="print_out"
-    [command]="0"
-    [match]=""
-    [max_tail_lines]=10     # 错误日志显示的最大行数
+    # 基本配置
+    [to_dir]=""                         # 目标目录
+    [file]="print_out"                  # 输出文件
+    [command]="0"                       # 命令
+    [match]=""                          # 匹配模式
+    [max_tail_lines]=10                 # 错误日志显示的最大行数
     [source_file]="$(basename "$0")"     # 脚本文件
-
+    
     # 运行模式
     [dry_run]=false                      # 模拟运行模式
     [verbose]=false                      # 详细输出模式
-    [backup]=true                        # 备份模式
 )
 
 # 重置统计信息
@@ -36,7 +44,14 @@ reset_stats
 
 
 
-# 帮助信息
+#==============================================================================
+# 函数定义
+#==============================================================================
+
+# 函数: show_help
+# 描述: 显示脚本的帮助信息
+# 参数: 无
+# 返回: 0=成功
 show_help() {
     cat << EOF
 wk-che (VASP Calculation Checker) v${VERSION}
@@ -94,7 +109,11 @@ Note:
 EOF
 }
 
-# 解析命令行参数
+# 函数: parse_arguments
+# 描述: 解析命令行参数并设置配置
+# 参数:
+#   $@ - 命令行参数
+# 返回: 0=成功, 1=失败
 parse_arguments() {
     while [[ $# -gt 0 ]]; do
         case "$1" in
@@ -158,13 +177,11 @@ parse_arguments() {
             # 常规选项
             -h|--help)
                 show_help
-                shift 1
-                return 0
+                exit 0
                 ;;
             --version)
                 echo "${CONFIG[source_file]} : version $VERSION"
-                shift 1
-                return 0
+                exit 0
                 ;;
             --)
                 shift
@@ -182,7 +199,12 @@ parse_arguments() {
     done
 }
 
-# 检查计算是否收敛
+# 函数: check_convergence
+# 描述: 检查VASP计算是否收敛
+# 参数:
+#   $1 - OUTCAR文件路径
+#   $2 - 输出文件路径
+# 返回: 0=成功, 1=失败, 2=未收敛, 3=输出文件错误
 check_convergence() {
     local outcar="$1"
     local output_file="$2"
@@ -205,7 +227,12 @@ check_convergence() {
     return 0
 }
 
-# 记录错误信息
+# 函数: log_error
+# 描述: 记录错误信息到日志文件
+# 参数:
+#   $1 - 目录路径
+#   $2 - 错误信息
+# 返回: 0=成功
 log_error() {
     local target_dir="$1"
     local error_type="$2"
@@ -242,7 +269,12 @@ log_error() {
     fi
 }
 
-# 记录成功信息
+# 函数: log_success
+# 描述: 记录成功信息到日志文件
+# 参数:
+#   $1 - 目录路径
+#   $2 - 成功信息
+# 返回: 0=成功
 log_success() {
     local target_dir="$1"
     local work_dir="$2"
@@ -257,7 +289,11 @@ log_success() {
     fi
 }
 
-# 函数：检查单个目录
+# 函数: check_directory
+# 描述: 检查单个目录中的计算结果
+# 参数:
+#   $1 - 目录路径
+# 返回: 0=成功
 check_directory() {
     local to_dir="$1"              # 从 CONFIG 中获取根目录
     local match="${CONFIG[match]}"   # 从 CONFIG 中获取匹配模式
@@ -296,7 +332,14 @@ check_directory() {
 }
 
 
-# 主程序
+#==============================================================================
+# 程序入口
+#==============================================================================
+
+# 函数: main
+# 描述: 主程序入口
+# 参数: 无
+# 返回: 0=成功
 main() {
     local to_dir="${CONFIG[to_dir]}"
     local command="${CONFIG[command]}"
@@ -317,11 +360,11 @@ main() {
     case "${CONFIG[command]}" in
         help)
             show_help
-            return 0
+            exit 0
             ;;
         --version)
             echo "${CONFIG[source_file]} : version $VERSION"
-            return 0
+            exit 0
             ;;
         [0])
             # 解析命令信息

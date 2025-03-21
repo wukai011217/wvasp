@@ -1,29 +1,47 @@
 #!/bin/bash
-#
-# 脚本名称: wk-bdr
+#==============================================================================
+# 脚本信息
+#==============================================================================
+# 名称: wk-bdr
 # 描述: 执行Bader电荷分析，处理VASP的AECCAR文件并生成分析结果
-# 用法: ./wk-bdr [OPTIONS]
+# 用法: wk-bdr [OPTIONS]
 # 作者: wukai
+# 版本: 1.0.0
 # 日期: 2024-01-18
 
+#==============================================================================
+# 初始化
+#==============================================================================
+
+# 错误处理
 set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
-# 加载配置和函数
+# 加载外部依赖
 . functions
-
-# 默认配置
-declare -A CONFIG=(
-    [root_dir]="$(pwd)"
-    [command]="0"
-)
-
-
 
 # 版本信息
 VERSION="1.0.0"
 
-# 帮助信息
+# 默认配置
+declare -A CONFIG=(
+    # 基本配置
+    [root_dir]="$(pwd)"     # 根目录
+    [command]="0"           # 命令
+    [source_file]="$(basename "$0")"   # 脚本文件
+)
+
+# 重置统计信息
+reset_stats
+
+#==============================================================================
+# 函数定义
+#==============================================================================
+
+# 函数: show_help
+# 描述: 显示脚本的帮助信息
+# 参数: 无
+# 返回: 0=成功
 show_help() {
     cat << EOF
 wk-bdr (Bader Charge Analysis) v${VERSION}
@@ -72,7 +90,11 @@ Note:
 EOF
 }
 
-# 解析命令行参数
+# 函数: parse_arguments
+# 描述: 解析命令行参数并设置配置
+# 参数:
+#   $@ - 命令行参数
+# 返回: 0=成功, 1=失败
 parse_arguments() {
     while [[ $# -gt 0 ]]; do
         case "$1" in
@@ -119,7 +141,11 @@ parse_arguments() {
     done
 }
 
-# 执行Bader分析
+# 函数: run_bader_analysis
+# 描述: 在指定目录执行Bader电荷分析
+# 参数:
+#   $1 - 目标目录
+# 返回: 0=成功
 run_bader_analysis() {
     local target_dir="$1"
     local current_dir="$(pwd)"
@@ -147,7 +173,11 @@ run_bader_analysis() {
     cd "$current_dir"
 }
 
-# 检查必要的文件
+# 函数: check_files
+# 描述: 检查目录中是否存在所需的文件
+# 参数:
+#   $1 - 目标目录
+# 返回: 0=成功
 check_files() {
     local dir="$1"
     local missing_files=()
@@ -177,7 +207,14 @@ check_files() {
     return 0
 }
 
-# 主程序
+#==============================================================================
+# 程序入口
+#==============================================================================
+
+# 函数: main
+# 描述: 主程序入口
+# 参数: 无
+# 返回: 0=成功
 main() {
     case "${CONFIG[command]}" in
         0)
@@ -212,15 +249,14 @@ main() {
     esac
 }
 
-# 日志记录
-logging 0
-logging 1 "wk-bdr started"
+# 初始化脚本
+initialize || { logging 2 "${CONFIG[source_file]} : Failed to initialize script"; exit 1; }
 
-# 启动脚本
-parse_arguments "$@"
+# 解析命令行参数
+parse_arguments "$@" || { logging 2 "${CONFIG[source_file]} : Failed to parse arguments"; exit 1; }
+
+# 记录运行环境
+log_environment
 
 # 执行主程序
-main
-
-# 结果检查
-result $? "wk-bdr"
+main || { logging 2 "${CONFIG[source_file]} : Failed to execute main function"; exit 1; }

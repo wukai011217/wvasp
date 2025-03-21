@@ -1,34 +1,42 @@
 #!/bin/bash
-#
-# 脚本名称: wk-dda
+#==============================================================================
+# 脚本信息
+#==============================================================================
+# 名称: wk-dda
 # 描述: 处理和分析 Bader 数据，输出结果到文件
-# 用法: ./wk-dda [OPTIONS]
+# 用法: wk-dda [OPTIONS]
 # 作者: wukai
+# 版本: 1.0.0
 # 日期: 2024-10-23
 
+#==============================================================================
+# 初始化
+#==============================================================================
+
+# 错误处理
 set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
-# 加载配置和函数
+# 加载外部依赖
 . functions
-
-# 函数：显示版本信息
-show_version() {
-    logging 1 "wk-dda v${VERSION}"
-}
 
 # 版本信息
 VERSION="1.0.0"
 
-# 默认变量
+# 默认配置
 declare -A CONFIG=(
-    [root_dir]="$(pwd)"     # 源目录
-    [file]="ACF.dat"       # 要分析的文件
-    [command]="0"          # 命令
-    [number]="1"           # 原子编号
-    [output_dir]=""        # 输出目录
-    [dry_run]=false        # 模拟运行模式
-    [verbose]=false        # 详细输出模式
+    # 基本配置
+    [root_dir]="$(pwd)"                  # 源目录
+    [file]="ACF.dat"                     # 要分析的文件
+    [command]="0"                        # 命令
+    [number]="1"                         # 原子编号
+    [output_dir]=""                      # 输出目录
+    [source_file]="$(basename "$0")"     # 脚本文件
+    
+    # 运行模式
+    [dry_run]=false                      # 模拟运行模式
+    [verbose]=false                      # 详细输出模式
+
 )
 
 # 重置统计信息
@@ -36,7 +44,14 @@ reset_stats
 
 
 
-# 帮助信息
+#==============================================================================
+# 函数定义
+#==============================================================================
+
+# 函数: show_help
+# 描述: 显示脚本的帮助信息
+# 参数: 无
+# 返回: 0=成功
 show_help() {
     cat << EOF
 wk-dda (VASP Bader Data Analysis) v${VERSION}
@@ -99,7 +114,12 @@ Note:
 EOF
 }
 
-# 检查路径
+# 函数: check_path
+# 描述: 检查路径是否存在，如果不存在则创建
+# 参数:
+#   $1 - 路径
+#   $2 - 路径类型 (source/output)
+# 返回: 0=成功, 1=失败
 check_path() {
     local path="$1"
     local path_type="$2"
@@ -118,7 +138,10 @@ check_path() {
     fi
 }
 
-# 初始化输出文件
+# 函数: init_output_files
+# 描述: 初始化输出文件，写入头部信息
+# 参数: 无
+# 返回: 0=成功
 init_output_files() {
     if [[ "${CONFIG[dry_run]}" == true ]]; then
         return 0
@@ -138,7 +161,11 @@ init_output_files() {
     done
 }
 
-# 解析命令行参数
+# 函数: parse_arguments
+# 描述: 解析命令行参数并设置配置
+# 参数:
+#   $@ - 命令行参数
+# 返回: 0=成功, 1=失败
 parse_arguments() {
     while [[ $# -gt 0 ]]; do
         case "$1" in
@@ -233,7 +260,11 @@ parse_arguments() {
     check_path "${CONFIG[output_dir]}" "output"
 }
 
-# 处理单个目录
+# 函数: process_directory
+# 描述: 处理单个目录中的 Bader 数据
+# 参数:
+#   $1 - 目录路径
+# 返回: 0=成功
 process_directory() {
     local target_dir="$1"
     local file="${CONFIG[file]}"
@@ -301,7 +332,12 @@ process_directory() {
     fi
 }
 
-# 函数：处理 Bader 数据
+# 函数: process_bader
+# 描述: 处理 Bader 电荷分析数据
+# 参数:
+#   $1 - 数据文件路径
+#   $2 - 原子编号
+# 返回: 0=成功, 1=失败
 process_bader() {
     local start_time=$(date +%s)
     
@@ -341,10 +377,17 @@ process_bader() {
     [[ ${STATS[failed]} -eq 0 ]]
 }
 
-# 主程序
+#==============================================================================
+# 程序入口
+#==============================================================================
+
+# 函数: main
+# 描述: 主程序入口
+# 参数: 无
+# 返回: 0=成功
 main() {
     case "${CONFIG[command]}" in
-        0)  # 处理 Bader 数据
+        0)
             if [[ "${CONFIG[dry_run]}" == true ]]; then
                 logging 1 "Running in dry-run mode - no files will be modified"
             fi
@@ -373,20 +416,18 @@ main() {
     esac
 }
 
-# 日志记录
-logging 0
-logging 1 "wk-dda v${VERSION} started"
+#==============================================================================
+# 脚本执行入口
+#==============================================================================
 
-# 启动脚本
-parse_arguments "$@"
+# 初始化脚本
+initialize || { logging 2 "${CONFIG[source_file]} : Failed to initialize script"; exit 1; }
+
+# 解析命令行参数
+parse_arguments "$@" || { logging 2 "${CONFIG[source_file]} : Failed to parse arguments"; exit 1; }
+
+# 记录运行环境
+log_environment
 
 # 执行主程序
-if main; then
-    result 0 "wk-dda"
-    logging 1 "wk-dda completed successfully"
-    exit 0
-else
-    result 1 "wk-dda"
-    logging 1 "wk-dda completed with errors"
-    exit 1
-fi
+main || { logging 2 "${CONFIG[source_file]} : Failed to execute main function"; exit 1; }

@@ -1,46 +1,57 @@
 #!/bin/bash
-#
-# 脚本名称: wk-cpy
+#==============================================================================
+# 脚本信息
+#==============================================================================
+# 名称: wk-cpy
 # 描述: 复制指定文件到目标目录，保持目录结构
-# 用法: ./wk-cpy [OPTIONS]
+# 用法: wk-cpy [OPTIONS]
 # 作者: wukai
+# 版本: 1.0.0
 # 日期: 2024-01-18
 
+#==============================================================================
+# 初始化
+#==============================================================================
+
+# 错误处理
 set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
-# 加载配置和函数
+# 加载外部依赖
 . functions
-
-# 函数：显示版本信息
-show_version() {
-    logging 1 "wk-cpy v${VERSION}"
-}
 
 # 版本信息
 VERSION="1.0.0"
 
 # 默认配置
 declare -A CONFIG=(
-    [root_dir]="$(pwd)"     # 源目录
-    [file]="CONTCAR"        # 要复制的文件
-    [to_dir]="$(pwd)"       # 目标目录
-    [match]=""              # 目录匹配模式
-    [command]="0"           # 命令
+    # 基本配置
+    [root_dir]="$(pwd)"                  # 源目录
+    [file]="CONTCAR"                     # 要复制的文件
+    [to_dir]="$(pwd)"                    # 目标目录
+    [match]=""                           # 目录匹配模式
+    [command]="0"                        # 命令
     [source_file]="$(basename "$0")"     # 脚本文件
-
+    [preserve]=true                      # 是否保持目录结构
+    
     # 运行模式
     [dry_run]=false                      # 模拟运行模式
     [verbose]=false                      # 详细输出模式
     [backup]=true                        # 备份模式
-    [preserve]=true         # 是否保持目录结构
-    # [overwrite]=false       # 是否覆盖现有文件
-    # [dry_run]=false         # 模拟运行模式
 )
 
+# 重置统计信息
+reset_stats
 
 
-# 帮助信息
+#==============================================================================
+# 函数定义
+#==============================================================================
+
+# 函数: show_help
+# 描述: 显示脚本的帮助信息
+# 参数: 无
+# 返回: 0=成功
 show_help() {
     cat << EOF
 wk-cpy (VASP File Copy Utility) v${VERSION}
@@ -97,7 +108,11 @@ Note:
 EOF
 }
 
-# 解析命令行参数
+# 函数: parse_arguments
+# 描述: 解析命令行参数并设置配置
+# 参数:
+#   $@ - 命令行参数
+# 返回: 0=成功, 1=失败
 parse_arguments() {
     while [[ $# -gt 0 ]]; do
         case "$1" in
@@ -180,13 +195,11 @@ parse_arguments() {
             # 常规选项
             -h|--help)
                 show_help
-                shift 1
-                return 0
+                exit 0
                 ;;
             --version)
                 echo "${CONFIG[source_file]} : version $VERSION"
-                shift 1
-                return 0
+                exit 0
                 ;;
             --)
                 shift
@@ -205,33 +218,12 @@ parse_arguments() {
     
 }
 
-# # 检查源文件
-# check_source_file() {
-#     local source_dir="$1"
-#     local file="${CONFIG[file]}"
-#     local source_file="$source_dir/$file"
-    
-#     if [[ ! -f "$source_file" ]]; then
-#         logging 1 "Source file not found: $source_file"
-#         return 1
-#     fi
-    
-#     return 0
-# }
-
-# # 检查目标文件
-# check_target_file() {
-#     local target_file="$1"
-    
-#     if [[ -f "$target_file" ]] && [[ "${CONFIG[overwrite]}" != true ]]; then
-#         logging 1 "Target file exists (use --overwrite to replace): $target_file"
-#         return 1
-#     fi
-    
-#     return 0
-# }
-
-# 复制文件
+# 函数: copy_file
+# 描述: 复制文件到目标目录
+# 参数:
+#   $1 - 源文件路径
+#   $2 - 目标目录
+# 返回: 0=成功
 copy_file() {
     local source_dir="$1"
     local rel_path="$2"
@@ -271,7 +263,7 @@ copy_file() {
     fi
     
     # 复制文件
-    if cp -a "$source_file" "$dest_file" 2>> "${PATHS[log_dir]}/errors"; then
+    if cp -a "$source_file" "$dest_file" 2>> "${PATHS[log_dir]}/logs"; then
         logging 1 "Successfully copied ${CONFIG[file]} to $dest_file"
         return 0
     else
@@ -280,14 +272,23 @@ copy_file() {
     fi
 }
 
-# 获取相对路径
+# 函数: get_relative_path
+# 描述: 获取源路径相对于目标目录的相对路径
+# 参数:
+#   $1 - 源路径
+#   $2 - 目标目录
+# 返回: 相对路径字符串
 get_relative_path() {
     local full_path="$1"
     echo "$(awk -F/ '{print $(NF-2)"/"$(NF-1)"/"$NF}' <<< "$full_path")"
 }
 
 
-# 处理单个目录
+# 函数: process_directory
+# 描述: 处理单个目录中的文件复制
+# 参数:
+#   $1 - 目录路径
+# 返回: 0=成功
 process_directory() {
     local target_dir="$1"
     local rel_path
@@ -312,7 +313,14 @@ process_directory() {
     fi
 }
 
-# 主程序
+#==============================================================================
+# 程序入口
+#==============================================================================
+
+# 函数: main
+# 描述: 主程序入口
+# 参数: 无
+# 返回: 0=成功
 main() {
     local start_time=$(date +%s)
     
@@ -332,11 +340,11 @@ main() {
     case "${CONFIG[command]}" in
         help)
             show_help
-            return 0
+            exit 0
             ;;
         --version)
             echo "${CONFIG[source_file]} : version $VERSION"
-            return 0
+            exit 0
             ;;
         [0-1])
             # 解析命令信息

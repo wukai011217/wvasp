@@ -1,15 +1,23 @@
 #!/bin/bash
-#
-# 脚本名称: wk-run
-# 描述: 运行VASP计算任务，检查必要文件并提交作业
-# 用法: ./wk-run [OPTIONS]
+#==============================================================================
+# 脚本信息
+#==============================================================================
+# 名称: wk-run
+# 描述: 运行 VASP 计算任务，检查必要文件并提交作业
+# 用法: wk-run [OPTIONS]
 # 作者: wukai
+# 版本: 1.0.0
 # 日期: 2024-01-18
 
+#==============================================================================
+# 初始化
+#==============================================================================
+
+# 错误处理
 set -e  # 遇到错误立即退出
 set -u  # 使用未定义变量时报错
 
-# 加载配置和函数
+# 加载外部依赖
 . functions
 
 # 版本信息
@@ -17,25 +25,34 @@ VERSION="1.0.0"
 
 # 默认配置
 declare -A CONFIG=(
-    [run_dir]="$(pwd)"
-    [to_dir]="$(pwd)"
-    [match]=""
-    [screen]="OUTCAR"
-    [command]="0"
-    [max_jobs]=100        # 最大作业数
+    # 基本配置
+    [run_dir]="$(pwd)"                   # 运行目录
+    [to_dir]="$(pwd)"                    # 目标目录
+    [match]=""                           # 匹配模式
+    [screen]="OUTCAR"                    # 输出文件
+    [command]="0"                        # 命令
+    [max_jobs]=100                       # 最大作业数
     [source_file]="$(basename "$0")"     # 脚本文件
-
-    [dry_run]=false       # 模拟运行模式
-    [verbose]=false       # 详细输出模式
-    [backup]=true         # 备份模式
+    
+    # 运行模式
+    [dry_run]=false                      # 模拟运行模式
+    [verbose]=false                      # 详细输出模式
 )
 
 # 作业计数器
 declare -i job_count=0
 
+# 重置统计信息
+reset_stats
 
+#==============================================================================
+# 函数定义
+#==============================================================================
 
-# 帮助信息
+# 函数: show_help
+# 描述: 显示脚本的帮助信息
+# 参数: 无
+# 返回: 0=成功
 show_help() {
     cat << EOF
 wk-run (VASP Job Submission) v${VERSION}
@@ -97,7 +114,11 @@ Note:
 EOF
 }
 
-# 解析命令行参数
+# 函数: parse_arguments
+# 描述: 解析命令行参数并设置配置
+# 参数:
+#   $@ - 命令行参数
+# 返回: 0=成功, 1=失败
 parse_arguments() {
     while [[ $# -gt 0 ]]; do
         case "$1" in
@@ -156,11 +177,6 @@ parse_arguments() {
                 logging 1 "Verbose output enabled"
                 shift 1
                 ;;
-            --no-backup)
-                CONFIG[backup]=false
-                logging 1 "Backup mode disabled"
-                shift 1
-                ;;
             -h|--help)
                 show_help
                 exit 0
@@ -182,7 +198,11 @@ parse_arguments() {
     done
 }
 
-# 检查必要的VASP输入文件
+# 函数: check_vasp_files
+# 描述: 检查必要的 VASP 输入文件
+# 参数:
+#   $1 - 目标目录路径
+# 返回: 0=成功, 1=失败
 check_vasp_files() {
     local dir="$1"
     local missing_files=()
@@ -201,7 +221,11 @@ check_vasp_files() {
     return 0
 }
 
-# 提交VASP作业
+# 函数: submit_vasp_job
+# 描述: 提交 VASP 作业
+# 参数:
+#   $1 - 目标目录路径
+# 返回: 0=成功, 1=失败
 submit_vasp_job() {
     local target_dir="$1"
     local dry_run="${CONFIG[dry_run]}"
@@ -238,7 +262,10 @@ submit_vasp_job() {
     return 0
 }
 
-# 检查并创建工作目录
+# 函数: check_work_directory
+# 描述: 检查并创建工作目录
+# 参数: 无
+# 返回: 0=成功, 1=失败
 check_work_directory() {
     local work_dir="${PATHS[work_dir]}"
     
@@ -259,7 +286,10 @@ check_work_directory() {
     return 0
 }
 
-# 提交新作业
+# 函数: submit_new_jobs
+# 描述: 提交新作业
+# 参数: 无
+# 返回: 0=成功, 1=失败
 submit_new_jobs() {
     local to_dir="${CONFIG[to_dir]}"
     local match="${CONFIG[match]}"
@@ -312,7 +342,10 @@ submit_new_jobs() {
     return 0
 }
 
-# 重新提交失败的作业
+# 函数: resubmit_failed_jobs
+# 描述: 重新提交失败的作业
+# 参数: 无
+# 返回: 0=成功, 1=失败
 resubmit_failed_jobs() {
     local datas_file="${PATHS[work_dir]}/datas"
     local resubmitted_count=0
@@ -355,7 +388,14 @@ resubmit_failed_jobs() {
     return 0
 }
 
-# 主程序
+#==============================================================================
+# 程序入口
+#==============================================================================
+
+# 函数: main
+# 描述: 主程序入口
+# 参数: 无
+# 返回: 0=成功
 main() {
     local start_time=$(date +%s)
     
