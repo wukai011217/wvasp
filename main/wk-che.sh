@@ -54,58 +54,65 @@ reset_stats
 # 返回: 0=成功
 show_help() {
     cat << EOF
-wk-che (VASP Calculation Checker) v${VERSION}
+wk-che (VASP 计算检查工具) v${VERSION}
 
 Usage: 
     $(basename "$0") [OPTIONS]
 
 Description:
-    Check VASP calculation results, validate output files, and collect data.
-    Lists successful calculations and records error information for failed ones.
-    Analyzes convergence and energy information from output files.
+    检查 VASP 计算结果、验证输出文件并收集数据的工具。列出成功
+    的计算，记录失败计算的错误信息。分析收敛和能量信息。
 
-Required Files:
-    - OUTCAR:    VASP output file containing calculation details
-    - print_out: Additional output file with energy information
+所需文件:
+    - OUTCAR:    VASP 计算详细输出文件
+    - print_out: 包含能量信息的辅助输出文件
 
 Options:
-    -d, -D, --dir DIR     Set root directory for analysis
-                          (default: current directory)
-    -m, -M, --match PAT   Set match pattern for directories
-                          (default: process all directories)
-    -f, -F, --file NAME   Set output file to analyze
-                          (default: print_out)
-    -c, -C, --command NUM Set operation command (default: 0)
-    -h, --help           Show this help message and exit
-    -v, --version        Show version information
+    目录控制:
+        -to                  设置分析根目录
+                             (默认: 当前目录)
+        -m, -M, --match PAT  目录匹配模式
+                             (默认: 处理所有目录)
+    
+    文件控制:
+        -f, -F, --file NAME  设置要分析的输出文件
+                             (默认: print_out)
+    
+    操作控制:
+        -c, -C, --command NUM 设置操作命令 (见下方命令说明)
+    
+    通用选项:
+        -h, --help           显示帮助信息
+        --version            显示版本信息
 
-Commands:
-    0    Check calculation status and collect data
-         - Validates OUTCAR convergence
-         - Analyzes energy information
-         - Records success/failure status
-    1    Reserved for future use
+命令说明:
+    [0] 检查计算状态并收集数据
+        • 验证 OUTCAR 收敛情况
+        • 分析能量信息
+        • 记录成功/失败状态
 
-Output Files:
-    - datas:      Status summary of all calculations
-    - good_datas: Details of successful calculations
-    - bad_datas:  Error logs and details of failed calculations
+    [1] 预留待扩展
 
-Examples:
-    # Check calculations in current directory
+输出文件:
+    - datas:      所有计算的状态汇总
+    - good_datas: 成功计算的详细信息
+    - bad_datas:  失败计算的错误日志和详细信息
+
+示例:
+    # 检查当前目录的计算
     $(basename "$0")
 
-    # Check calculations in specific directory with pattern matching
-    $(basename "$0") -d /path/to/calcs -m "Fe_*"
+    # 使用模式匹配检查指定目录
+    $(basename "$0") -to /path/to/calcs -m "Fe_*"
 
-    # Show version information
-    $(basename "$0") -v
+    # 显示版本信息
+    $(basename "$0") --version
 
-Note:
-    Exit codes in datas file:
-     1: Successful calculation
-    -1: Unexpected termination
-    -2: Convergence not reached
+注意:
+    datas 文件中的状态码说明:
+     1: 计算成功
+    -1: 意外终止
+    -2: 未达到收敛
 EOF
 }
 
@@ -326,7 +333,7 @@ check_directory() {
                 esac
             fi
         fi
-    done < <(find "$to_dir" -mindepth 1 -type d)
+    done < <(find "$to_dir" -type d)
     
     return 0
 }

@@ -51,37 +51,34 @@ reset_stats
 # 返回: 0=成功
 show_help() {
     cat << EOF
-===============================================================================
-                           POSCAR Processing Tool
-===============================================================================
+wk-pos (VASP POSCAR Processing Tool) v${VERSION}
 
 Usage: 
     $(basename "$0") [OPTIONS]
 
 Description:
-    A versatile tool for processing VASP POSCAR structure files. Supports multiple
-    operations including element substitution, structure transformations, and
-    charge analysis. Features dry-run mode and automatic backups for safety.
+    处理 VASP POSCAR 结构文件的多功能工具。支持元素替换、结构转换和
+    电荷分析等操作。具有模拟运行模式和自动备份功能，确保操作安全。
 
 Options:
-    File Control:
-        -f, --file FILE      Specify input file (default: POSCAR)
-        -to DIR             Set target directory (default: current)
-        -m, --match PAT     Match pattern for elements/structures
+    文件控制:
+        -f, -F, --file FILE   指定输入文件 (默认: POSCAR)
+        -to DIR              设置目标目录 (默认: 当前目录)
+        -m, -M, --match PAT  目录匹配模式
     
-    Operation Control:
-        -c, --command NUM   Set operation mode (see Commands below)
+    操作控制:
+        -c, -C, --command NUM 设置操作命令 (见下方命令说明)
     
-    Safety Options:
-        --dry-run          Preview changes without modifying files
-        --no-backup        Disable automatic backup creation
-        --verbose          Enable detailed operation logging
+    安全选项:
+        --dry-run           模拟运行，不实际修改文件
+        --no-backup         禁用自动备份功能
+        --verbose           启用详细输出模式
     
-    General:
-        -h, --help         Show this help message
-        --version          Display version information
+    通用选项:
+        -h, --help          显示帮助信息
+        --version           显示版本信息
 
-Commands:
+命令说明:
     [0] POSCAR 复制和替换
         • 复制 POSCAR 到指定目录
         • 替换元素符号
@@ -107,32 +104,32 @@ Commands:
         • 将 z < 0.2 的原子设为固定 (F)
         • 保持其他原子的约束不变
 
-Safety Features:
-    • Dry Run Mode     - Preview all operations before execution
-    • Auto Backup     - Creates .bak files before modifications
-    • Verbose Logging - Detailed operation tracking
+安全特性:
+    • 模拟运行     - 预览所有操作而不实际执行
+    • 自动备份     - 修改前自动创建 .bak 备份
+    • 详细日志     - 记录所有操作细节
 
-Examples:
-    0. Preview Element Substitution:
+示例:
+    0. 预览元素替换:
        $(basename "$0") -f POSCAR -to /path/to/M -c 0 -m "Fe_*" 
 
-    1. Process M to M-H:
+    1. M 到 M-H 转换:
        $(basename "$0") -to /path/to/M -c 1 -m "M/ads"
 
-    2. process ads to bader:
-       $(basename "$0") -to /path/to/ads  -c 2 -m "M/ads" 
+    2. 准备 Bader 分析:
+       $(basename "$0") -to /path/to/ads -c 2 -m "M/ads" 
 
-    3. Process M to M-2H:
+    3. M-H 到 2H 转换:
        $(basename "$0") -to /path/to/M -c 3 -m "M/ads"
 
-    4. Process FFF Format:
+    4. FFF 格式处理:
        $(basename "$0") -to /path/to/fff -c 4 -m "M/ads"
 
-Best Practices:
-    • Always use --dry-run first to preview changes
-    • Keep backups enabled unless specifically not needed
-    • Use verbose mode for detailed operation logs
-    • Verify input files before processing
+最佳实践:
+    • 首次运行时使用 --dry-run 预览更改
+    • 除非特别需要，保持自动备份功能开启
+    • 使用详细模式跟踪操作过程
+    • 执行前验证输入文件的正确性
 EOF
 }
 
@@ -242,6 +239,7 @@ process_one_to_all() {
     # 检查目标目录（检查目录是否存在、是否为空、是否匹配模式）
     check_path "$target_dir" "directory" true "${CONFIG[match]}" || return 0
     
+    echo "${CONFIG[source_file]} : Processing directory: $target_dir"
     # 记录总文件数
     update_stats "total"
     
@@ -770,11 +768,11 @@ main() {
     case "$command" in
         help)
             show_help
-            return 0
+            exit 0
             ;;
         --version)
             echo "${CONFIG[source_file]} : version $VERSION"
-            return 0
+            exit 0
             ;;
         [0-4])
             local IFS=':'
@@ -796,7 +794,7 @@ main() {
                     logging 2 "${CONFIG[source_file]} : Failed to process directory: $dir"
                     return $exit_code
                 }
-            done < <(find "$target_dir" -mindepth 1 -type d -not -path "*/\.*")
+            done < <(find "$target_dir"  -type d -not -path "*/\.*")
             ;;
         *)
             logging 2 "${CONFIG[source_file]} : Invalid command: $command"

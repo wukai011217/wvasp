@@ -49,55 +49,59 @@ declare -A CONFIG=(
 # 返回: 0=成功
 show_help() {
     cat << EOF
-NAME
-    ${CONFIG[source_file]} - VASP 文件管理工具
+wk-mkf (VASP 文件管理工具) v${VERSION}
 
-VERSION
-    $VERSION
-
-SYNOPSIS
+Usage: 
     $(basename "$0") [OPTIONS]
 
-DESCRIPTION
-    在多个目录之间复制和组织 VASP 计算文件。
-    支持单文件分发和结构化目录复制。
-    包含安全特性，如模拟运行模式和自动备份。
+Description:
+    在多个目录之间复制和组织 VASP 计算文件。支持单文件分发和结构化
+    目录复制。包含安全特性，如模拟运行模式和自动备份。
 
-OPTIONS
-    -d, -D, --dir DIR     设置源目录
-                          (默认: 当前目录)
-    -f, -F, --file FILE   设置要复制的文件
-                          (默认: data 目录中的 KPOINTS)
-    -to DIR               设置目标目录
-                          (默认: 当前目录)
-    -m, -M, --match PAT   设置目录匹配模式
-                          (默认: 匹配所有)
-    -c, -C, --command NUM 设置操作命令
-                          (默认: 0)
-    --no-backup          禁用自动备份
-    -n, --dry-run        显示将要复制的内容
-    -v, --verbose        启用详细输出
-    -h, --help           显示此帮助信息
-    --version            显示版本信息
+Options:
+    目录控制:
+        -d, -D, --dir DIR    设置源目录
+                             (默认: 当前目录)
+        -to DIR              设置目标目录
+                             (默认: 当前目录)
+        -m, -M, --match PAT  设置目录匹配模式
+                             (默认: 匹配所有)
+    
+    文件控制:
+        -f, -F, --file FILE  设置要复制的文件
+                             (默认: data 目录中的 KPOINTS)
+    
+    操作控制:
+        -c, -C, --command NUM 设置操作命令 (见下方命令说明)
+                             (默认: 0)
+    
+    安全选项:
+        --no-backup         禁用自动备份
+        -n, --dry-run       模拟运行，显示将要复制的内容
+        -v, --verbose       启用详细输出
+    
+    通用选项:
+        -h, --help          显示帮助信息
+        --version           显示版本信息
 
-COMMANDS
-    0  简单分发
-       - 将单个文件复制到所有匹配的目录
-       - 保持文件名
-       - 如果文件存在则创建备份
+命令说明:
+    [0] 简单分发
+        • 将单个文件复制到所有匹配的目录
+        • 保持文件名
+        • 如果文件存在则创建备份
 
-    1  结构化复制
-       - 将 CONTCAR 作为 POSCAR 复制，保持目录结构
-       - 保留相对路径
-       - 如果文件存在则创建备份
+    [1] 结构化复制
+        • 将 CONTCAR 作为 POSCAR 复制
+        • 保持目录结构
+        • 自动创建备份
 
-SAFETY FEATURES
-    - 模拟运行模式: 显示将要复制的内容
-    - 自动备份: 创建 .bak 文件 (默认)
-    - 详细日志: 详细的操作信息
-    - 路径验证: 检查源和目标路径
+安全特性:
+    • 模拟运行    预览将要复制的文件
+    • 自动备份    在修改前创建 .bak 文件
+    • 详细日志    记录完整的操作历史
+    • 路径验证    检查源和目标路径
 
-EXAMPLES
+示例:
     # 预览将 KPOINTS 复制到匹配的目录
     $(basename "$0") -f KPOINTS -to /target/dir -m "Fe_*" --dry-run
 
@@ -107,28 +111,19 @@ EXAMPLES
     # 使用详细输出进行结构化复制
     $(basename "$0") -d /source/dir -to /target/dir -m "Fe_*" -c 1 -v
 
-EXIT STATUS
-    0  成功
-    1  失败
-
-FILES
+相关文件:
     KPOINTS   默认的输入文件
     CONTCAR   结构化复制模式下的源文件
     POSCAR    结构化复制模式下的目标文件
 
-AUTHOR
-    Written by Kai Wu.
+返回值:
+    0    成功
+    1    失败
 
-REPORTING BUGS
-    Report bugs to <wukai@mail.ustc.edu.cn>.
-
-COPYRIGHT
-    Copyright © 2024 Kai Wu. License MIT.
-    This is free software: you are free to change and redistribute it.
-    There is NO WARRANTY, to the extent permitted by law.
-
-SEE ALSO
-    wk-pot(1), wk-pos(1)
+注意:
+    • 默认启用自动备份，使用 --no-backup 可禁用
+    • 使用 --dry-run 可预览将要执行的操作
+    • 命令 1 会将 CONTCAR 文件复制为 POSCAR
 EOF
 }
 

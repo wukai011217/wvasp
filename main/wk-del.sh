@@ -381,7 +381,7 @@ main() {
             echo "${CONFIG[source_file]} : Processing: $description"
             
             # 处理目录
-            local find_args=("${CONFIG[to_dir]}" -mindepth 1 -type d)
+            local find_args=("${CONFIG[to_dir]}" -type d)
             [[ -n "${CONFIG[match]}" ]] && find_args+=(-path "*${CONFIG[match]}*")
             
             # 执行命令处理函数

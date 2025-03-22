@@ -8459,3 +8459,281 @@ cp: cannot stat '/home/wk/auto/test/Ov0/None/Ag/M-H/ads/INCAR': No such file or 
 [2025-03-21 20:02:51] [INFO]   Successfully processed:    0
 [2025-03-21 20:02:51] [INFO]   Failed operations:         53
 [2025-03-21 20:02:51] [INFO]   Processing time:          0s
+===============================================================
+2025-03-22 14:44:07
+===============================================================
+2025-03-22 14:44:51
+===============================================================
+2025-03-22 14:45:14
+[2025-03-22 14:45:14] [INFO] Command set to: 1
+[2025-03-22 14:45:14] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/
+[2025-03-22 14:45:14] [INFO] Environment:
+[2025-03-22 14:45:14] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 14:45:14] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/
+[2025-03-22 14:45:14] [INFO]   - Command 1
+[2025-03-22 14:45:14] [INFO]   - Match Pattern 
+[2025-03-22 14:45:14] [INFO]   - Dry Run false
+[2025-03-22 14:45:14] [INFO]   - Verbose false
+[2025-03-22 14:45:19] [INFO] Processing: Delete all files (DANGEROUS)
+===============================================================
+2025-03-22 14:45:19
+[2025-03-22 14:45:19] [INFO]   Total files processed:     0
+[2025-03-22 14:45:19] [INFO]   Successfully processed:    0
+[2025-03-22 14:45:19] [INFO]   Failed operations:         0
+[2025-03-22 14:45:19] [INFO]   Processing time:          5s
+===============================================================
+2025-03-22 14:46:05
+[2025-03-22 14:46:05] [INFO] Input file set to: data/POSCAR_Ov1
+[2025-03-22 14:46:05] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 14:46:05] [INFO] Command set to: 0
+[2025-03-22 14:46:05] [INFO] Environment:
+[2025-03-22 14:46:05] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 14:46:05] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 14:46:05] [INFO]   - Command 0
+[2025-03-22 14:46:05] [INFO]   - Match Pattern 
+[2025-03-22 14:46:05] [INFO]   - Dry Run false
+[2025-03-22 14:46:05] [INFO]   - Backup true
+[2025-03-22 14:46:05] [INFO]   - Verbose false
+[2025-03-22 14:46:05] [INFO] Processing: Element Substitution
+===============================================================
+2025-03-22 14:46:05
+[2025-03-22 14:46:05] [INFO]   Total files processed:     0
+[2025-03-22 14:46:05] [INFO]   Successfully processed:    0
+[2025-03-22 14:46:05] [INFO]   Failed operations:         0
+[2025-03-22 14:46:05] [INFO]   Processing time:          0s
+===============================================================
+2025-03-22 15:15:06
+[2025-03-22 15:15:06] [INFO] Input file set to: data/POSCAR_Ov1
+[2025-03-22 15:15:06] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:15:06] [INFO] Command set to: 0
+[2025-03-22 15:15:06] [INFO] Environment:
+[2025-03-22 15:15:06] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 15:15:06] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:15:06] [INFO]   - Command 0
+[2025-03-22 15:15:06] [INFO]   - Match Pattern 
+[2025-03-22 15:15:06] [INFO]   - Dry Run false
+[2025-03-22 15:15:06] [INFO]   - Backup true
+[2025-03-22 15:15:06] [INFO]   - Verbose false
+[2025-03-22 15:15:06] [INFO] Processing: Element Substitution
+===============================================================
+2025-03-22 15:15:06
+[2025-03-22 15:15:06] [INFO]   Total files processed:     0
+[2025-03-22 15:15:06] [INFO]   Successfully processed:    0
+[2025-03-22 15:15:06] [INFO]   Failed operations:         0
+[2025-03-22 15:15:06] [INFO]   Processing time:          0s
+===============================================================
+2025-03-22 15:15:39
+[2025-03-22 15:15:39] [INFO] Input file set to: data/POSCAR_Ov1
+[2025-03-22 15:15:39] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:15:39] [INFO] Command set to: 0
+[2025-03-22 15:15:39] [INFO] Environment:
+[2025-03-22 15:15:39] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 15:15:39] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:15:39] [INFO]   - Command 0
+[2025-03-22 15:15:39] [INFO]   - Match Pattern 
+[2025-03-22 15:15:39] [INFO]   - Dry Run false
+[2025-03-22 15:15:39] [INFO]   - Backup true
+[2025-03-22 15:15:39] [INFO]   - Verbose false
+[2025-03-22 15:15:39] [INFO] Processing: Element Substitution
+===============================================================
+2025-03-22 15:15:39
+[2025-03-22 15:15:39] [INFO]   Total files processed:     0
+[2025-03-22 15:15:39] [INFO]   Successfully processed:    0
+[2025-03-22 15:15:39] [INFO]   Failed operations:         0
+[2025-03-22 15:15:39] [INFO]   Processing time:          0s
+===============================================================
+2025-03-22 15:16:11
+[2025-03-22 15:16:11] [INFO] Input file set to: data/POSCAR_Ov1
+[2025-03-22 15:16:11] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:16:11] [INFO] Command set to: 0
+[2025-03-22 15:16:11] [INFO] Environment:
+[2025-03-22 15:16:11] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 15:16:11] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:16:11] [INFO]   - Command 0
+[2025-03-22 15:16:11] [INFO]   - Match Pattern 
+[2025-03-22 15:16:11] [INFO]   - Dry Run false
+[2025-03-22 15:16:11] [INFO]   - Backup true
+[2025-03-22 15:16:11] [INFO]   - Verbose false
+[2025-03-22 15:16:11] [INFO] Processing: Element Substitution
+===============================================================
+2025-03-22 15:16:11
+[2025-03-22 15:16:11] [INFO]   Total files processed:     0
+[2025-03-22 15:16:11] [INFO]   Successfully processed:    0
+[2025-03-22 15:16:11] [INFO]   Failed operations:         0
+[2025-03-22 15:16:11] [INFO]   Processing time:          0s
+===============================================================
+2025-03-22 15:17:37
+[2025-03-22 15:17:37] [INFO] Input file set to: data/POSCAR_Ov1
+[2025-03-22 15:17:37] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:17:37] [INFO] Command set to: 0
+[2025-03-22 15:17:37] [INFO] Environment:
+[2025-03-22 15:17:37] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 15:17:37] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:17:37] [INFO]   - Command 0
+[2025-03-22 15:17:37] [INFO]   - Match Pattern 
+[2025-03-22 15:17:37] [INFO]   - Dry Run false
+[2025-03-22 15:17:37] [INFO]   - Backup true
+[2025-03-22 15:17:37] [INFO]   - Verbose false
+[2025-03-22 15:17:37] [INFO] Processing: Element Substitution
+[2025-03-22 15:17:37] [INFO] Successfully processed: /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR
+===============================================================
+2025-03-22 15:17:37
+[2025-03-22 15:17:37] [INFO]   Total files processed:     1
+[2025-03-22 15:17:37] [INFO]   Successfully processed:    1
+[2025-03-22 15:17:37] [INFO]   Failed operations:         0
+[2025-03-22 15:17:37] [INFO]   Processing time:          0s
+===============================================================
+2025-03-22 15:18:17
+[2025-03-22 15:18:17] [INFO] Input file set to: data/POSCAR_Ov1
+[2025-03-22 15:18:17] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:18:17] [INFO] Command set to: 0
+[2025-03-22 15:18:17] [INFO] Environment:
+[2025-03-22 15:18:17] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 15:18:17] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:18:17] [INFO]   - Command 0
+[2025-03-22 15:18:17] [INFO]   - Match Pattern 
+[2025-03-22 15:18:17] [INFO]   - Dry Run false
+[2025-03-22 15:18:17] [INFO]   - Backup true
+[2025-03-22 15:18:17] [INFO]   - Verbose false
+[2025-03-22 15:18:17] [INFO] Processing: Element Substitution
+[2025-03-22 15:18:17] [INFO] Successfully processed: /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR
+===============================================================
+2025-03-22 15:18:17
+[2025-03-22 15:18:17] [INFO]   Total files processed:     1
+[2025-03-22 15:18:17] [INFO]   Successfully processed:    1
+[2025-03-22 15:18:17] [INFO]   Failed operations:         0
+[2025-03-22 15:18:17] [INFO]   Processing time:          0s
+===============================================================
+2025-03-22 15:20:04
+[2025-03-22 15:20:04] [INFO] Input file set to: data/POSCAR_Ov1
+[2025-03-22 15:20:04] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:20:04] [INFO] Command set to: 0
+[2025-03-22 15:20:04] [INFO] Environment:
+[2025-03-22 15:20:04] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 15:20:04] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:20:04] [INFO]   - Command 0
+[2025-03-22 15:20:05] [INFO]   - Match Pattern 
+[2025-03-22 15:20:05] [INFO]   - Dry Run false
+[2025-03-22 15:20:05] [INFO]   - Backup true
+[2025-03-22 15:20:05] [INFO]   - Verbose false
+[2025-03-22 15:20:05] [INFO] Processing: Element Substitution
+[2025-03-22 15:20:05] [INFO] Warning: POSCAR already exists in /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:20:05] [INFO] Created backup: /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR.bak
+[2025-03-22 15:20:05] [INFO] Successfully processed: /home/wk/auto/test/Ov0/None/Ag/M/ads/POSCAR
+===============================================================
+2025-03-22 15:20:05
+[2025-03-22 15:20:05] [INFO]   Total files processed:     1
+[2025-03-22 15:20:05] [INFO]   Successfully processed:    1
+[2025-03-22 15:20:05] [INFO]   Failed operations:         0
+[2025-03-22 15:20:05] [INFO]   Backups created:          1
+[2025-03-22 15:20:05] [INFO]   Processing time:          0s
+===============================================================
+2025-03-22 15:25:34
+[2025-03-22 15:25:34] [INFO] Command set to: 1
+[2025-03-22 15:25:34] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:25:34] [INFO] Environment:
+[2025-03-22 15:25:34] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 15:25:34] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:25:34] [INFO]   - Command 1
+[2025-03-22 15:25:34] [INFO]   - Match Pattern 
+[2025-03-22 15:25:34] [INFO]   - Dry Run false
+[2025-03-22 15:25:34] [INFO]   - Verbose false
+[2025-03-22 15:25:39] [INFO] Processing: Delete all files (DANGEROUS)
+===============================================================
+2025-03-22 15:25:39
+[2025-03-22 15:25:39] [INFO]   Total files processed:     0
+[2025-03-22 15:25:39] [INFO]   Successfully processed:    0
+[2025-03-22 15:25:39] [INFO]   Failed operations:         0
+[2025-03-22 15:25:39] [INFO]   Processing time:          5s
+===============================================================
+2025-03-22 15:25:58
+[2025-03-22 15:25:58] [INFO] Command set to: 1
+[2025-03-22 15:25:58] [INFO] Target directory set to: /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:25:58] [INFO] Environment:
+[2025-03-22 15:25:58] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 15:25:58] [INFO]   - Target Directory /home/wk/auto/test/Ov0/None/Ag/M/ads
+[2025-03-22 15:25:58] [INFO]   - Command 1
+[2025-03-22 15:25:58] [INFO]   - Match Pattern 
+[2025-03-22 15:25:58] [INFO]   - Dry Run false
+[2025-03-22 15:25:58] [INFO]   - Verbose false
+[2025-03-22 15:26:03] [INFO] Processing: Delete all files (DANGEROUS)
+===============================================================
+2025-03-22 15:26:03
+[2025-03-22 15:26:03] [INFO]   Total files processed:     0
+[2025-03-22 15:26:03] [INFO]   Successfully processed:    0
+[2025-03-22 15:26:03] [INFO]   Failed operations:         0
+[2025-03-22 15:26:03] [INFO]   Processing time:          5s
+===============================================================
+2025-03-22 15:30:29
+[2025-03-22 15:30:29] [ERROR] wk-che.sh: Invalid option: -d
+[2025-03-22 15:30:29] [ERROR] wk-che.sh : Failed to parse arguments
+===============================================================
+2025-03-22 15:31:30
+[2025-03-22 15:31:30] [INFO] TO_DIR set to: test/Ov0/None/Ag/M-2H/ads
+[2025-03-22 15:31:30] [INFO] Environment:
+[2025-03-22 15:31:30] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 15:31:30] [INFO]   - Target Directory test/Ov0/None/Ag/M-2H/ads
+[2025-03-22 15:31:30] [INFO]   - Command 0
+[2025-03-22 15:31:30] [INFO]   - Match Pattern 
+[2025-03-22 15:31:30] [INFO]   - Dry Run false
+[2025-03-22 15:31:30] [INFO]   - Verbose false
+[2025-03-22 15:31:30] [INFO] Processing: Check calculation status
+===============================================================
+2025-03-22 15:31:30
+[2025-03-22 15:31:30] [INFO]   Total files processed:     0
+[2025-03-22 15:31:30] [INFO]   Successfully processed:    0
+[2025-03-22 15:31:30] [INFO]   Failed operations:         0
+[2025-03-22 15:31:30] [INFO]   Processing time:          0s
+===============================================================
+2025-03-22 15:31:52
+[2025-03-22 15:31:52] [INFO] TO_DIR set to: test/Ov0/None/Ag/M-2H/
+[2025-03-22 15:31:52] [INFO] Environment:
+[2025-03-22 15:31:52] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 15:31:52] [INFO]   - Target Directory test/Ov0/None/Ag/M-2H/
+[2025-03-22 15:31:52] [INFO]   - Command 0
+[2025-03-22 15:31:52] [INFO]   - Match Pattern 
+[2025-03-22 15:31:52] [INFO]   - Dry Run false
+[2025-03-22 15:31:52] [INFO]   - Verbose false
+[2025-03-22 15:31:52] [INFO] Processing: Check calculation status
+[2025-03-22 15:31:52] [ERROR] Invalid stats key: success
+===============================================================
+2025-03-22 15:31:52
+[2025-03-22 15:31:52] [INFO]   Total files processed:     2
+[2025-03-22 15:31:52] [INFO]   Successfully processed:    0
+[2025-03-22 15:31:52] [INFO]   Failed operations:         1
+[2025-03-22 15:31:52] [INFO]   Processing time:          0s
+===============================================================
+2025-03-22 15:35:25
+[2025-03-22 15:35:25] [INFO] TO_DIR set to: test/Ov0/None/Ag/M-2H/ads
+[2025-03-22 15:35:25] [INFO] Environment:
+[2025-03-22 15:35:25] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 15:35:25] [INFO]   - Target Directory test/Ov0/None/Ag/M-2H/ads
+[2025-03-22 15:35:25] [INFO]   - Command 0
+[2025-03-22 15:35:25] [INFO]   - Match Pattern 
+[2025-03-22 15:35:25] [INFO]   - Dry Run false
+[2025-03-22 15:35:25] [INFO]   - Verbose false
+[2025-03-22 15:35:25] [INFO] Processing: Check calculation status
+[2025-03-22 15:35:25] [ERROR] Invalid stats key: success
+===============================================================
+2025-03-22 15:35:25
+[2025-03-22 15:35:25] [INFO]   Total files processed:     1
+[2025-03-22 15:35:25] [INFO]   Successfully processed:    0
+[2025-03-22 15:35:25] [INFO]   Failed operations:         0
+[2025-03-22 15:35:25] [INFO]   Processing time:          0s
+===============================================================
+2025-03-22 15:37:17
+[2025-03-22 15:37:17] [INFO] TO_DIR set to: test/Ov0/None/Ag/M-2H/ads
+[2025-03-22 15:37:17] [INFO] Environment:
+[2025-03-22 15:37:17] [INFO]   - Working Directory /home/wk/auto
+[2025-03-22 15:37:17] [INFO]   - Target Directory test/Ov0/None/Ag/M-2H/ads
+[2025-03-22 15:37:17] [INFO]   - Command 0
+[2025-03-22 15:37:18] [INFO]   - Match Pattern 
+[2025-03-22 15:37:18] [INFO]   - Dry Run false
+[2025-03-22 15:37:18] [INFO]   - Verbose false
+[2025-03-22 15:37:18] [INFO] Processing: Check calculation status
+===============================================================
+2025-03-22 15:37:18
+[2025-03-22 15:37:18] [INFO]   Total files processed:     1
+[2025-03-22 15:37:18] [INFO]   Successfully processed:    0
+[2025-03-22 15:37:18] [INFO]   Failed operations:         0
+[2025-03-22 15:37:18] [INFO]   Processing time:          0s

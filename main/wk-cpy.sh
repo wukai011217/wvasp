@@ -54,57 +54,54 @@ reset_stats
 # 返回: 0=成功
 show_help() {
     cat << EOF
-wk-cpy (VASP File Copy Utility) v${VERSION}
+wk-cpy (VASP 文件复制工具) v${VERSION}
 
 Usage: 
     $(basename "$0") [OPTIONS]
 
 Description:
-    Copy specified files between directories while maintaining directory structure.
-    Useful for organizing VASP calculation files across different setups.
-    Supports pattern matching and dry-run mode.
+    在目录之间复制指定文件，可保持目录结构。适用于组织不同
+    设置下的 VASP 计算文件。支持模式匹配和模拟运行模式。
 
 Options:
-    -d, -D, --dir DIR      Set source directory
-                           (default: current directory)
-    -f, -F, --file NAME    Set file to copy
-                           (default: CONTCAR)
-    -t, --to DIR           Set destination directory
-                           (default: current directory)
-    -m, -M, --match PAT    Set directory match pattern
-                           (default: process all directories)
-    -c, -C, --command NUM  Set operation command
-                           (default: 0)
-    --no-preserve          Don't preserve directory structure
-    --overwrite           Overwrite existing files
-    -n, --dry-run         Show what would be done without copying
-    -h, --help            Show this help message and exit
-    -v, --version         Show version information
+    目录控制:
+        -d, -D, --dir DIR     设置源目录
+                              (默认: 当前目录)
+        -t, --to DIR          设置目标目录
+                              (默认: 当前目录)
+        -m, -M, --match PAT   目录匹配模式
+                              (默认: 处理所有目录)
+    
+    文件控制:
+        -f, -F, --file NAME   设置要复制的文件
+                              (默认: CONTCAR)
+    
+    操作控制:
+        -c, -C, --command NUM 设置操作命令 (见下方命令说明)
+    
+    安全选项:
+        -n, --dry-run         模拟运行，不实际复制
+    
+    通用选项:
+        -h, --help            显示帮助信息
+        --version             显示版本信息
 
-Commands:
-    0    Copy files while maintaining structure
-         - Creates target directories as needed
-         - Preserves relative paths by default
-         - Skips existing files unless --overwrite
-    1    Reserved for future use
+命令说明:
+    [0] 复制文件并保持结构
+        • 根据需要创建目标目录
+        • 默认保持相对路径
+        • 除非使用 --overwrite，否则跳过现有文件
 
-Examples:
-    # Copy CONTCAR files from current directory
-    $(basename "$0") --to /target/dir
+    [1] 预留待扩展
 
-    # Copy specific files with pattern matching
-    $(basename "$0") -d /source/dir -f POSCAR -t /target/dir -m "Fe_*"
+示例:
 
-    # Show what would be copied without actually copying
-    $(basename "$0") -d /source/dir -t /target/dir --dry-run
+    # 使用模式匹配复制指定文件
+    $(basename "$0") -f POSCAR -t /target/dir -m "Fe_*"
 
-    # Copy files without preserving directory structure
-    $(basename "$0") -d /source/dir -t /target/dir --no-preserve
 
-Note:
-    The script will maintain the relative directory structure by default.
-    Use --no-preserve to copy files directly to the target directory.
-    Use --overwrite to replace existing files in the target directory.
+注意:
+    脚本默认会保持相对目录结构。
 EOF
 }
 

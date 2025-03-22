@@ -54,63 +54,69 @@ reset_stats
 # 返回: 0=成功
 show_help() {
     cat << EOF
-wk-dda (VASP Bader Data Analysis) v${VERSION}
+wk-dda (VASP Bader 数据分析工具) v${VERSION}
 
 Usage: 
     $(basename "$0") [OPTIONS]
 
 Description:
-    Process and analyze Bader charge analysis data from VASP calculations.
-    Extracts specific data from files and outputs results to summary files.
-    Supports dry-run mode and detailed output options.
+    处理和分析 VASP 计算中的 Bader 电荷分析数据。从文件中提取
+    特定数据并输出到汇总文件。支持模拟运行和详细输出选项。
 
 Options:
-    -d, -D, --dir DIR       Set source directory
-                            (default: current directory)
-    -f, -F, --file NAME     Set target file to analyze
-                            (default: ACF.dat)
-    -n, -N, --number NUM    Set atomic number to process
-                            (default: 1)
-    -o, -O, --output DIR    Set output directory
-                            (default: work directory)
-    -c, -C, --command NUM   Set operation command
-                            (default: 0)
-    --dry-run              Show what would be done
-    -v, --verbose          Enable detailed output
-    -h, --help             Show this help message
-    --version              Show version information
+    目录控制:
+        -d, -D, --dir DIR      设置源数据目录
+                               (默认: 当前目录)
+        -o, -O, --output DIR   设置输出目录
+                               (默认: work 目录)
+    
+    数据控制:
+        -f, -F, --file NAME    设置要分析的目标文件
+                               (默认: ACF.dat)
+        -n, -N, --number NUM   设置要处理的原子编号
+                               (默认: 1)
+    
+    操作控制:
+        -c, -C, --command NUM  设置操作命令 (见下方命令说明)
+    
+    运行选项:
+        --dry-run             模拟运行，显示将要执行的操作
+        -v, --verbose         启用详细输出
+    
+    通用选项:
+        -h, --help            显示帮助信息
+        --version             显示版本信息
 
-Commands:
-    0    Process Bader data
-         - Extracts charge data for specified atom
-         - Creates summary files:
-           * good_datas: successful extractions
-           * bad_datas: failed extractions
-           * datas: complete status log
-    1    Reserved for future use
+命令说明:
+    [0] 处理 Bader 数据
+        • 提取指定原子的电荷数据
+        • 创建汇总文件:
+          * good_datas: 成功提取的数据
+          * bad_datas:  提取失败的记录
+          * datas:      完整的状态日志
 
-Output Files:
-    good_datas  Contains successfully processed data
-    bad_datas   Lists directories with missing or invalid files
-    datas       Complete processing log with status codes
+    [1] 预留待扩展
 
-Examples:
-    # Process default atom from ACF.dat files
+输出文件:
+    good_datas  包含成功处理的数据
+    bad_datas   列出缺失或无效文件的目录
+    datas       完整的处理日志及状态码
+
+示例:
+    # 处理默认原子
     $(basename "$0")
 
-    # Process specific atom with custom output
+    # 使用自定义输出处理特定原子
     $(basename "$0") -d /path/to/calcs -n 5 -o /path/to/output
 
-    # Show what would be processed without making changes
+    # 模拟运行，不进行实际更改
     $(basename "$0") -d /path/to/calcs --dry-run
 
-    # Enable verbose output for debugging
-    $(basename "$0") -d /path/to/calcs -v
 
-Note:
-    The script processes Bader charge analysis data from VASP calculations.
-    Use --dry-run to preview operations without making changes.
-    Use --verbose for detailed processing information.
+注意:
+    脚本处理 VASP 计算中的 Bader 电荷分析数据。
+    使用 --dry-run 可预览操作而不进行实际更改。
+    使用 --verbose 可查看详细的处理信息。
 EOF
 }
 
@@ -232,11 +238,19 @@ parse_arguments() {
                 logging 1 "Command set to: ${CONFIG[command]}"
                 shift 2
                 ;;
-            --dry-run|--verbose|-h|--help|--version)
-                if parse_common_args "wk-dda" "$1"; then
-                    shift
-                    continue
-                fi
+            --dry-run)
+                CONFIG[dry_run]=true
+                logging 1 "Dry run mode enabled"
+                shift
+                ;;
+            --verbose)
+                CONFIG[verbose]=true
+                logging 1 "Verbose mode enabled"
+                shift
+                ;;
+            -h|--help)
+                show_help
+                exit 0
                 ;;
             --)
                 shift
@@ -356,7 +370,7 @@ process_bader() {
     fi
     
     # 遍历目录
-    find "${CONFIG[root_dir]}" -mindepth 1 -type d | while read -r target_dir; do
+    find "${CONFIG[root_dir]}" -type d | while read -r target_dir; do
         # 检查是否是叶子目录
         if [[ -z "$(find "$target_dir" -mindepth 1 -type d)" ]]; then
             process_directory "$target_dir"

@@ -10,6 +10,7 @@
  LDA part: xc-table for Pade appr. of Perdew
  POSCAR, INCAR and KPOINTS ok, starting setup
  FFT: planning ...
+ reached
  WAVECAR not read
  augmentation electrons   649.123168590345     
  soft         electrons  0.000000000000000E+000

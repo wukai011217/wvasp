@@ -55,90 +55,73 @@ declare -A CONFIG=(
 # 返回: 0=成功
 show_help() {
     cat << EOF
-================================================================================
-                              POTCAR Generator
-================================================================================
+    cat << EOF
+wk-pot (VASP POTCAR 生成工具) v${VERSION}
 
-NAME
-    ${CONFIG[source_file]} - Generate VASP POTCAR files from POSCAR elements
+Usage: 
+    $(basename "$0") -to <directory> [OPTIONS]
 
-VERSION
-    $VERSION
+Description:
+    根据 POSCAR 文件中指定的元素自动生成 VASP POTCAR 文件。
+    支持批量处理并包含安全检查机制。
 
-SYNOPSIS
-    ${CONFIG[source_file]} -to <directory> [OPTIONS]
+Options:
+    目录控制:
+        -to <directory>      设置目标目录 (必需参数)
+        -m, --match <pat>    设置目录匹配模式
+                             (默认: 处理所有目录)
+    
+    操作控制:
+        -c, --command <num>  设置操作命令 (见下方命令说明)
+                             (默认: 0)
+    
+    处理选项:
+        --dry-run           模拟运行，不实际执行
+        --no-backup         禁用自动备份
+        --verbose           启用详细日志
+    
+    通用选项:
+        -h, --help          显示帮助信息
+        --version           显示版本信息
 
-DESCRIPTION
-    A tool for generating VASP POTCAR files by automatically combining
-    pseudopotential files based on elements specified in POSCAR files.
-    Supports batch processing and includes safety checks.
+命令说明:
+    [0] 生成 POTCAR
+        • 从 POSCAR 读取元素信息
+        • 组合相应的赫斯势能文件
+        • 自动创建备份
 
-OPTIONS
-    Required Arguments:
-        -to <dir>              Target directory for processing
+    [1] 预留待扩展
 
-    Optional Arguments:
-        -m, --match <pattern>  Directory matching pattern
-        -c, --command <num>    Operation mode (default: 0)
+安全特性:
+    • 模拟运行    可预览操作而不实际执行
+    • 自动备份    在修改前创建 .bak 文件
+    • 详细日志    记录详细的操作历史
+    • 错误检查    验证输入和操作
 
-    Processing Control:
-        --dry-run             Preview operations without execution
-        --no-backup           Disable automatic backup
-        --verbose             Enable detailed logging
+示例:
+    # 在当前目录生成 POTCAR
+    $(basename "$0") -to .
 
-    General:
-        -h, --help            Display this help message
-        --version             Display version information
+    # 处理匹配模式的多个目录
+    $(basename "$0") -to /path/to/calcs -m "Fe_*" --verbose
 
-COMMANDS
-    [0] Generate POTCAR
-        • Read element information from POSCAR
-        • Combine corresponding pseudopotential files
-        • Create automatic backups
+    # 预览操作而不执行
+    $(basename "$0") -to /path/to/calc/Fe2O3 --dry-run
 
-    [1] Reserved for future use
+文件:
+    ./POSCAR          输入结构文件
+    ./POTCAR          生成的势能文件
+    ${PATHS[log_dir]}/logs    日志文件位置
 
-SAFETY FEATURES
-    • Dry Run Mode    Preview operations without actual execution
-    • Auto Backup    Create .bak files before modifications
-    • Verbose Logs   Record detailed operation history
-    • Error Checks   Validate inputs and operations
+返回值:
+    0    成功
+    1    一般错误
+    2    参数无效
 
-EXAMPLES
-    0. Generate POTCAR in current directory:
-       $ ${CONFIG[source_file]} -to . -m ads
-
-    1. Process multiple directories matching a pattern:
-       $ ${CONFIG[source_file]} -to /path/to/calcs -m "Fe_*" --verbose
-
-    2. Preview operations without execution:
-       $ ${CONFIG[source_file]} -to /path/to/calc/Fe2O3 --dry-run
-
-
-EXIT STATUS
-    0    Success
-    1    General error
-    2    Invalid arguments
-
-FILES
-    ./POSCAR          Input structure file
-    ./POTCAR          Generated potential file
-    ${PATHS[log_dir]}/logs    Log file location
-
-AUTHOR
-    Written by Wu Kai
-
-REPORTING BUGS
-    Report bugs to: wukai@example.com
-
-COPYRIGHT
-    Copyright © 2024-2025 Wu Kai. License GPLv3+
-    This is free software: you are free to change and redistribute it.
-    There is NO WARRANTY, to the extent permitted by law.
-
-SEE ALSO
-    VASP documentation: https://www.vasp.at/
-    Project repository: https://github.com/wukai/vasp-tools
+注意:
+    • -to 参数是必需的，必须指定目标目录
+    • 默认启用自动备份，使用 --no-backup 可禁用
+    • 使用 --dry-run 可预览将要执行的操作
 EOF
 }
 
@@ -371,11 +354,11 @@ main() {
     case "$command" in
         help)
             show_help
-            return 0
+            exit 0
             ;;
         --version)
             echo "${CONFIG[source_file]} : version $VERSION"
-            return 0
+            exit 0
             ;;
         [0-1])
             local IFS=':'
@@ -402,7 +385,7 @@ main() {
                     logging 2 "${CONFIG[source_file]} : Failed to process directory: $dir"
                     return $exit_code
                 }
-            done < <(find "$target_dir" -mindepth 1 -type d -not -path "*/\.*")
+            done < <(find "$target_dir"  -type d -not -path "*/\.*")
             ;;
         *)
             logging 2 "${CONFIG[source_file]} : Invalid command: $command"

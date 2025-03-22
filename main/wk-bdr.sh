@@ -44,49 +44,53 @@ reset_stats
 # 返回: 0=成功
 show_help() {
     cat << EOF
-wk-bdr (Bader Charge Analysis) v${VERSION}
+wk-bdr (Bader 电荷分析工具) v${VERSION}
 
 Usage: 
     $(basename "$0") [OPTIONS]
 
 Description:
-    Execute Bader charge analysis on VASP output files. This script processes
-    AECCAR0, AECCAR2, and CHGCAR files to calculate charge density analysis
-    using the Bader method.
+    执行 Bader 电荷分析的工具脚本。处理 VASP 输出的 AECCAR0、AECCAR2
+    和 CHGCAR 文件，使用 Bader 方法计算电荷密度分布。
 
-Required Files:
-    - AECCAR0: Core charge density
-    - AECCAR2: Valence charge density
-    - CHGCAR:  Total charge density
+所需文件:
+    - AECCAR0: 核心电荷密度
+    - AECCAR2: 价电子电荷密度
+    - CHGCAR:  总电荷密度
 
 Options:
-    -d, -D, --dir DIR      Set root directory for analysis
-                           (default: current directory)
-    -c, -C, --command NUM  Set operation command (default: 0)
-    -h, --help            Show this help message and exit
-    -v, --version         Show version information
+    目录控制:
+        -d, -D, --dir DIR     设置分析根目录
+                              (默认: 当前目录)
+    
+    操作控制:
+        -c, -C, --command NUM 设置操作命令 (见下方命令说明)
+    
+    通用选项:
+        -h, --help           显示帮助信息
+        --version            显示版本信息
 
-Commands:
-    0    Run Bader charge analysis in leaf directories
-         - Checks for required files
-         - Skips directories with existing ACF.dat
-         - Processes only leaf directories
-    1    Reserved for future use
+命令说明:
+    [0] 执行 Bader 电荷分析
+        • 检查所需文件是否存在
+        • 跳过已有 ACF.dat 的目录
+        • 仅处理叶子目录
 
-Examples:
-    # Run Bader analysis in current directory
+    [1] 预留待扩展
+
+示例:
+    # 在当前目录执行分析
     $(basename "$0")
 
-    # Run Bader analysis in specific directory
-    $(basename "$0") -d /path/to/vasp/output
+    # 在指定目录执行分析
+    $(basename "$0") -d /path/to/vasp/output -m "Fe_*"
 
-    # Show version information
-    $(basename "$0") -v
+    # 显示版本信息
+    $(basename "$0") --version
 
-Note:
-    The script will automatically process all leaf directories under the
-    specified root directory. It skips directories that already have
-    ACF.dat files to avoid redundant calculations.
+注意:
+    脚本会自动处理指定根目录下的所有叶子目录。为避免重复计算，
+    已包含 ACF.dat 文件的目录将被跳过。
 EOF
 }
 
@@ -218,7 +222,7 @@ check_files() {
 main() {
     case "${CONFIG[command]}" in
         0)
-            find "${CONFIG[root_dir]}" -mindepth 1 -type d | while read -r target_dir; do
+            find "${CONFIG[root_dir]}" -type d | while read -r target_dir; do
                 # 检查是否是叶子目录
                 if [[ -z "$(find "$target_dir" -mindepth 1 -type d)" ]]; then
                     if [[ -f "$target_dir/ACF.dat" ]]; then

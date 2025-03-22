@@ -29,6 +29,7 @@ declare -A STATS=(
     [backup]=0      # 备份文件数
     [copied]=0      # 复制文件数
     [deleted]=0     # 删除文件数
+    [success]=0     # 成功文件数
 )
 
 # 元素列表

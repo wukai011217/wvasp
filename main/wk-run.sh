@@ -55,62 +55,67 @@ reset_stats
 # 返回: 0=成功
 show_help() {
     cat << EOF
-wk-run (VASP Job Submission) v${VERSION}
+wk-run (VASP 作业提交工具) v${VERSION}
 
 Usage: 
     $(basename "$0") [OPTIONS]
 
 Description:
-    Submit and manage VASP calculation jobs on the cluster.
-    Checks for required input files and handles job submission with queue limits.
-    Supports job templates and different queues.
-11
-Required Files:
-    - POSCAR:  Structure file
-    - INCAR:   Input parameters
-    - KPOINTS: k-points settings
-    - POTCAR:  Pseudopotentials
+    在集群上提交和管理 VASP 计算作业。检查必要的输入文件，并在队列限制下
+    处理作业提交。支持作业模板和不同的计算队列。
+
+必需文件:
+    • POSCAR:  结构文件
+    • INCAR:   输入参数
+    • KPOINTS: 能带采样点
+    • POTCAR:  赫斯势能
 
 Options:
-    -d, -D, --dir DIR      Set root directory for submissions
-                           (default: current directory)
-    -m, -M, --match PAT    Set match pattern for directories
-                           (default: process all directories)
-    -s, -S, --screen FILE  Set screen file for job status check
-                           (default: OUTCAR)
-    -t, -T, --template FILE Set job script template
-                           (default: use system template)
-    -q, -Q, --queue NAME   Set queue for job submission
-                           (default: normal)
-    -n, --dry-run         Show what would be done without submitting
-    -c, -C, --command NUM Set operation command (default: 0)
-    -h, --help            Show this help message and exit
-    -v, --version         Show version information
+    目录控制:
+        -d, -D, --dir DIR     设置提交作业的根目录
+                              (默认: 当前目录)
+        -m, -M, --match PAT   设置目录匹配模式
+                              (默认: 处理所有目录)
+    
+    作业控制:
+        -s, -S, --screen FILE 设置作业状态检查文件
+                              (默认: OUTCAR)
+    
+    操作控制:
+        -c, -C, --command NUM 设置操作命令 (见下方命令说明)
+                              (默认: 0)
+    
+    安全选项:
+        -n, --dry-run        模拟运行，不实际提交作业
+    
+    通用选项:
+        -h, --help           显示帮助信息
+        --version            显示版本信息
 
-Commands:
-    0    Submit new VASP jobs
-         - Checks required files
-         - Respects job limit (${CONFIG[max_jobs]} max)
-         - Skips directories with existing output
-    1    Resubmit failed jobs from check-res results
+命令说明:
+    [0] 提交新的 VASP 作业
+        • 检查必要的文件
+        • 遵循作业限制 (最多 ${CONFIG[max_jobs]} 个)
+        • 跳过已有输出的目录
 
-Examples:
-    # Submit jobs in current directory
+    [1] 重新提交失败的作业
+        • 基于 check-res 的结果
+        • 仅处理失败的作业
+
+示例:
+    # 在当前目录提交作业
     $(basename "$0")
 
-    # Submit jobs with custom template and queue
-    $(basename "$0") -t custom.sbatch -q gpu
-
-    # Submit jobs in specific directory with pattern matching
+    # 在指定目录下使用模式匹配提交作业
     $(basename "$0") -d /path/to/calcs -m "Fe_*"
 
-    # Show what would be done without submitting
+    # 模拟运行，不实际提交作业
     $(basename "$0") --dry-run
 
-Note:
-    The script will automatically skip directories that already
-    have output files (specified by --screen) to avoid duplicate
-    submissions.
+注意:
+    • 脚本会自动跳过已有输出文件的目录，以避免重复提交
+    • 使用 --screen 参数可指定检查的输出文件
+    • 最多同时运行 ${CONFIG[max_jobs]} 个作业
 EOF
 }
 
