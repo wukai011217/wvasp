@@ -1,5 +1,7 @@
 """
 WVasp核心模块
 
-包含基础数据结构、文件I/O、任务管理等核心功能。
+提供VASP计算的核心功能。
 """
+
+from .base import Atom, Lattice, Structure

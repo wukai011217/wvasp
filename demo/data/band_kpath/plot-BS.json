@@ -1,0 +1,10 @@
+{
+  "bwidth": 2,
+  "title": "Band Structure",
+  "xticks": [],
+  "ylabel": "Energy (eV)",
+  "ylim": [
+    -1,
+    1
+  ]
+}

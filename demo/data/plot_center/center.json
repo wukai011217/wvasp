@@ -1,0 +1,12 @@
+{
+  "ISPIN": 1,
+  "LORBIT": 12,
+  "atoms": "Pt",
+  "dos_file": "DOSCAR_ispin",
+  "orbitals": "d",
+  "pos_file": "CONTCAR_ispin",
+  "xlim": [
+    -15,
+    0
+  ]
+}

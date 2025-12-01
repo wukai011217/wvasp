@@ -26,7 +26,7 @@ class StructureError(WVaspError):
 
 
 class ParameterError(WVaspError):
-    """参数错误"""
+    """参数配置错误"""
     pass
 
 

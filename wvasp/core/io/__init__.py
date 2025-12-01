@@ -1,17 +1,20 @@
 """
-文件I/O模块
+VASP文件输入输出模块
 
-提供VASP各种文件格式的读写功能。
+专注于VASP输入文件的读写功能。
+输出文件的处理已移至analysis模块。
 """
 
 from .base import VASPFile
 from .poscar import POSCAR
-from .outcar import OUTCAR
 from .incar import INCAR
+from .kpoints import KPOINTS
+from .potcar import POTCAR
 
 __all__ = [
     'VASPFile',
     'POSCAR', 
-    'OUTCAR',
     'INCAR',
+    'KPOINTS',
+    'POTCAR',
 ]

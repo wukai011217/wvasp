@@ -1,0 +1,41 @@
+{
+  "LORBIT": 10,
+  "data": {
+    "0": [
+      {
+        "atoms": "41-80",
+        "color": "#ed0345",
+        "orbitals": [
+          "s"
+        ]
+      },
+      {
+        "atoms": "41-80",
+        "color": "#098760",
+        "orbitals": [
+          "p"
+        ]
+      },
+      {
+        "atoms": "41-80",
+        "color": "#66ccff",
+        "orbitals": [
+          "d"
+        ]
+      }
+    ]
+  },
+  "dos_file": [
+    "DOSCAR"
+  ],
+  "fontsize": 10,
+  "height": 4,
+  "pos_file": [
+    "CONTCAR"
+  ],
+  "width": 12,
+  "xlim": [
+    -10,
+    5
+  ]
+}
