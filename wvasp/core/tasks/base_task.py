@@ -34,13 +34,14 @@ class TaskConfig:
     potcar_dir: Optional[Path] = None
     # 作业脚本配置
     generate_job_script: bool = True
-    job_scheduler: str = "slurm"  # slurm 或 pbs
-    nodes: int = 1
-    ntasks_per_node: int = 24
-    memory: str = "32G"
-    time: str = "12:00:00"
-    partition: str = "normal"
-    vasp_executable: str = "vasp_std"
+    # 作业调度器配置 - 从WVaspConfig获取默认值
+    job_scheduler: Optional[str] = None
+    nodes: Optional[int] = None
+    ntasks_per_node: Optional[int] = None
+    memory: Optional[str] = None
+    time: Optional[str] = None
+    partition: Optional[str] = None
+    vasp_executable: Optional[str] = None
     
     def __post_init__(self):
         self.work_dir = Path(self.work_dir)
@@ -64,12 +65,39 @@ class BaseTask(ABC):
         """
         self.config = config
         self.status = TaskStatus.CREATED
+        
+        # 从WVaspConfig获取默认值
+        self._apply_default_config()
+        
+        # 初始化VASP文件对象
         self.incar = INCAR()
         self.kpoints = KPOINTS()
         self.poscar = POSCAR()
         self.potcar = None
         self.results = {}
         self.errors = []
+    
+    def _apply_default_config(self):
+        """从WVaspConfig应用默认配置"""
+        from ...utils.config import get_config
+        
+        wvasp_config = get_config()
+        
+        # 应用默认的作业调度器配置
+        if self.config.job_scheduler is None:
+            self.config.job_scheduler = wvasp_config.job_scheduler
+        if self.config.nodes is None:
+            self.config.nodes = wvasp_config.default_nodes
+        if self.config.ntasks_per_node is None:
+            self.config.ntasks_per_node = wvasp_config.default_ntasks_per_node
+        if self.config.memory is None:
+            self.config.memory = wvasp_config.default_memory
+        if self.config.time is None:
+            self.config.time = wvasp_config.default_time
+        if self.config.partition is None:
+            self.config.partition = wvasp_config.default_partition
+        if self.config.vasp_executable is None:
+            self.config.vasp_executable = wvasp_config.vasp_executable
     
     @abstractmethod
     def setup_incar(self) -> None:
@@ -93,27 +121,11 @@ class BaseTask(ABC):
     
     def setup_job_script(self) -> None:
         """设置作业脚本"""
-        from .job_management import JobConfig, JobScriptGenerator
-        
-        # 转换任务配置为作业配置
-        job_config = JobConfig(
-            job_name=self.config.name,
-            nodes=self.config.nodes,
-            ntasks_per_node=self.config.ntasks_per_node,
-            memory=self.config.memory,
-            time=self.config.time,
-            partition=self.config.partition,
-            vasp_executable=self.config.vasp_executable
-        )
-        
-        # 生成作业脚本
-        generator = JobScriptGenerator(job_config)
-        
         if self.config.job_scheduler.lower() == "slurm":
-            script_content = generator.generate_slurm_script()
+            script_content = self._generate_slurm_script()
             script_filename = "submit.sh"
         elif self.config.job_scheduler.lower() == "pbs":
-            script_content = generator.generate_pbs_script()
+            script_content = self._generate_pbs_script()
             script_filename = "submit.pbs"
         else:
             raise ValueError(f"不支持的作业调度器: {self.config.job_scheduler}")
@@ -125,6 +137,82 @@ class BaseTask(ABC):
         
         # 设置执行权限
         script_path.chmod(0o755)
+    
+    def _generate_slurm_script(self) -> str:
+        """生成SLURM作业脚本"""
+        total_cores = self.config.nodes * self.config.ntasks_per_node
+        
+        script_content = f"""#!/bin/bash
+#SBATCH --job-name={self.config.name}
+#SBATCH --nodes={self.config.nodes}
+#SBATCH --ntasks-per-node={self.config.ntasks_per_node}
+#SBATCH --mem={self.config.memory}
+#SBATCH --time={self.config.time}
+#SBATCH --partition={self.config.partition}
+#SBATCH --output=vasp_%j.out
+#SBATCH --error=vasp_%j.err
+
+# 环境设置
+set -e
+
+# 作业信息
+echo "作业开始时间: $(date)"
+echo "节点信息: $SLURM_JOB_NODELIST"
+echo "作业ID: $SLURM_JOB_ID"
+echo "工作目录: $(pwd)"
+
+# 检查输入文件
+required_files=("POSCAR" "INCAR" "KPOINTS" "POTCAR")
+for file in "${{required_files[@]}}"; do
+    if [[ ! -f "$file" ]]; then
+        echo "错误: 缺少必要文件 $file"
+        exit 1
+    fi
+done
+echo "所有输入文件检查完毕"
+
+# 运行VASP
+echo "使用 {total_cores} 个核心运行VASP"
+mpirun -np {total_cores} {self.config.vasp_executable}
+
+# 作业完成
+echo "作业完成时间: $(date)"
+if [[ -f "OUTCAR" ]]; then
+    if grep -q "reached required accuracy" OUTCAR; then
+        echo "✅ VASP计算成功收敛"
+    else
+        echo "⚠️  VASP计算可能未收敛，请检查OUTCAR"
+    fi
+else
+    echo "❌ 未找到OUTCAR文件，计算可能失败"
+fi
+"""
+        return script_content
+    
+    def _generate_pbs_script(self) -> str:
+        """生成PBS作业脚本"""
+        total_cores = self.config.nodes * self.config.ntasks_per_node
+        
+        script_content = f"""#!/bin/bash
+#PBS -N {self.config.name}
+#PBS -l nodes={self.config.nodes}:ppn={self.config.ntasks_per_node}
+#PBS -l mem={self.config.memory}
+#PBS -l walltime={self.config.time}
+#PBS -q {self.config.partition}
+#PBS -o vasp_%j.out
+#PBS -e vasp_%j.err
+
+# 切换到工作目录
+cd $PBS_O_WORKDIR
+
+# 环境设置
+set -e
+
+# 运行VASP
+echo "使用 {total_cores} 个核心运行VASP"
+mpirun -np {total_cores} {self.config.vasp_executable}
+"""
+        return script_content
     
     def prepare(self) -> None:
         """
@@ -184,64 +272,18 @@ class BaseTask(ABC):
         return errors
     
     @abstractmethod
-    def analyze_results(self) -> Dict[str, Any]:
+    def check_results(self) -> Dict[str, Any]:
         """
-        分析计算结果
+        检查计算结果
         
         Returns:
-            分析结果字典
+            结果检查字典
         """
         pass
     
     def get_status(self) -> TaskStatus:
         """获取任务状态"""
         return self.status
-    
-    def check_calculation_status(self) -> Dict[str, Any]:
-        """
-        通用的计算状态检查机制
-        
-        Returns:
-            计算状态信息
-        """
-        status_info = {
-            "files_exist": {},
-            "calculation_completed": False,
-            "errors_found": [],
-            "warnings": []
-        }
-        
-        # 检查基本文件
-        required_files = ["OUTCAR", "POSCAR", "INCAR", "KPOINTS"]
-        for filename in required_files:
-            filepath = self.config.work_dir / filename
-            status_info["files_exist"][filename] = filepath.exists()
-        
-        # 检查OUTCAR中的完成标志
-        outcar_path = self.config.work_dir / "OUTCAR"
-        if outcar_path.exists():
-            try:
-                with open(outcar_path, 'r') as f:
-                    content = f.read()
-                
-                # 检查是否正常结束
-                if "General timing and accounting informations for this job:" in content:
-                    status_info["calculation_completed"] = True
-                elif "ZBRENT: fatal error" in content:
-                    status_info["errors_found"].append("ZBRENT fatal error")
-                elif "VERY BAD NEWS" in content:
-                    status_info["errors_found"].append("VERY BAD NEWS found")
-                
-                # 检查收敛
-                if "reached required accuracy" in content:
-                    status_info["converged"] = True
-                elif "aborting loop" in content:
-                    status_info["warnings"].append("Loop aborted - may not be converged")
-                
-            except Exception as e:
-                status_info["errors_found"].append(f"OUTCAR读取失败: {e}")
-        
-        return status_info
     
     def get_summary(self) -> Dict[str, Any]:
         """

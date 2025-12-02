@@ -214,6 +214,22 @@ class Structure:
         """根据元素获取原子"""
         return [atom for atom in self.atoms if atom.element == element]
     
+    def get_ordered_elements(self) -> List[str]:
+        """
+        获取按POSCAR顺序排列的唯一元素列表
+        
+        Returns:
+            按照原子在结构中首次出现的顺序排列的唯一元素列表
+            这个顺序与POSCAR文件中的元素顺序一致
+        """
+        seen = set()
+        ordered_elements = []
+        for atom in self.atoms:
+            if atom.element not in seen:
+                ordered_elements.append(atom.element)
+                seen.add(atom.element)
+        return ordered_elements
+    
     def get_distances(self, atom1_idx: int, atom2_idx: int) -> float:
         """计算两个原子间的距离"""
         if atom1_idx >= len(self.atoms) or atom2_idx >= len(self.atoms):

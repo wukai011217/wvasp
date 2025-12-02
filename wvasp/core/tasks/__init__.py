@@ -4,7 +4,7 @@
 提供VASP计算任务的管理、调度和监控功能。
 """
 
-from .job_management import JobConfig, JobScriptGenerator, VASPJobManager
+# job_management模块已移除，功能整合到任务类中
 from .base_task import BaseTask, TaskConfig, TaskStatus
 from .calculation_tasks import (
     OptimizationTask, 
@@ -16,9 +16,6 @@ from .calculation_tasks import (
 )
 
 __all__ = [
-    'JobConfig',
-    'JobScriptGenerator', 
-    'VASPJobManager',
     'BaseTask',
     'TaskConfig',
     'TaskStatus',

@@ -76,8 +76,8 @@ class OptimizationTask(BaseTask):
         from ..io import KPOINTS
         self.kpoints = KPOINTS.create_gamma_centered(list(self.kpoints_grid))
     
-    def analyze_results(self) -> Dict[str, Any]:
-        """分析结构优化结果"""
+    def check_results(self) -> Dict[str, Any]:
+        """检查结构优化结果"""
         results = {}
         
         outcar_path = self.config.work_dir / "OUTCAR"
@@ -149,7 +149,7 @@ class DOSTask(BaseTask):
         from ..io import KPOINTS
         self.kpoints = KPOINTS.create_gamma_centered(list(self.kpoints_grid))
     
-    def analyze_results(self) -> Dict[str, Any]:
+    def check_results(self) -> Dict[str, Any]:
         """检查计算完成状态和基本结果"""
         results = {}
         
@@ -268,7 +268,7 @@ class BandTask(BaseTask):
         weights = [1.0] * len(kpoints_list)
         self.kpoints = KPOINTS.create_explicit(kpoints_list, weights, "Band structure k-path")
     
-    def analyze_results(self) -> Dict[str, Any]:
+    def check_results(self) -> Dict[str, Any]:
         """检查能带计算完成状态"""
         results = {}
         
@@ -361,8 +361,8 @@ class SinglePointTask(BaseTask):
         from ..io import KPOINTS
         self.kpoints = KPOINTS.create_gamma_centered(list(self.kpoints_grid))
     
-    def analyze_results(self) -> Dict[str, Any]:
-        """分析单点计算结果"""
+    def check_results(self) -> Dict[str, Any]:
+        """检查单点计算结果"""
         results = {}
         
         outcar_path = self.config.work_dir / "OUTCAR"
@@ -457,7 +457,7 @@ class MolecularDynamicsTask(BaseTask):
         from ..io import KPOINTS
         self.kpoints = KPOINTS.create_gamma_centered(list(self.kpoints_grid))
     
-    def analyze_results(self) -> Dict[str, Any]:
+    def check_results(self) -> Dict[str, Any]:
         """检查MD计算完成状态"""
         results = {}
         
@@ -561,7 +561,7 @@ class TransitionStateTask(BaseTask):
         from ..io import KPOINTS
         self.kpoints = KPOINTS.create_gamma_centered(list(self.kpoints_grid))
     
-    def analyze_results(self) -> Dict[str, Any]:
+    def check_results(self) -> Dict[str, Any]:
         """检查NEB计算完成状态"""
         results = {}
         
